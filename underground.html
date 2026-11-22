@@ -218,7 +218,20 @@ class Component extends DCLogic {
       muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
+  tasti(e) {
+    var t = e.target && e.target.tagName; if (t === 'INPUT' || t === 'TEXTAREA') { return; }
+    var st = this.state, k = e.key, L = this.F;
+    if (k === 'Escape') {
+      if (st.lb >= 0) { this.setState({ lb: -1 }); } else if (st.apertoC) { this.setState({ apertoC: false }); } else if (st.apertoI) { this.setState({ apertoI: false, hI: -1 }); } else if (st.apertoP) { this.setState({ apertoP: false }); }
+      return;
+    }
+    if (k !== 'ArrowLeft' && k !== 'ArrowRight') { return; }
+    var d = k === 'ArrowRight' ? 1 : -1;
+    if (L && st.lb >= 0 && L.length > 1) { e.preventDefault(); this.setState({ lb: (st.lb + d + L.length) % L.length }); return; }
+    if (st.apertoC || st.apertoI || st.lb >= 0) { return; }
+  }
   renderVals() {
+    if (!this._kb) { this._kb = true; var me = this; try { window.addEventListener('keydown', function (e) { me.tasti(e); }); } catch (x) {} }
     var self = this, st = this.state, F = this.F;
     var lista = F.concat(F);
     var nomiL = ['Pittogramma in negativo', 'Pittogramma in positivo', 'Logo orizzontale in negativo', 'Logo orizzontale in positivo', 'Logo su due righe in negativo', 'Logo su due righe in positivo'];

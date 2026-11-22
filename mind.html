@@ -31,22 +31,33 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 .anteprima img{display:block;width:100%;height:auto}
 .anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
 .gira-i{animation:giraI 12s linear infinite}
-.scena1{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vh;overflow:hidden}
+.scena1{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vh;overflow:visible}
 .logo1{position:relative;width:min(58vw, calc((100vh - 430px) * 2.35), 820px);min-width:230px;aspect-ratio:354.5/151}
-.logo1 img{position:relative;z-index:1;display:block;width:100%;height:100%;animation:scrivi1 3s cubic-bezier(.6,0,.3,1) .3s both}
+.logo1 img{position:relative;z-index:1;pointer-events:none;display:block;width:100%;height:100%;animation:scrivi1 3s cubic-bezier(.6,0,.3,1) .3s both}
 @keyframes scrivi1{from{clip-path:inset(-10% 100% -10% 0)}to{clip-path:inset(-10% 0 -10% 0)}}
-.onda1{position:absolute;left:45.5%;top:62%;width:22%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(180,169,184,.55);transform:translate(-50%,-50%) scale(.4);opacity:0;animation:onda1 7s ease-out 3s infinite}
+.onda1{position:absolute;left:45.5%;top:62%;width:min(calc(100vh - 470px), 86vw);min-width:200px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(180,169,184,.55);transform:translate(-50%,-50%) scale(.4);opacity:0;animation:onda1 7s ease-out 3s infinite}
 .onda1.o2{animation-delay:5.33s}.onda1.o3{animation-delay:7.66s}
-@keyframes onda1{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}10%{opacity:1}100%{transform:translate(-50%,-50%) scale(6);opacity:0}}
+@keyframes onda1{0%{transform:translate(-50%,-50%) scale(.07);opacity:0}10%{opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
 .payoff1{margin:0;font-weight:900;font-size:clamp(16px,1.6vw,24px);letter-spacing:-.01em;text-transform:uppercase;color:#EFE8DF;animation:appare1 1s ease 2.8s both}
 .payoff1 b{color:#B4A9B8}
 @keyframes appare1{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.logo1 img,.onda1,.payoff1{animation:none}}
-.materia-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%, calc((100vh - 150px) * .75), 600px)}
-.materia-g button{position:relative;display:block;padding:0;border:0;background:#3E2A3D;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
-.materia-g img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.materia-g button:hover img{transform:scale(1.04)}
-.materia-g span{position:absolute;left:12px;bottom:10px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#EFE8DF;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.orbita{position:relative;width:min(100%, calc(100vh - 170px), 640px);aspect-ratio:1}
+.anello{position:absolute;inset:13%;border-radius:50%;border:1px solid rgba(180,169,184,.35)}
+.anello.a2{inset:30%;border-color:rgba(180,169,184,.18)}
+.centro{position:absolute;left:50%;top:50%;width:24%;transform:translate(-50%,-50%);animation:respiraO 6s ease-in-out infinite}
+@keyframes respiraO{0%,100%{transform:translate(-50%,-50%) scale(.94)}50%{transform:translate(-50%,-50%) scale(1.08)}}
+.giro{position:absolute;inset:0;animation:giraO 70s linear infinite}
+.giro:hover,.giro:hover .sat-in{animation-play-state:paused}
+@keyframes giraO{to{transform:rotate(360deg)}}
+.sat{position:absolute;left:50%;top:50%;width:25%;aspect-ratio:1;margin:-12.5% 0 0 -12.5%;transform:rotate(var(--a)) translate(150%) rotate(calc(-1 * var(--a)))}
+.sat-in{width:100%;height:100%;animation:controO 70s linear infinite}
+@keyframes controO{to{transform:rotate(-360deg)}}
+.sat button{display:block;width:100%;height:100%;padding:0;border:0;border-radius:50%;overflow:hidden;background:#222;cursor:pointer;box-shadow:0 0 0 1px rgba(180,169,184,.5);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.sat button:hover{transform:scale(1.12);box-shadow:0 0 0 2px #B4A9B8,0 18px 40px rgba(0,0,0,.5)}
+.sat img{display:block;width:100%;height:100%;object-fit:cover}
+.sat span{position:absolute;left:50%;top:104%;transform:translateX(-50%);white-space:nowrap;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
+@media (prefers-reduced-motion: reduce){.giro,.sat-in,.centro{animation:none}}
 
 @keyframes giraI{to{transform:rotate(360deg)}}
 @media (max-width: 760px){
@@ -77,8 +88,8 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 *{cursor:auto !important}
 }
 .tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
-@media (max-width: 760px){.materia-g{width:100%}}
-@media (max-width: 760px){.pagina .area-vis.scena1{height:62svh !important;justify-content:center !important;overflow:hidden !important}.logo1{width:82vw}}
+@media (max-width: 760px){.orbita{width:74vw;margin:10px 0 26px}.sat span{font-size:9px}}
+@media (max-width: 760px){.pagina .area-vis.scena1{height:62svh !important;justify-content:center !important;overflow:visible !important;gap:3vh !important}.logo1{width:80vw}.onda1{width:min(54svh, 88vw)}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -121,11 +132,15 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
       <button type="button" class="btn-menu" onClick="{{chiudiP}}">← Torna al progetto</button>
       <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
     </div>
-    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 820px) minmax(0, 420px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
-      <div class="materia-g">
-        <sc-for list="{{manifesti}}" as="m" hint-placeholder-count="4">
-          <button type="button" onClick="{{m.apri}}" aria-label="{{m.alt}}"><img src="{{m.src}}" alt=""><span>{{m.et}}</span></button>
-        </sc-for>
+    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 680px) minmax(0, 420px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
+      <div class="orbita">
+        <span class="anello"></span><span class="anello a2"></span>
+        <img class="centro" src="a/ace5aa989904e2ef6cdb4d3717bcd614.svg" alt="Il pittogramma di mind">
+        <div class="giro">
+          <sc-for list="{{manifesti}}" as="m" hint-placeholder-count="4">
+            <div class="sat" style="--a: {{m.ang}}"><div class="sat-in"><button type="button" onClick="{{m.apri}}" aria-label="{{m.alt}}"><img src="{{m.src}}" alt=""></button><span>{{m.et}}</span></div></div>
+          </sc-for>
+        </div>
       </div>
       <div class="testo-p">
         <h2>Il concetto</h2>
@@ -210,7 +225,7 @@ class Component extends DCLogic {
   renderVals() {
     var self = this, st = this.state;
     return Object.assign(this.valsIndice(), {
-      manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], et: m[2], apri: function () { self.setState({ lb: i }); } }; }),
+      manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], et: m[2], ang: (i * 90 - 45) + 'deg', apri: function () { self.setState({ lb: i }); } }; }),
       foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
       lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',
       lbSrc: st.lb >= 0 ? this.M[st.lb][0] : this.M[0][0], lbAlt: st.lb >= 0 ? this.M[st.lb][1] : '',

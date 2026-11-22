@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Emma Simoncelli — graphic designer (nome 2) · Emma Simoncelli</title>
+<title>Emma Simoncelli — about me (proposta 3) · Emma Simoncelli</title>
 <style>
 @font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
 body{margin:0;background:#000}
@@ -91,6 +91,20 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 @media (max-width: 900px){.colonne-cv{grid-template-columns:1fr !important;gap:56px !important}.voce-cv h4{font-size:22px}}
 
 @media (max-width: 760px){.nastro-p{padding:18px 0}.tag-c{padding:10px 18px;font-size:16px}}
+.ab3{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);height:100vh;min-height:700px}
+.ab3-sx{position:relative;background:#000;display:flex;flex-direction:column;justify-content:center;padding:90px 4vw 60px}
+.ab3-dx{background:#4B1F8F;display:flex;flex-direction:column;padding:90px 4vw 40px;min-height:0}
+.schede3{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.scheda3{padding:11px 18px;border:1.5px solid #C9A8FF;border-radius:999px;background:transparent;color:#FFFFFF;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .25s,color .25s}
+.scheda3:hover{background:rgba(201,168,255,.2)}
+.scheda3.on{background:#C9A8FF;color:#1A0B33}
+.pannelli3{position:relative;flex:1 1 auto;min-height:0}
+.pann3{position:absolute;inset:0;overflow-y:auto;padding-right:8px;transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.pann3 .voce-cv:first-child{border-top:0;padding-top:0}
+.grande3{margin:0 0 24px;font-weight:800;font-size:clamp(26px,2.8vw,46px);line-height:1.04;letter-spacing:-.03em}
+.lista3{margin:10px 0 30px;font-size:clamp(22px,2.4vw,38px);font-weight:900;line-height:1.15;letter-spacing:-.03em;text-transform:uppercase}
+.lista3 span{display:block;border-top:1px solid rgba(255,255,255,.25);padding:8px 0}
+@media (max-width: 900px){.ab3{grid-template-columns:1fr !important;height:auto !important}.ab3-sx{padding:100px 4vw 50px !important}.ab3-dx{padding:50px 4vw 60px !important}.pannelli3{min-height:0}.pann3{position:static !important;overflow:visible !important}.pann3[aria-hidden="true"]{display:none}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -107,81 +121,36 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
     </nav>
   </header>
 
-  <section class="eroe-nome" style="position: relative; background: #000; color: #FFFFFF; padding: 110px 4vw 90px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; overflow: hidden">
-    <h1 style="margin: 0; width: min(84vw, 1100px)"><img class="nome-mano" src="a/2d1c42f1fda66786002443b5b17444a4.svg" alt="Emma Simoncelli" style="display: block; width: 100%; height: auto; aspect-ratio: 279.1 / 40.4"></h1>
-    <p class="cornice" style="position: absolute; left: 4vw; bottom: 28px; margin: 0; color: #C9A8FF">Graphic designer · Riccione (RN)</p>
-  </section>
-
-  <section style="background: #4B1F8F; padding: 96px 4vw 110px">
-    <div style="max-width: 1120px; margin: 0 0 96px">
-      <p class="frase-cv" style="margin: 0 0 28px; font-weight: 800; font-size: 3.6vw; line-height: 1.02; letter-spacing: -.03em">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un segno.</p>
-      <p style="margin: 0; max-width: 760px; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.5; color: #E6DAFF">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p>
+  <section class="ab3">
+    <div class="ab3-sx">
+      <h1 style="margin: 0; width: 100%"><img class="nome-mano" src="a/4e0223b96e6b43584891d2507cfb632f.svg" alt="Emma Simoncelli" style="display: block; width: 100%; height: auto; aspect-ratio: 391.5 / 57.5"></h1>
+      <p class="cornice" style="position: absolute; left: 4vw; bottom: 28px; margin: 0; color: #C9A8FF">Graphic designer · Riccione (RN)</p>
     </div>
-    <div class="colonne-cv">
-      <div>
-        <h3 class="titolo-cv" style="margin-bottom: 18px">Esperienze lavorative</h3>
-        <article class="voce-cv">
-          <div class="voce-testa"><h4>Graphic designer</h4><span class="data-cv">gennaio 2026 – in corso</span></div>
-          <p class="dove-cv">Simbiosi Group, Cattolica</p>
-          <p class="desc-cv">Come figura junior del team, il mio ruolo è molto dinamico. Da una parte gestisco in totale autonomia i progetti più piccoli, dall'altra faccio da supporto ai colleghi sui lavori complessi, occupandomi spesso in prima persona della creazione delle immagini. Il mio punto forte è Illustrator, ma salto agilmente tra Photoshop, InDesign e le basi di Figma, Premiere e After Effects per dare una mano ovunque serva.</p>
-        </article>
-        <article class="voce-cv">
-          <div class="voce-testa"><h4>Stage graphic designer</h4><span class="data-cv">marzo – settembre 2025</span></div>
-          <p class="dove-cv">Simbiosi Group, Cattolica</p>
-          <p class="desc-cv">Ho iniziato affiancando il team sulle lavorazioni quotidiane, facendo modifiche e adattamenti per imparare il mestiere. L'agenzia ha apprezzato la mia flessibilità e soprattutto la voglia di fare, tanto da decidere di aspettare la mia laurea per potermi assumere a tempo pieno.</p>
-        </article>
-        <article class="voce-cv">
-          <div class="voce-testa"><h4>Alternanza scuola-lavoro</h4><span class="data-cv">febbraio 2020</span></div>
-          <p class="dove-cv">Retorica, Riccione</p>
-          <p class="desc-cv">Breve esperienza formativa svolta durante gli anni del liceo artistico. È stato il mio primo vero approccio al mondo del lavoro, dove ho potuto osservare da vicino le dinamiche di un'agenzia.</p>
-        </article>
-      </div>
-      <div>
-        <h3 class="titolo-cv" style="margin-bottom: 18px">Istruzione</h3>
-        <article class="voce-cv">
-          <div class="voce-testa"><h4>Laurea in Design</h4><span class="data-cv">novembre 2025</span></div>
-          <p class="dove-cv">Unirsm Design</p>
-          <p class="desc-cv">Il corso prevede un biennio multidisciplinare per formare basi solide sia nel design del prodotto che nella comunicazione. Arrivata al terzo anno, avendo la possibilità di personalizzare il piano di studi, ho scelto di specializzarmi sulla comunicazione visiva, frequentando entrambi i laboratori dedicati.</p>
-        </article>
-        <article class="voce-cv">
-          <div class="voce-testa"><h4>Maturità artistica</h4><span class="data-cv">giugno 2021</span></div>
-          <p class="dove-cv">Liceo Artistico Mengaroni</p>
-          <p class="desc-cv">Indirizzo Grafica. Diploma conseguito con votazione 100 e lode.</p>
-        </article>
-        <article class="voce-cv">
-          <div class="voce-testa"><h4>Certificazione lingua inglese</h4><span class="data-cv">2021</span></div>
-          <p class="dove-cv">Cambridge Assessment English</p>
-          <p class="desc-cv">Livello B2.</p>
-        </article>
-        <h3 class="titolo-cv" style="margin: 56px 0 18px">Software</h3>
-        <div class="pillole">
-          <span class="tag-c">Illustrator</span>
-          <span class="tag-c">InDesign</span>
-          <span class="tag-c">Photoshop</span>
-          <span class="tag-c">Figma</span>
-          <span class="tag-c">After Effects (basi)</span>
-          <span class="tag-c">Premiere (basi)</span>
+    <div class="ab3-dx">
+      <div class="schede3" role="group" aria-label="Sezioni"><button type="button" class="scheda3 {{s0}}" onClick="{{v0}}" aria-pressed="{{p0}}">Chi sono</button><button type="button" class="scheda3 {{s1}}" onClick="{{v1}}" aria-pressed="{{p1}}">Esperienze</button><button type="button" class="scheda3 {{s2}}" onClick="{{v2}}" aria-pressed="{{p2}}">Istruzione</button><button type="button" class="scheda3 {{s3}}" onClick="{{v3}}" aria-pressed="{{p3}}">Skills</button><button type="button" class="scheda3 {{s4}}" onClick="{{v4}}" aria-pressed="{{p4}}">Contatti</button></div>
+      <div class="pannelli3">
+        <div class="pann3" aria-hidden="{{h0}}" style="opacity: {{o0}}; transform: translateY({{y0}}); pointer-events: {{pe0}}">
+<p class="grande3">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un segno.</p><p style="margin: 0; max-width: 560px; font-size: 17px; line-height: 1.6; color: #E6DAFF">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p>
         </div>
-        <h3 class="titolo-cv" style="margin: 36px 0 18px">Expertise</h3>
-        <div class="pillole">
-          <span class="tag-c">Brand design</span>
-          <span class="tag-c">Editorial design</span>
-          <span class="tag-c">Typography</span>
-          <span class="tag-c">Photo editing</span>
-          <span class="tag-c">Digital assets</span>
+        <div class="pann3" aria-hidden="{{h1}}" style="opacity: {{o1}}; transform: translateY({{y1}}); pointer-events: {{pe1}}">
+        <article class="voce-cv"><div class="voce-testa"><h4>Graphic designer</h4><span class="data-cv">gennaio 2026 – in corso</span></div><p class="dove-cv">Simbiosi Group, Cattolica</p><p class="desc-cv">Come figura junior del team, il mio ruolo è molto dinamico. Da una parte gestisco in totale autonomia i progetti più piccoli, dall'altra faccio da supporto ai colleghi sui lavori complessi, occupandomi spesso in prima persona della creazione delle immagini. Il mio punto forte è Illustrator, ma salto agilmente tra Photoshop, InDesign e le basi di Figma, Premiere e After Effects per dare una mano ovunque serva.</p></article>
+        <article class="voce-cv"><div class="voce-testa"><h4>Stage graphic designer</h4><span class="data-cv">marzo – settembre 2025</span></div><p class="dove-cv">Simbiosi Group, Cattolica</p><p class="desc-cv">Ho iniziato affiancando il team sulle lavorazioni quotidiane, facendo modifiche e adattamenti per imparare il mestiere. L'agenzia ha apprezzato la mia flessibilità e soprattutto la voglia di fare, tanto da decidere di aspettare la mia laurea per potermi assumere a tempo pieno.</p></article>
+        <article class="voce-cv"><div class="voce-testa"><h4>Alternanza scuola-lavoro</h4><span class="data-cv">febbraio 2020</span></div><p class="dove-cv">Retorica, Riccione</p><p class="desc-cv">Breve esperienza formativa svolta durante gli anni del liceo artistico. È stato il mio primo vero approccio al mondo del lavoro, dove ho potuto osservare da vicino le dinamiche di un'agenzia.</p></article>
+        </div>
+        <div class="pann3" aria-hidden="{{h2}}" style="opacity: {{o2}}; transform: translateY({{y2}}); pointer-events: {{pe2}}">
+        <article class="voce-cv"><div class="voce-testa"><h4>Laurea in Design</h4><span class="data-cv">novembre 2025</span></div><p class="dove-cv">Unirsm Design</p><p class="desc-cv">Il corso prevede un biennio multidisciplinare per formare basi solide sia nel design del prodotto che nella comunicazione. Arrivata al terzo anno, avendo la possibilità di personalizzare il piano di studi, ho scelto di specializzarmi sulla comunicazione visiva, frequentando entrambi i laboratori dedicati.</p></article>
+        <article class="voce-cv"><div class="voce-testa"><h4>Maturità artistica</h4><span class="data-cv">giugno 2021</span></div><p class="dove-cv">Liceo Artistico Mengaroni</p><p class="desc-cv">Indirizzo Grafica. Diploma conseguito con votazione 100 e lode.</p></article>
+        <article class="voce-cv"><div class="voce-testa"><h4>Certificazione lingua inglese</h4><span class="data-cv">2021</span></div><p class="dove-cv">Cambridge Assessment English</p><p class="desc-cv">Livello B2.</p></article>
+        </div>
+        <div class="pann3" aria-hidden="{{h3}}" style="opacity: {{o3}}; transform: translateY({{y3}}); pointer-events: {{pe3}}">
+<p class="titolo-cv">Software</p><p class="lista3"><span>Illustrator</span><span>InDesign</span><span>Photoshop</span><span>Figma</span><span>After Effects (basi)</span><span>Premiere (basi)</span></p><p class="titolo-cv">Expertise</p><p class="lista3"><span>Brand design</span><span>Editorial design</span><span>Typography</span><span>Photo editing</span><span>Digital assets</span></p>
+        </div>
+        <div class="pann3" aria-hidden="{{h4}}" style="opacity: {{o4}}; transform: translateY({{y4}}); pointer-events: {{pe4}}">
+<p class="grande3">Lavoriamo insieme.</p><div class="lista-c" style="max-width: 420px"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/">LinkedIn</a><a href="https://www.instagram.com/emmasimoncelli/">Instagram</a><span>Riccione (RN), Italia</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <footer class="piede" style="background: #000; padding: 72px 4vw 36px">
-    <div class="piede-griglia" style="display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; align-items: end">
-      <p style="margin: 0; font-weight: 900; font-size: 3.4vw; line-height: .95; letter-spacing: -.04em; text-transform: uppercase">Lavoriamo insieme</p>
-      <div class="lista-c"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><span>Riccione (RN), Italia</span></div>
-      <div class="lista-c"><a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/">LinkedIn</a><a href="https://www.instagram.com/emmasimoncelli/">Instagram</a></div>
-      <div class="lista-c"><span style="color: #C9A8FF">© 2026 Emma Simoncelli</span></div>
-    </div>
-  </footer>
   </div>
 
   <div class="tendina" aria-hidden="{{nascosto}}" onMouseMove="{{muovi}}" style="transform: translateX({{tx}})">
@@ -227,7 +196,7 @@ class Component extends DCLogic {
     super(props);
     var B = 'a/';
     this.P = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "mind", "href": "mind.html", "img": "a/a16172e6abb63de71a2dffe82b94600e.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "r": -3, "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp"}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
-    this.state = { aperto: false, apertoC: false, h: -1, x: -200, y: -200, sopra: false, dentro: false };
+    this.state = { aperto: false, apertoC: false, h: -1, x: -200, y: -200, sopra: false, dentro: false, tab: 0 };
   }
   componentDidMount() {
     try { if (window.location.hash === '#progetti') { this.setState({ aperto: true }); } } catch (e) {}
@@ -235,6 +204,11 @@ class Component extends DCLogic {
   renderVals() {
     var self = this, st = this.state;
     return {
+      v0: function () { self.setState({ tab: 0 }); }, s0: st.tab === 0 ? 'on' : '', p0: st.tab === 0 ? 'true' : 'false', h0: st.tab === 0 ? 'false' : 'true', o0: st.tab === 0 ? 1 : 0, y0: st.tab === 0 ? '0px' : '24px', pe0: st.tab === 0 ? 'auto' : 'none',
+      v1: function () { self.setState({ tab: 1 }); }, s1: st.tab === 1 ? 'on' : '', p1: st.tab === 1 ? 'true' : 'false', h1: st.tab === 1 ? 'false' : 'true', o1: st.tab === 1 ? 1 : 0, y1: st.tab === 1 ? '0px' : '24px', pe1: st.tab === 1 ? 'auto' : 'none',
+      v2: function () { self.setState({ tab: 2 }); }, s2: st.tab === 2 ? 'on' : '', p2: st.tab === 2 ? 'true' : 'false', h2: st.tab === 2 ? 'false' : 'true', o2: st.tab === 2 ? 1 : 0, y2: st.tab === 2 ? '0px' : '24px', pe2: st.tab === 2 ? 'auto' : 'none',
+      v3: function () { self.setState({ tab: 3 }); }, s3: st.tab === 3 ? 'on' : '', p3: st.tab === 3 ? 'true' : 'false', h3: st.tab === 3 ? 'false' : 'true', o3: st.tab === 3 ? 1 : 0, y3: st.tab === 3 ? '0px' : '24px', pe3: st.tab === 3 ? 'auto' : 'none',
+      v4: function () { self.setState({ tab: 4 }); }, s4: st.tab === 4 ? 'on' : '', p4: st.tab === 4 ? 'true' : 'false', h4: st.tab === 4 ? 'false' : 'true', o4: st.tab === 4 ? 1 : 0, y4: st.tab === 4 ? '0px' : '24px', pe4: st.tab === 4 ? 'auto' : 'none',
       tx: st.aperto ? '0%' : '100%', nascosto: st.aperto ? 'false' : 'true',
       progetti: this.P.map(function (p, i) {
         return { titolo: p.t, href: p.href, tab: st.aperto ? 0 : -1,

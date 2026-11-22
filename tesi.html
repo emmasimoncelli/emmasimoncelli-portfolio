@@ -364,7 +364,7 @@ class Component extends DCLogic {
           cls: on ? 'on' : '', on: on ? 'true' : 'false',
           ar: p.r, g: on ? 0 : g[i].toFixed(4), b: on ? (Math.round(Math.min(h * p.r, (self.state.w || 99999) * 0.82)) + 'px') : '0px',
           pos: (on || a < 0) ? 'center' : (i < a ? '8% 50%' : '92% 50%'),
-          apri: function () { self.setState({ a: (self.state.a === i && !self.mob()) ? -1 : i }); }
+          apri: function () { self.setState({ a: self.state.a === i ? -1 : i }); }
         };
       }),
       bx: this.state.mx + 'px', by: this.state.my + 'px',

@@ -65,38 +65,27 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 *{cursor:auto !important}
 }
 .tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
-@property --lx{syntax:'<percentage>';inherits:true;initial-value:68%}
-@property --ly{syntax:'<percentage>';inherits:true;initial-value:40%}
-.scena4{position:relative;overflow:hidden;background:#CFC6BA;--lx:68%;--ly:40%;animation:vaga4 14s ease-in-out infinite alternate}
-.scena4.segui{animation:none}
-@keyframes vaga4{0%{--lx:58%;--ly:22%}35%{--lx:82%;--ly:48%}70%{--lx:66%;--ly:78%}100%{--lx:88%;--ly:30%}}
-.scena4 img.buio4,.scena4 img.luce4{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;pointer-events:none}
-.buio4{filter:brightness(.72) saturate(.9)}
-.luce4{filter:brightness(1) contrast(1.3);-webkit-mask-image:radial-gradient(circle at var(--lx) var(--ly),#000 0,rgba(0,0,0,.75) 14%,transparent 40%);mask-image:radial-gradient(circle at var(--lx) var(--ly),#000 0,rgba(0,0,0,.75) 14%,transparent 40%)}
-.bagliore4{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--lx) var(--ly),rgba(255,236,210,.12),rgba(255,236,210,0) 32%);mix-blend-mode:soft-light}
-.logo4{position:absolute;left:4%;bottom:7%;width:min(24vw,280px);height:auto;pointer-events:none}
-.palco-m{width:min(100%,820px);display:flex;flex-direction:column;gap:16px}
-.schede-m{display:flex;flex-wrap:wrap;gap:8px}
-.scheda-m{padding:9px 16px;border:1.5px solid #B4A9B8;border-radius:999px;background:transparent;color:#EFE8DF;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:background .25s,color .25s}
-.scheda-m:hover{background:rgba(180,169,184,.2)}
-.scheda-m.on{background:#B4A9B8;color:#000}
-.scena-m{height:calc(100vh - 230px);min-height:380px;flex-direction:column;align-items:center;justify-content:center;gap:12px;animation:entra-m .5s ease both}
-@keyframes entra-m{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.nota-m{margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
-.telefono-m{height:calc(100% - 30px);aspect-ratio:9/18.5;padding:10px;border-radius:34px;background:#1A1A1A;box-shadow:0 0 0 1px #333,0 30px 60px rgba(0,0,0,.5)}
-.schermo-m{width:100%;height:100%;border-radius:26px;overflow-y:auto;background:#F6F2EC;scrollbar-width:none}
-.schermo-m::-webkit-scrollbar{display:none}
-.schermo-m img{display:block;width:100%;height:auto}
-.giro-m{position:relative;width:min(100%,560px);aspect-ratio:920/598;padding:0;border:0;background:transparent;cursor:pointer;perspective:1400px}
-.giro-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
-.giro-m.girato .giro-in{transform:rotateY(180deg)}
-.faccia-m{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
-.retro-m{transform:rotateY(180deg)}
-.doppia-m{justify-content:center}
-.zoom-m{display:block;min-height:0;flex:1 1 0;padding:0;border:0;background:transparent;cursor:zoom-in}
-.zoom-m img{display:block;width:100%;height:100%;object-fit:contain}
-@media (prefers-reduced-motion: reduce){.scena4{animation:none}.giro-in{transition:none}}
-@media (max-width: 760px){.scena-m{height:auto !important;min-height:0}.telefono-m{height:72svh}.zoom-m{flex:none;width:100%}.logo4{width:40vw}}
+@property --mx{syntax:'<number>';inherits:true;initial-value:0}
+@property --my{syntax:'<number>';inherits:true;initial-value:0}
+.scena5{position:relative;overflow:hidden}
+.figura5{position:absolute;right:-7%;top:2%;height:122%;aspect-ratio:107.65/114.72;-webkit-mask:url(a/ace5aa989904e2ef6cdb4d3717bcd614.svg) center/contain no-repeat;mask:url(a/ace5aa989904e2ef6cdb4d3717bcd614.svg) center/contain no-repeat;background:#2A2230}
+.figura5 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:dissolvi5 24s linear infinite}
+@keyframes dissolvi5{0%{opacity:0;transform:scale(1.08)}5%{opacity:1}17%{opacity:1}22%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.testo5{position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:3vh;z-index:2}
+.frase5{margin:0;font-weight:900;font-size:min(7vw, 11vh);line-height:.88;letter-spacing:-.045em;text-transform:uppercase;color:#EFE8DF}
+.frase5 span{color:#B4A9B8}
+.logo5{width:min(16vw,200px);height:auto}
+.compo5{position:relative;width:min(100%,860px);height:min(calc(100vh - 150px),660px);--mx:0;--my:0;animation:fluttua5 9s ease-in-out infinite alternate}
+.compo5.segui{animation:none}
+@keyframes fluttua5{0%{--mx:-.6;--my:-.4}50%{--mx:.5;--my:.3}100%{--mx:-.2;--my:.6}}
+.pezzo5{position:absolute;padding:0;border:0;background:transparent;cursor:zoom-in;transform:translate(calc(var(--mx) * var(--d) * 26px), calc(var(--my) * var(--d) * 20px)) rotate(var(--r));transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .3s;filter:drop-shadow(0 22px 40px rgba(0,0,0,.55))}
+.pezzo5:hover{z-index:20;filter:drop-shadow(0 28px 50px rgba(0,0,0,.7)) brightness(1.05)}
+.pezzo5 img{display:block;width:100%;height:auto}
+.tel5{aspect-ratio:9/18.5;padding:8px;border-radius:26px;background:#161616;box-shadow:0 0 0 1px #333;z-index:10}
+.feed5{display:block;width:100%;height:100%;border-radius:19px;background:#F6F2EC url(a/759403cb5efd593f083bebb5c365f3d0.jpg) center 0/100% auto no-repeat;animation:scorriFeed5 36s ease-in-out infinite alternate}
+@keyframes scorriFeed5{to{background-position:center 100%}}
+@media (prefers-reduced-motion: reduce){.figura5 img{animation:none}.figura5 img:first-child{opacity:1}.compo5,.feed5{animation:none}}
+@media (max-width: 760px){.figura5{right:-34%;top:-4%;height:82%}.frase5{font-size:13vw}.logo5{width:34vw}.compo5{height:120vw}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -122,11 +111,12 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
     </div>
   </div>
 
-  <div class="area-vis scena4" onMouseMove="{{luce}}" onMouseLeave="{{luceVia}}" style="flex: 1 1 auto; min-height: 0; margin: 0 4vw 4vh">
-    <img class="buio4" src="a/2d37befa565f77cc98e7013e2226b43c.jpg" alt="">
-    <img class="luce4" src="a/2d37befa565f77cc98e7013e2226b43c.jpg" alt="Il pittogramma di Mind inciso a secco su carta avorio">
-    <span class="bagliore4" aria-hidden="true"></span>
-    <img class="logo4" src="a/77b5b9c6074ccb41326cc4454165ae7f.svg" alt="Mind">
+  <div class="area-vis scena5" style="flex: 1 1 auto; min-height: 0; margin: 0 4vw 4vh">
+    <div class="figura5" role="img" aria-label="Il pittogramma di Mind, una persona a braccia aperte, riempito dalle foto delle mani che massaggiano"><img src="a/9c6d24336697a85957347d092c0af351.jpg" alt="" style="animation-delay: 0s"><img src="a/8443c2acd55ba2e047b269dc5c76ef88.jpg" alt="" style="animation-delay: 4s"><img src="a/b2c11e0f782fc7ffdd87ff5fe4621670.jpg" alt="" style="animation-delay: 8s"><img src="a/76e3c0395e0f938cdb0f3a9c702fe476.jpg" alt="" style="animation-delay: 12s"><img src="a/204c1484b4df8fb6d42852b146cbeaa4.jpg" alt="" style="animation-delay: 16s"><img src="a/8e9dc00817037655c2bfac0d477430fa.jpg" alt="" style="animation-delay: 20s"></div>
+    <div class="testo5">
+      <p class="frase5">Il corpo<br>ha <span>memoria</span></p>
+      <img class="logo5" src="a/9a33b35417b26ee3e5e51f35a79969ba.svg" alt="Mind">
+    </div>
   </div>
 
   <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
@@ -139,25 +129,7 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
       <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
     </div>
     <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 820px) minmax(0, 400px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
-      <div class="palco-m">
-        <div class="schede-m" role="group" aria-label="Applicazioni"><button type="button" class="scheda-m {{s0}}" onClick="{{v0}}" aria-pressed="{{p0}}">Instagram</button><button type="button" class="scheda-m {{s1}}" onClick="{{v1}}" aria-pressed="{{p1}}">Biglietto</button><button type="button" class="scheda-m {{s2}}" onClick="{{v2}}" aria-pressed="{{p2}}">Poster e buono</button><button type="button" class="scheda-m {{s3}}" onClick="{{v3}}" aria-pressed="{{p3}}">Carta e sito</button></div>
-        <div class="scena-m" style="display: {{d0}}">
-          <div class="telefono-m"><div class="schermo-m"><img src="a/759403cb5efd593f083bebb5c365f3d0.jpg" alt="Il profilo Instagram di Mind: griglia a scacchiera di foto e grafiche"></div></div>
-          <p class="nota-m">scorri il feed</p>
-        </div>
-        <div class="scena-m" style="display: {{d1}}">
-          <button type="button" class="giro-m {{gcls}}" onClick="{{gira}}" aria-label="Gira il biglietto da visita"><span class="giro-in"><img class="faccia-m" src="a/d11001c1f36415bac180e198b732ea96.jpg" alt="Fronte del biglietto: pittogramma inciso su carta prugna"><img class="faccia-m retro-m" src="a/e37ad5e8525c2fc12e7ee9c69442de75.jpg" alt="Retro del biglietto: pittogramma in rilievo su carta avorio"></span></button>
-          <p class="nota-m">clicca per girarlo: l'incisione del fronte diventa rilievo sul retro</p>
-        </div>
-        <div class="scena-m doppia-m" style="display: {{d2}}">
-          <button type="button" class="zoom-m" onClick="{{z0}}" aria-label="Ingrandisci i poster"><img src="a/8fe23d9fe260443331e3a9c35240f195.jpg" alt="Serie di poster di Mind"></button>
-          <button type="button" class="zoom-m" onClick="{{z1}}" aria-label="Ingrandisci il buono regalo"><img src="a/8cacde17ec9e91a5b2b1f0f9d22e4bc9.jpg" alt="Buono regalo di Mind"></button>
-        </div>
-        <div class="scena-m doppia-m" style="display: {{d3}}">
-          <button type="button" class="zoom-m" onClick="{{z2}}" aria-label="Ingrandisci la carta dei trattamenti"><img src="a/fc288ec947005270ff9a38fe6b7c673f.jpg" alt="Carta dei trattamenti e carta intestata di Mind"></button>
-          <button type="button" class="zoom-m" onClick="{{z3}}" aria-label="Ingrandisci il sito"><img src="a/5b40c24173a87b08dda93c83106e970e.jpg" alt="Homepage del sito di Mind"></button>
-        </div>
-      </div>
+      <div class="compo5" onMouseMove="{{muoviC}}" onMouseLeave="{{esciC}}"><button type="button" class="pezzo5" onClick="{{z0}}" aria-label="Ingrandisci: Poster Abbraccia il tuo equilibrio" style="left: 2%; top: 4%; width: 22%; --r: -5deg; --d: 0.35"><img src="a/da9b08428647c669b3cb1a6ea7585e63.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z1}}" aria-label="Ingrandisci: Poster Il corpo ha memoria" style="left: 17%; top: 34%; width: 20%; --r: 4deg; --d: 0.6"><img src="a/deaef25284cce0c92b71c9d9e17e1268.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z2}}" aria-label="Ingrandisci: Buono regalo" style="left: 3%; top: 70%; width: 44%; --r: -3deg; --d: 0.8"><img src="a/8c84134ab41d76785cba1fd221b73eda.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z3}}" aria-label="Ingrandisci: Retro del biglietto da visita" style="left: 62%; top: 44%; width: 32%; --r: -4deg; --d: 0.5"><img src="a/e37ad5e8525c2fc12e7ee9c69442de75.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z4}}" aria-label="Ingrandisci: Fronte del biglietto da visita" style="left: 58%; top: 10%; width: 32%; --r: 7deg; --d: 0.9"><img src="a/d11001c1f36415bac180e198b732ea96.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z5}}" aria-label="Ingrandisci: Poster Ritrova il tuo centro" style="left: 79%; top: 62%; width: 17%; --r: 5deg; --d: 0.45"><img src="a/f04109e4199548250dfe55a4bf7805c0.jpg" alt=""></button><button type="button" class="pezzo5 tel5" onClick="{{z6}}" aria-label="Ingrandisci il feed Instagram" style="left: 37%; top: 3%; width: 23%; --r: -1deg; --d: 1.2"><span class="feed5"></span></button></div>
       <div class="testo-p">
         <h2>Il concetto</h2>
         <p>La i del logo è una persona a braccia aperte che stringe a sé le lettere vicine. È quello che succede da Mind: qualcuno si prende cura del corpo e intanto ascolta tutto il resto.</p>
@@ -166,7 +138,7 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
         <h2>La fotografia</h2>
         <p>Mani, pelle, olio, da vicino e in luce calda. Ogni foto passa dalla stessa correzione, ombre verso il prugna e luci verso l'avorio, così sembrano tutte dello stesso servizio.</p>
         <h2>Le applicazioni</h2>
-        <p style="margin-bottom: 0">Un feed a scacchiera tra foto e grafica, poster per la cabina e la vetrina, buono regalo, carta dei trattamenti, carta intestata e sito.</p>
+        <p style="margin-bottom: 0">Un feed a scacchiera tra foto e grafica, poster per la cabina e la vetrina, biglietti con l'incisione, buono regalo, carta dei trattamenti e sito.</p>
       </div>
     </div>
   </div>
@@ -214,8 +186,8 @@ class Component extends DCLogic {
     super(props);
     this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "Mind", "href": "mind.html", "img": "a/518a2dbce15d2d160a2b57c03518ff21.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
     var B = 'a/';
-    this.M = [['a/8fe23d9fe260443331e3a9c35240f195.jpg', 'Serie di poster di Mind'], ['a/8cacde17ec9e91a5b2b1f0f9d22e4bc9.jpg', 'Buono regalo di Mind'], ['a/fc288ec947005270ff9a38fe6b7c673f.jpg', 'Carta dei trattamenti e carta intestata di Mind'], ['a/5b40c24173a87b08dda93c83106e970e.jpg', 'Homepage del sito di Mind']]
-    this.F = [['a/78ca1aaaea83f7c958194547cad66a2e.jpg', 'I tre manifesti esposti in galleria']];
+    this.M = [['a/da9b08428647c669b3cb1a6ea7585e63.jpg', 'Poster Abbraccia il tuo equilibrio'], ['a/deaef25284cce0c92b71c9d9e17e1268.jpg', 'Poster Il corpo ha memoria'], ['a/8c84134ab41d76785cba1fd221b73eda.jpg', 'Buono regalo'], ['a/e37ad5e8525c2fc12e7ee9c69442de75.jpg', 'Retro del biglietto da visita'], ['a/d11001c1f36415bac180e198b732ea96.jpg', 'Fronte del biglietto da visita'], ['a/f04109e4199548250dfe55a4bf7805c0.jpg', 'Poster Ritrova il tuo centro'], ['a/759403cb5efd593f083bebb5c365f3d0.jpg', 'Feed Instagram di Mind']];
+    this.F = [];
     this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0, tm: 0, girato: false };
   }
   posI(e) {
@@ -246,20 +218,14 @@ class Component extends DCLogic {
     var d = k === 'ArrowRight' ? 1 : -1;
     if (L && st.lb >= 0 && L.length > 1) { e.preventDefault(); this.setState({ lb: (st.lb + d + L.length) % L.length }); return; }
     if (st.apertoC || st.apertoI || st.lb >= 0) { return; }
-    if (st.apertoP) { e.preventDefault(); this.setState({ tm: (st.tm + d + 4) % 4 }); return; }
   }
   renderVals() {
     if (!this._kb) { this._kb = true; var me = this; try { window.addEventListener('keydown', function (e) { me.tasti(e); }); } catch (x) {} }
     var self = this, st = this.state;
     return Object.assign(this.valsIndice(), {
-      v0: function () { self.setState({ tm: 0 }); }, s0: st.tm === 0 ? 'on' : '', p0: st.tm === 0 ? 'true' : 'false', d0: st.tm === 0 ? 'flex' : 'none',
-      v1: function () { self.setState({ tm: 1 }); }, s1: st.tm === 1 ? 'on' : '', p1: st.tm === 1 ? 'true' : 'false', d1: st.tm === 1 ? 'flex' : 'none',
-      v2: function () { self.setState({ tm: 2 }); }, s2: st.tm === 2 ? 'on' : '', p2: st.tm === 2 ? 'true' : 'false', d2: st.tm === 2 ? 'flex' : 'none',
-      v3: function () { self.setState({ tm: 3 }); }, s3: st.tm === 3 ? 'on' : '', p3: st.tm === 3 ? 'true' : 'false', d3: st.tm === 3 ? 'flex' : 'none',
-      z0: function () { self.setState({ lb: 0 }); }, z1: function () { self.setState({ lb: 1 }); }, z2: function () { self.setState({ lb: 2 }); }, z3: function () { self.setState({ lb: 3 }); },
-      gira: function () { self.setState({ girato: !st.girato }); }, gcls: st.girato ? 'girato' : '',
-      luce: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.classList.add('segui'); el.style.setProperty('--lx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%'); el.style.setProperty('--ly', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%'); },
-      luceVia: function (e) { e.currentTarget.classList.remove('segui'); },
+      z0: function () { self.setState({ lb: 0 }); }, z1: function () { self.setState({ lb: 1 }); }, z2: function () { self.setState({ lb: 2 }); }, z3: function () { self.setState({ lb: 3 }); }, z4: function () { self.setState({ lb: 4 }); }, z5: function () { self.setState({ lb: 5 }); }, z6: function () { self.setState({ lb: 6 }); },
+      muoviC: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.classList.add('segui'); el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3)); el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3)); },
+      esciC: function (e) { e.currentTarget.classList.remove('segui'); },
       manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], apri: function () { self.setState({ lb: i }); } }; }),
       foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
       lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',

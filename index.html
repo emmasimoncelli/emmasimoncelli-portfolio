@@ -75,11 +75,21 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 @media (prefers-reduced-motion: reduce){.nome-mano,.eroe-nome .foto-viola,.nastro-p .nastro-in{animation:none}}
 .piede .lista-c a,.piede .lista-c span{border-top:1px solid rgba(255,255,255,.28)}
 @media (max-width: 760px){.piede-griglia{grid-template-columns:1fr !important;gap:20px !important}.piede-griglia p{font-size:10vw !important}.frase-cv{font-size:7.5vw !important}}
-header.testata .btn-menu{color:#1D1D1B}
-header.testata .btn-menu:hover{color:#6E3BD8}
 @media (max-width: 760px){.foto-b{height:min(56vh,460px) !important}}
 .tag-c{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:14px 26px;border:1.5px solid #C9A8FF;border-radius:999px;color:#FFFFFF;font-weight:700;font-size:clamp(16px,1.9vw,30px);line-height:1;letter-spacing:-.01em;transition:background .25s,color .25s}
 .tag-c:hover{background:#C9A8FF;color:#000}
+.voce-cv{padding:26px 0 28px;border-top:1px solid rgba(255,255,255,.3)}
+.voce-testa{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.voce-cv h4{margin:0;font-size:clamp(20px,1.9vw,30px);font-weight:800;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase}
+.data-cv{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF;white-space:nowrap}
+.dove-cv{margin:8px 0 12px;font-size:16px;font-weight:600;color:#FFFFFF}
+.desc-cv{margin:0;max-width:620px;font-size:15px;line-height:1.6;color:#E6DAFF}
+.titolo-cv{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D9C2FF}
+.pillole{display:flex;flex-wrap:wrap;gap:10px}
+.pillole .tag-c{font-size:16px;padding:11px 20px}
+.colonne-cv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4vw 6vw;align-items:start}
+@media (max-width: 900px){.colonne-cv{grid-template-columns:1fr !important;gap:56px !important}.voce-cv h4{font-size:22px}}
+
 @media (max-width: 760px){.nastro-p{padding:18px 0}.tag-c{padding:10px 18px;font-size:16px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
@@ -97,57 +107,84 @@ header.testata .btn-menu:hover{color:#6E3BD8}
     </nav>
   </header>
 
-  <section class="eroe-nome" style="position: relative; background: #FFFFFF; color: #1D1D1B; padding: 84px 4vw 56px; display: flex; justify-content: center; overflow: hidden">
-    <div style="position: relative; display: flex; justify-content: center; width: 100%">
-      <div class="foto-b" style="height: min(64vh, 600px); aspect-ratio: 3 / 4; overflow: hidden">
-        <img src="a/db431695f9f2f720f216029de6e3f401.jpg" alt="" aria-hidden="true" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1)">
-      </div>
-    <h1 style="position: absolute; left: 50%; top: 50%; z-index: 1; margin: 0; width: min(84vw, 1180px); transform: translate(-50%, -50%)"><img class="nome-mano" src="a/6326c933afe773b1c9eb06a164aa0013.svg" alt="Emma Simoncelli" style="display: block; width: 100%; height: auto; aspect-ratio: 391.5 / 57.5; filter: none"></h1>
-    </div>
-    <p class="cornice" style="position: absolute; left: 4vw; bottom: 28px; z-index: 1; margin: 0; color: #6E3BD8">Graphic designer · Riccione (RN)</p>
+  <section class="eroe-nome" style="position: relative; background: #000; color: #FFFFFF; min-height: 100svh; padding: 84px 4vw 72px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; overflow: hidden">
+    <h1 style="margin: 0; width: min(88vw, 1240px)"><img class="nome-mano" src="a/4e0223b96e6b43584891d2507cfb632f.svg" alt="Emma Simoncelli" style="display: block; width: 100%; height: auto; aspect-ratio: 391.5 / 57.5"></h1>
+    <p class="cornice" style="position: absolute; left: 4vw; bottom: 28px; margin: 0; color: #C9A8FF">Graphic designer · Riccione (RN)</p>
   </section>
 
-  <section style="background: #4B1F8F; padding: 90px 4vw 100px">
-    <p class="frase-cv" style="margin: 0 0 64px; max-width: 1100px; font-weight: 800; font-size: 3.6vw; line-height: 1.02; letter-spacing: -.03em">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un segno.</p>
-    <div class="griglia-cv rivela" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; align-items: start">
-      <div class="blocco">
-        <h3>Esperienza</h3>
-        <div class="riga6">Graphic designer, Simbiosi Group <span>dal 2026</span></div>
-        <div class="riga6">Stage, Simbiosi Group <span>2025</span></div>
+  <section style="background: #4B1F8F; padding: 96px 4vw 110px">
+    <div style="max-width: 1120px; margin: 0 0 96px">
+      <p class="frase-cv" style="margin: 0 0 28px; font-weight: 800; font-size: 3.6vw; line-height: 1.02; letter-spacing: -.03em">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un segno.</p>
+      <p style="margin: 0; max-width: 760px; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.5; color: #E6DAFF">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p>
+    </div>
+    <div class="colonne-cv">
+      <div>
+        <h3 class="titolo-cv" style="margin-bottom: 18px">Esperienze lavorative</h3>
+        <article class="voce-cv">
+          <div class="voce-testa"><h4>Graphic designer</h4><span class="data-cv">gennaio 2026 – in corso</span></div>
+          <p class="dove-cv">Simbiosi Group, Cattolica</p>
+          <p class="desc-cv">Come figura junior del team, il mio ruolo è molto dinamico. Da una parte gestisco in totale autonomia i progetti più piccoli, dall'altra faccio da supporto ai colleghi sui lavori complessi, occupandomi spesso in prima persona della creazione delle immagini. Il mio punto forte è Illustrator, ma salto agilmente tra Photoshop, InDesign e le basi di Figma, Premiere e After Effects per dare una mano ovunque serva.</p>
+        </article>
+        <article class="voce-cv">
+          <div class="voce-testa"><h4>Stage graphic designer</h4><span class="data-cv">marzo – settembre 2025</span></div>
+          <p class="dove-cv">Simbiosi Group, Cattolica</p>
+          <p class="desc-cv">Ho iniziato affiancando il team sulle lavorazioni quotidiane, facendo modifiche e adattamenti per imparare il mestiere. L'agenzia ha apprezzato la mia flessibilità e soprattutto la voglia di fare, tanto da decidere di aspettare la mia laurea per potermi assumere a tempo pieno.</p>
+        </article>
+        <article class="voce-cv">
+          <div class="voce-testa"><h4>Alternanza scuola-lavoro</h4><span class="data-cv">febbraio 2020</span></div>
+          <p class="dove-cv">Retorica, Riccione</p>
+          <p class="desc-cv">Breve esperienza formativa svolta durante gli anni del liceo artistico. È stato il mio primo vero approccio al mondo del lavoro, dove ho potuto osservare da vicino le dinamiche di un'agenzia.</p>
+        </article>
       </div>
-      <div class="blocco">
-        <h3>Studi</h3>
-        <div class="riga6">Laurea in Design, UniRSM <span>2025</span></div>
-        <div class="riga6">Maturità artistica, Liceo Mengaroni <span>2021</span></div>
-        <div class="riga6">Inglese <span>B2</span></div>
-      </div>
-      <div class="blocco">
-        <h3>Strumenti</h3>
-        <div class="riga6">Illustrator, InDesign, Photoshop</div>
-        <div class="riga6">Figma</div>
-        <div class="riga6">After Effects, Premiere <span>basi</span></div>
+      <div>
+        <h3 class="titolo-cv" style="margin-bottom: 18px">Istruzione</h3>
+        <article class="voce-cv">
+          <div class="voce-testa"><h4>Laurea in Design</h4><span class="data-cv">novembre 2025</span></div>
+          <p class="dove-cv">Unirsm Design</p>
+          <p class="desc-cv">Il corso prevede un biennio multidisciplinare per formare basi solide sia nel design del prodotto che nella comunicazione. Arrivata al terzo anno, avendo la possibilità di personalizzare il piano di studi, ho scelto di specializzarmi sulla comunicazione visiva, frequentando entrambi i laboratori dedicati.</p>
+        </article>
+        <article class="voce-cv">
+          <div class="voce-testa"><h4>Maturità artistica</h4><span class="data-cv">giugno 2021</span></div>
+          <p class="dove-cv">Liceo Artistico Mengaroni</p>
+          <p class="desc-cv">Indirizzo Grafica. Diploma conseguito con votazione 100 e lode.</p>
+        </article>
+        <article class="voce-cv">
+          <div class="voce-testa"><h4>Certificazione lingua inglese</h4><span class="data-cv">2021</span></div>
+          <p class="dove-cv">Cambridge Assessment English</p>
+          <p class="desc-cv">Livello B2.</p>
+        </article>
+        <h3 class="titolo-cv" style="margin: 56px 0 18px">Software</h3>
+        <div class="pillole">
+          <span class="tag-c">Illustrator</span>
+          <span class="tag-c">InDesign</span>
+          <span class="tag-c">Photoshop</span>
+          <span class="tag-c">Figma</span>
+          <span class="tag-c">After Effects (basi)</span>
+          <span class="tag-c">Premiere (basi)</span>
+        </div>
+        <h3 class="titolo-cv" style="margin: 36px 0 18px">Expertise</h3>
+        <div class="pillole">
+          <span class="tag-c">Brand design</span>
+          <span class="tag-c">Editorial design</span>
+          <span class="tag-c">Typography</span>
+          <span class="tag-c">Photo editing</span>
+          <span class="tag-c">Digital assets</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="nastro-p" aria-label="Competenze">
-    <div class="nastro-in">
-      <sc-for list="{{tags}}" as="t" hint-placeholder-count="16">
-        <span class="tag-c">{{t.nome}}</span>
-      </sc-for>
-    </div>
-  </div>
-  <footer class="piede" style="background: #4B1F8F; padding: 56px 4vw 36px">
+  <footer class="piede" style="background: #000; padding: 72px 4vw 36px">
     <div class="piede-griglia" style="display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; align-items: end">
       <p style="margin: 0; font-weight: 900; font-size: 3.4vw; line-height: .95; letter-spacing: -.04em; text-transform: uppercase">Lavoriamo insieme</p>
-      <div class="lista-c"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><a href="tel:+393288224848">+39 328 822 4848</a></div>
+      <div class="lista-c"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><span>Riccione (RN), Italia</span></div>
       <div class="lista-c"><a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/">LinkedIn</a><a href="https://www.instagram.com/emmasimoncelli/">Instagram</a></div>
-      <div class="lista-c"><span>Riccione (RN), Italia</span><span style="color: #D9C2FF">© 2026 Emma Simoncelli</span></div>
+      <div class="lista-c"><span style="color: #C9A8FF">© 2026 Emma Simoncelli</span></div>
     </div>
   </footer>
   </div>
 
-  <div class="tendina" aria-hidden="{{nascosto}}" style="transform: translateX({{tx}})">
+  <div class="tendina" aria-hidden="{{nascosto}}" onMouseMove="{{muovi}}" style="transform: translateX({{tx}})">
     <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
       <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
       <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
@@ -163,7 +200,7 @@ header.testata .btn-menu:hover{color:#6E3BD8}
     </div>
   </div>
 
-  <div class="tendina" aria-hidden="{{nascostoC}}" style="transform: translateX({{txC}}); background: #4B1F8F; z-index: 510">
+  <div class="tendina" aria-hidden="{{nascostoC}}" onMouseMove="{{muovi}}" style="transform: translateX({{txC}}); background: #4B1F8F; z-index: 510">
     <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
       <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
       <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
@@ -172,7 +209,6 @@ header.testata .btn-menu:hover{color:#6E3BD8}
       <div class="lista-c" style="width: min(360px, 100%); opacity: {{opC}}; transform: translateX({{trC}}); transition: opacity .5s .3s, transform .6s .3s cubic-bezier(.2,.8,.2,1)">
         <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
         <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
-        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
         <span>Riccione (RN), Italia</span>
         <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
         <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
@@ -203,9 +239,8 @@ class Component extends DCLogic {
       progetti: this.P.map(function (p, i) {
         return { titolo: p.t, href: p.href, tab: st.aperto ? 0 : -1,
           tx: st.aperto ? '0px' : '120px', op: st.aperto ? 1 : 0, del: st.aperto ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s',
-          su: function () { self.setState({ h: i }); }, giu: function () { self.setState({ h: -1 }); } };
+          su: function (e) { var o = { h: i }; if (e && e.clientX !== undefined) { o.x = e.clientX; o.y = e.clientY; } self.setState(o); }, giu: function () { self.setState({ h: -1 }); } };
       }),
-      tags: ["Brand identity", "Editoria", "Impaginazione", "Illustrazione", "Poster design", "Lettering", "Social media", "Merchandising", "Brand identity", "Editoria", "Impaginazione", "Illustrazione", "Poster design", "Lettering", "Social media", "Merchandising"].map(function (n) { return { nome: n }; }),
       iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: (st.aperto && st.h >= 0) ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '300px' : '280px',
       apri: function () { self.setState({ aperto: true, apertoC: false }); },
       apriC: function () { self.setState({ apertoC: true, aperto: false, h: -1 }); },

@@ -78,7 +78,7 @@ a{color:#EFE8DF}a:hover{color:#F27BA6}
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Edicola 518</h1>
     <div>
-      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Tre manifesti per il temporary store che Edicola 518, di Perugia, avrebbe allestito all'università: riviste e libri di design da tutto il mondo. Un invito a lasciarsi andare, con un tunnel di cerchi che guida lo sguardo verso il centro.</p>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Tre manifesti per annunciare il temporary store di Edicola 518 all'università: un invito a lasciarsi andare all'arte.</p>
       <p class="cornice" style="margin: 0; color: #F27BA6">Progetto universitario · UniRSM Design · Manifesti 50 × 70 cm</p>
       <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #F27BA6; padding: 6px 11px 5px">Approfondisci +</button>
     </div>
@@ -109,9 +109,9 @@ a{color:#EFE8DF}a:hover{color:#F27BA6}
       </div>
       <div class="testo-p">
         <h2>Concept</h2>
-        <p>Edicola 518 è un'edicola di Perugia che avrebbe allestito un temporary store all'università, con riviste e libri di grafica e architettura da tutto il mondo. I manifesti ne annunciano l'apertura con un invito a lasciarsi andare all'arte: lasciati guidare, lasciati portare, lasciati guardare.</p>
+        <p>Edicola 518 è un'edicola di Perugia che avrebbe portato all'università riviste e libri di grafica e architettura da tutto il mondo. I manifesti giocano su tre verbi: lasciati guidare, lasciati guardare, lasciati portare.</p>
         <h2>Il segno</h2>
-        <p style="margin-bottom: 0">Un tunnel di cerchi concentrici e sfumati porta lo sguardo verso il centro, dove c'è il marchio dell'edicola; in basso, un monte rappresenta San Marino, dove ha sede l'università. Tre verbi, tre variazioni di colore dello stesso paesaggio.</p>
+        <p style="margin-bottom: 0">Un tunnel di cerchi concentrici e sfumati porta lo sguardo verso il centro, dove c'è il marchio dell'edicola; in basso, un monte rappresenta San Marino, dove ha sede l'università. Ogni manifesto è una variazione di colore dello stesso paesaggio.</p>
       </div>
     </div>
   </div>
@@ -126,7 +126,7 @@ a{color:#EFE8DF}a:hover{color:#F27BA6}
         <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
       </sc-for>
     </nav>
-    <div class="anteprima" aria-hidden="true" style="width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+    <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
       <img class="{{icls}}" src="{{iimg}}" alt="">
       <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
     </div>
@@ -141,7 +141,6 @@ a{color:#EFE8DF}a:hover{color:#F27BA6}
       <div class="lista-c" style="width: min(360px, 100%)">
         <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
         <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
-        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
         <span>Riccione (RN), Italia</span>
         <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
         <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
@@ -168,15 +167,21 @@ class Component extends DCLogic {
     this.F = [['a/78ca1aaaea83f7c958194547cad66a2e.jpg', 'I tre manifesti esposti in galleria']];
     this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0 };
   }
+  posI(e) {
+    if (!e || e.clientX === undefined) { return; }
+    var t = e.currentTarget && e.currentTarget.closest ? e.currentTarget.closest('.tendinaI') : null; if (!t) { return; }
+    var r = t.getBoundingClientRect(); this._ix = (e.clientX - r.left) + 'px'; this._iy = (e.clientY - r.top) + 'px';
+  }
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function () { self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
       iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
-      muoviI: function (e) { var r = e.currentTarget.getBoundingClientRect(); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = (e.clientX - r.left) + 'px'; a.style.top = (e.clientY - r.top) + 'px'; } }
+      ilx: this._ix || '-400px', ily: this._iy || '-400px',
+      muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
   renderVals() {

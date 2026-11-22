@@ -20,6 +20,12 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
 .freccia{min-width:44px;height:44px;border:0;background:transparent;color:#EFE8DF;font:inherit;font-size:30px;font-weight:300;line-height:1;cursor:pointer;transition:color .2s,transform .2s}
 .freccia:hover{color:#E98BC0;transform:scale(1.15)}
 @media (prefers-reduced-motion: reduce){.pag{transition:none}}
+@media (max-width: 760px){
+.area-vis.contenitore-rivista{height:auto !important;min-height:0 !important;padding:0 !important}
+.fisarmonica{height:auto !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px !important;padding:4px 4vw 10px;scroll-padding-left:4vw}
+.fisarmonica .pag{flex:0 0 auto !important;height:min(60vw, 46svh);aspect-ratio:var(--r);filter:none !important;scroll-snap-align:start}
+.fisarmonica .pag img{object-fit:contain}
+}
 .btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
 .btn-menu:hover{color:#E98BC0}
 .tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
@@ -85,7 +91,7 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Let's stop trying to make all the edges smooth</h1>
     <div>
-      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Una rivista contro l'omologazione visiva. Racconta l'alternative rock di oggi e ogni sezione ha palette, caratteri e ritmo propri, come l'artista di cui parla.</p>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Una rivista contro l'omologazione visiva: la mia tesi di laurea, dedicata all'alternative rock di oggi.</p>
       <p class="cornice" style="margin: 0; color: #E98BC0">Tesi di laurea · UniRSM 2025 · Rivista A4, 68 pagine</p>
       <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #FFFFFF; background: #8C0A55; padding: 6px 11px 5px">Approfondisci +</button>
     </div>
@@ -94,7 +100,7 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
   <div class="area-vis contenitore-rivista" style="flex: 1 1 auto; min-height: 0; padding: 0 4vw">
     <div class="fisarmonica">
       <sc-for list="{{pagine}}" as="p" hint-placeholder-count="33">
-        <button type="button" class="pag {{p.cls}}" onClick="{{p.apri}}" aria-label="{{p.etichetta}}" aria-pressed="{{p.on}}" style="flex-grow: {{p.g}}; flex-shrink: 1; flex-basis: {{p.b}}">
+        <button type="button" class="pag {{p.cls}}" onClick="{{p.apri}}" aria-label="{{p.etichetta}}" aria-pressed="{{p.on}}" style="flex-grow: {{p.g}}; flex-shrink: 1; flex-basis: {{p.b}}; --r: {{p.ar}}">
           <img src="{{p.src}}" alt="{{p.alt}}" loading="lazy" style="object-position: {{p.pos}}">
         </button>
       </sc-for>
@@ -128,9 +134,9 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
       </div>
       <div class="testo-p">
         <h2>Concept</h2>
-        <p>Let's stop trying to make all the edges smooth nasce da una domanda: come costruiscono oggi i giovani la propria identità, in un sistema in cui tutto è esposto, giudicato e copiato? La rivista rifiuta la coerenza formale come regola e usa la varietà come metodo.</p>
+        <p>Let's stop trying to make all the edges smooth nasce da una domanda: come costruiscono oggi i giovani la propria identità, in un sistema in cui tutto è esposto, giudicato e copiato? La risposta è rifiutare la coerenza formale come regola e usare la varietà come metodo.</p>
         <h2>Metodo</h2>
-        <p style="margin-bottom: 0">La rivista è dedicata all'alternative rock contemporaneo. Yungblud, Bring Me the Horizon, Fontaines D.C. e Wolf Alice sono i punti di partenza; attorno a loro gravitano brand, festival e format, legati da collegamenti reali o concettuali. Ogni sezione prende palette e caratteri dal mondo che racconta.</p>
+        <p style="margin-bottom: 0">Yungblud, Bring Me the Horizon, Fontaines D.C. e Wolf Alice sono i punti di partenza; attorno a loro gravitano brand, festival e format, legati da collegamenti reali o concettuali. Ogni sezione prende palette, caratteri e ritmo dal mondo che racconta, come l'artista di cui parla.</p>
       </div>
     </div>
   </div>
@@ -144,7 +150,7 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
         <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
       </sc-for>
     </nav>
-    <div class="anteprima" aria-hidden="true" style="width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+    <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
       <img class="{{icls}}" src="{{iimg}}" alt="">
       <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
     </div>
@@ -159,7 +165,6 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
       <div class="lista-c" style="width: min(360px, 100%)">
         <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
         <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
-        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
         <span>Riccione (RN), Italia</span>
         <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
         <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
@@ -320,15 +325,21 @@ class Component extends DCLogic {
     }
     this.raf = requestAnimationFrame(passo);
   }
+  posI(e) {
+    if (!e || e.clientX === undefined) { return; }
+    var t = e.currentTarget && e.currentTarget.closest ? e.currentTarget.closest('.tendinaI') : null; if (!t) { return; }
+    var r = t.getBoundingClientRect(); this._ix = (e.clientX - r.left) + 'px'; this._iy = (e.clientY - r.top) + 'px';
+  }
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function () { self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
       iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
-      muoviI: function (e) { var r = e.currentTarget.getBoundingClientRect(); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = (e.clientX - r.left) + 'px'; a.style.top = (e.clientY - r.top) + 'px'; } }
+      ilx: this._ix || '-400px', ily: this._iy || '-400px',
+      muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
   renderVals() {
@@ -340,7 +351,7 @@ class Component extends DCLogic {
         return {
           src: p.src, alt: on ? ('Pagine della rivista: ' + p.nome + ' ' + p.pp) : '', etichetta: p.nome + ' ' + p.pp,
           cls: on ? 'on' : '', on: on ? 'true' : 'false',
-          g: on ? 0 : g[i].toFixed(4), b: on ? (Math.round(Math.min(h * p.r, (self.state.w || 99999) * 0.82)) + 'px') : '0px',
+          ar: p.r, g: on ? 0 : g[i].toFixed(4), b: on ? (Math.round(Math.min(h * p.r, (self.state.w || 99999) * 0.82)) + 'px') : '0px',
           pos: (on || a < 0) ? 'center' : (i < a ? '8% 50%' : '92% 50%'),
           apri: function () { self.setState({ a: self.state.a === i ? -1 : i }); }
         };

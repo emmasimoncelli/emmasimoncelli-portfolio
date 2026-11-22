@@ -83,7 +83,7 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Leave the Spikes to the Punks</h1>
     <div>
-      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Lascia le spine ai punk. Un'illustrazione in cui il filo spinato si trasforma in un ramo d'ulivo: dalla divisione alla condivisione.</p>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Un manifesto illustrato nato durante il workshop con Antonio Colomboni: dalla divisione alla condivisione.</p>
       <p class="cornice" style="margin: 0; color: #5FC24A">Workshop con Antonio Colomboni · Illustrazione · Manifesto</p>
       <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #5FC24A; padding: 6px 11px 5px">Approfondisci +</button>
     </div>
@@ -119,7 +119,7 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
       </div>
       <div class="testo-p">
         <h2>L'illustrazione</h2>
-        <p>Il filo spinato e il ramo d'ulivo si avvolgono nella stessa spirale: il primo richiama la guerra, l'ostilità e la violenza; il secondo è un simbolo universale di pace.</p>
+        <p>Il filo spinato si trasforma in un ramo d'ulivo, avvolti nella stessa spirale: il primo richiama la guerra, l'ostilità e la violenza; il secondo è un simbolo universale di pace.</p>
         <h2>Il claim</h2>
         <p style="margin-bottom: 0">"Leave the spikes to the punks" invita, con ironia, a lasciare le spine ai punk, che ne fanno un uso solo estetico, e a non usarle più come confine innaturale, simbolo di segregazione e divisione: per abbracciare la libertà e la condivisione degli spazi e delle culture.</p>
       </div>
@@ -136,7 +136,7 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
         <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
       </sc-for>
     </nav>
-    <div class="anteprima" aria-hidden="true" style="width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+    <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
       <img class="{{icls}}" src="{{iimg}}" alt="">
       <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
     </div>
@@ -151,7 +151,6 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
       <div class="lista-c" style="width: min(360px, 100%)">
         <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
         <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
-        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
         <span>Riccione (RN), Italia</span>
         <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
         <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
@@ -231,15 +230,21 @@ class Component extends DCLogic {
     this.raf = requestAnimationFrame(disegna);
   }
   componentWillUnmount() { if (this.raf) { cancelAnimationFrame(this.raf); } }
+  posI(e) {
+    if (!e || e.clientX === undefined) { return; }
+    var t = e.currentTarget && e.currentTarget.closest ? e.currentTarget.closest('.tendinaI') : null; if (!t) { return; }
+    var r = t.getBoundingClientRect(); this._ix = (e.clientX - r.left) + 'px'; this._iy = (e.clientY - r.top) + 'px';
+  }
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function () { self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
       iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
-      muoviI: function (e) { var r = e.currentTarget.getBoundingClientRect(); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = (e.clientX - r.left) + 'px'; a.style.top = (e.clientY - r.top) + 'px'; } }
+      ilx: this._ix || '-400px', ily: this._iy || '-400px',
+      muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
   renderVals() {

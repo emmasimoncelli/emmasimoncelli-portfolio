@@ -99,7 +99,7 @@ a{color:#EFE8DF}a:hover{color:#FF5A4F}
   </div>
 
   <div class="riga-titolo compari" style="position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 460px) auto; justify-content: space-between; align-items: end; gap: 40px; padding: 4vh 4vw 3vh; animation-delay: 1.8s">
-    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #E6DFE8">Identità visiva per Underground, cocktail bar: il pittogramma, il lettering e il menù dei drink. Un segno squadrato e notturno, pensato per vivere sotto la luce rossa del locale.</p>
+    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #E6DFE8">Identità visiva per Underground, un cocktail bar che vive di notte, sotto la luce rossa del locale.</p>
     <div style="text-align: right">
       <p class="cornice" style="margin: 0; color: #FF5A4F">Cliente reale · 2025 · Logo e menù</p>
       <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #FF5A4F; padding: 6px 11px 5px">Approfondisci +</button>
@@ -149,7 +149,7 @@ a{color:#EFE8DF}a:hover{color:#FF5A4F}
         <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
       </sc-for>
     </nav>
-    <div class="anteprima" aria-hidden="true" style="width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+    <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
       <img class="{{icls}}" src="{{iimg}}" alt="">
       <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
     </div>
@@ -164,7 +164,6 @@ a{color:#EFE8DF}a:hover{color:#FF5A4F}
       <div class="lista-c" style="width: min(360px, 100%)">
         <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
         <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
-        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
         <span>Riccione (RN), Italia</span>
         <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
         <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
@@ -195,15 +194,21 @@ class Component extends DCLogic {
     this.L = ['55dd3fcb857f120e113f2a34f29df38e.jpg', '728a5efe1e605dfac2759cccb9d1d141.jpg', '351b82239366915da75e1506e014df7c.jpg', 'fa6fe9a2be39b36ebd07288418b7ef3f.jpg', '2761474b3d0181a7a23c7f8c1f34ffe3.jpg', '8cb761378d82aeeeb5a162678b6041d3.jpg'];
     this.state = { sopra: '', dentro: false, mx: -100, my: -100, apertoC: false, apertoP: false, lb: -1 };
   }
+  posI(e) {
+    if (!e || e.clientX === undefined) { return; }
+    var t = e.currentTarget && e.currentTarget.closest ? e.currentTarget.closest('.tendinaI') : null; if (!t) { return; }
+    var r = t.getBoundingClientRect(); this._ix = (e.clientX - r.left) + 'px'; this._iy = (e.clientY - r.top) + 'px';
+  }
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function () { self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
       iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
-      muoviI: function (e) { var r = e.currentTarget.getBoundingClientRect(); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = (e.clientX - r.left) + 'px'; a.style.top = (e.clientY - r.top) + 'px'; } }
+      ilx: this._ix || '-400px', ily: this._iy || '-400px',
+      muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
   renderVals() {

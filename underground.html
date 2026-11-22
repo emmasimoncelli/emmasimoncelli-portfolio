@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progetto — Underground · Emma Simoncelli</title>
+<style>
+@font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#000}
+a{color:#EFE8DF}a:hover{color:#FF5A4F}
+.palco-ug,.palco-ug *{cursor:none !important}
+.cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu:hover{color:#FF5A4F}
+.neon-linea{position:absolute;left:0;right:0;top:0;height:3px;background:#FF6A5E;box-shadow:0 0 4px #FF3B30,0 0 14px #FF1A1A,0 0 40px rgba(255,0,0,.75);opacity:0;animation:accendi 1.6s .5s forwards}
+.alone{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 85% 60% at 50% 0%,rgba(255,24,24,.40),rgba(150,0,0,.12) 55%,rgba(0,0,0,0) 82%);opacity:0;animation:alone 2.4s .9s forwards}
+.neon-img{display:block;filter:drop-shadow(0 0 2px #FF5A5A) drop-shadow(0 0 10px #FF2020) drop-shadow(0 0 28px rgba(255,0,0,.85));opacity:0;animation:accendi 1.5s forwards}
+@keyframes accendi{0%{opacity:0}7%{opacity:1}11%{opacity:.08}19%{opacity:.9}23%{opacity:.15}33%{opacity:1}39%{opacity:.5}47%,100%{opacity:1}}
+@keyframes alone{from{opacity:0}to{opacity:1}}
+@keyframes compari{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.compari{opacity:0;animation:compari .9s cubic-bezier(.2,.8,.2,1) forwards}
+.nastro{display:flex;gap:12px;height:100%;width:max-content;animation:scorri 30s linear infinite}
+.nastro:hover{animation-play-state:paused}
+@keyframes scorri{to{transform:translateX(-50%)}}
+.foto-ug{height:100%;padding:0;border:0;background:#000;flex:0 0 auto;overflow:hidden}
+.foto-ug img{height:100%;width:auto;display:block;filter:brightness(.72) saturate(1.05);transition:filter .4s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.foto-ug:hover img{filter:brightness(1.05);transform:scale(1.03)}
+.tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.tendinaP{position:absolute;inset:0;z-index:490;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
+.lista-c a:hover{color:#D9C2FF}
+.testo-p h2{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#FF5A4F}
+.testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#E6DFE8}
+.bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.lb{position:absolute;inset:0;z-index:600;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:40px;border:0;width:100%;transition:opacity .35s}
+@media (prefers-reduced-motion: reduce){.neon-linea,.alone,.neon-img,.compari{animation:none;opacity:1}.nastro{animation:none}}
+.palco-picto{position:relative;width:min(100%,58vh,460px);aspect-ratio:600/599;filter:drop-shadow(0 0 2px #FF5A5A) drop-shadow(0 0 10px #FF2020) drop-shadow(0 0 26px rgba(255,0,0,.8))}
+.palco-picto img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.p-gira{transform-origin:50% 50.9%;animation:gira 7s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.p-gira{animation:none}}
+.tendinaI{position:absolute;inset:0;z-index:495;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#C9A8FF}
+.anteprima{position:absolute;left:-400px;top:-400px;pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.anteprima img{display:block;width:100%;height:auto}
+.anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
+.gira-i{animation:giraI 12s linear infinite}
+@keyframes giraI{to{transform:rotate(360deg)}}
+@media (max-width: 760px){
+.pagina .area-vis{height:32svh !important;min-height:200px !important}
+.tendinaP .palco-picto{width:min(46vw,40vh) !important}
+.pagina{height:auto !important;min-height:100svh !important;overflow:visible !important}
+.riga-titolo{grid-template-columns:1fr !important;gap:14px !important;justify-content:stretch !important;align-items:start !important}
+.titolo{font-size:clamp(30px,9vw,56px) !important}
+.area-vis{flex:none !important;height:62svh !important;min-height:320px}
+.tendina,.tendinaP,.tendinaI,.lb{position:fixed !important}
+.tendina,.tendinaP,.tendinaI{overflow-y:auto !important}
+.griglia-p{grid-template-columns:1fr !important;align-content:start !important;justify-items:center !important;gap:28px !important;padding-top:20px !important;flex:none !important}
+.voce6{font-size:8.5vw !important;padding:12px 0 !important}
+.legenda-row{flex-wrap:wrap !important}
+.frase-hero{font-size:11vw !important}
+.riga-hero{flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+.riga-hero p{text-align:left !important}
+.griglia-cv{grid-template-columns:1fr !important;gap:36px !important}
+.cta6{font-size:9vw !important}
+.nome-scia{font-size:15vw !important}
+}
+@media (min-width: 761px) and (max-width: 1100px){
+.griglia-cv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.voce6{font-size:6vw !important}
+}
+@media (hover: none), (pointer: coarse){
+.bolla,.cursore,.anteprima{display:none !important}
+*{cursor:auto !important}
+}
+.tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+</style>
+<style>body{font-family:Switzer,sans-serif}</style>
+</head>
+<body>
+<template id="dc-template">
+
+<div class="pagina palco-ug" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: #050303; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
+  <div class="alone"></div>
+
+  <header class="cornice" style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw 0">
+    <button type="button" class="btn-menu" onClick="{{apriI}}">← Progetti</button>
+    <nav aria-label="Menu" style="display: flex; gap: 28px">
+      <a href="index.html" style="text-decoration: none">About me</a>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </nav>
+  </header>
+
+  <div style="position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 26px; padding: 9vh 4vw 0">
+    <h1 style="margin: 0; width: min(76vw, 1080px)">
+      <img class="neon-img" src="a/3c24334d212df1503225b06a61743bd2.png" alt="Underground" style="width: 100%; height: auto; animation-delay: .6s">
+    </h1>
+  </div>
+
+  <div class="riga-titolo compari" style="position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 460px) auto; justify-content: space-between; align-items: end; gap: 40px; padding: 4vh 4vw 3vh; animation-delay: 1.8s">
+    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #E6DFE8">Identità visiva per Underground, cocktail bar: il pittogramma, il lettering e il menù dei drink. Un segno squadrato e notturno, pensato per vivere sotto la luce rossa del locale.</p>
+    <div style="text-align: right">
+      <p class="cornice" style="margin: 0; color: #FF5A4F">Cliente reale · 2025 · Logo e menù</p>
+      <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #FF5A4F; padding: 6px 11px 5px">Approfondisci +</button>
+    </div>
+  </div>
+
+  <div class="area-vis compari" style="position: relative; z-index: 1; flex: 1 1 auto; min-height: 0; padding: 0 0 4vh; overflow: hidden; animation-delay: 2.3s">
+    <div class="nastro">
+      <sc-for list="{{nastro}}" as="f" hint-placeholder-count="14">
+        <button type="button" class="foto-ug" onClick="{{f.apri}}" aria-label="{{f.alt}}"><img src="{{f.src}}" alt="" loading="lazy"></button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div class="lb" role="dialog" aria-label="Foto ingrandita" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
+    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(255,0,0,.25)">
+  </div>
+
+  <div class="tendinaP" aria-hidden="{{nascostoP}}" style="transform: translateX({{txP}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiP}}">← Torna al progetto</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </div>
+    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 420px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
+      <div class="palco-picto" role="img" aria-label="Animazione del pittogramma: la G, il cubetto di ghiaccio, gira dentro la U, il bicchiere">
+        <img src="a/8b27e51bf04d4a3cce9bea8a27eac6bd.png" alt="">
+        <img class="p-gira" src="a/654cdb1316fe39ddc808fddd991e851f.png" alt="">
+      </div>
+      <div class="testo-p">
+        <h2>Il pittogramma</h2>
+        <p>Il pittogramma unisce le iniziali del nome, la U e la G, ma è anche un'immagine: la U è il bicchiere, la G ruotata è il cubetto di ghiaccio.</p>
+        <h2>Il lettering</h2>
+        <p>Il lettering è costruito su un modulo squadrato, con angoli netti e tratti spessi: si legge bene anche al buio e diventa facilmente insegna, neon o stampa.</p>
+        <h2>Il menù</h2>
+        <p style="margin-bottom: 0">Il menù dei drink è bordeaux, come le luci del locale, diviso in Signature, Classic e Gin, con il pittogramma in basso a firmare la pagina.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tendinaI" aria-hidden="{{nascostoI}}" onMouseMove="{{muoviI}}" style="transform: translateX({{txI}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudiI}}">← Torna al progetto</button>
+      <nav aria-label="Menu" style="display: flex; gap: 28px"><a href="index.html" style="text-decoration: none">About me</a><button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button></nav>
+    </div>
+    <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
+      <sc-for list="{{indice}}" as="p" hint-placeholder-count="6">
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+      </sc-for>
+    </nav>
+    <div class="anteprima" aria-hidden="true" style="width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+      <img class="{{icls}}" src="{{iimg}}" alt="">
+      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
+    </div>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascostoC}}" style="transform: translateX({{txC}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiC}}">← Torna al progetto</button>
+      <a href="index.html" style="text-decoration: none">About me</a>
+    </div>
+    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
+      <div class="lista-c" style="width: min(360px, 100%)">
+        <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
+        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
+        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
+        <span>Riccione (RN), Italia</span>
+        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
+        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bolla" aria-hidden="true" style="left: {{bx}}; top: {{by}}; width: {{bw}}; height: {{bw}}; background: {{bbg}}; opacity: {{bop}}"></div>
+</div>
+</template>
+<div id="dc-root"></div>
+<script src="dc.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "mind", "href": "mind.html", "img": "a/a16172e6abb63de71a2dffe82b94600e.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    var B = 'a/';
+    this.F = [
+      [B + '99ea656d25d84e0de776034ebef2d544.jpg', "L'ingresso di Underground con l'insegna illuminata"],
+      [B + '75280c6fb810d13804a08972136286da.jpg', 'Il bancone sotto la luce rossa, con il logo sopra le bottiglie'],
+      [B + '3e8bdaa1732a4da46ce83b5fc6c09833.jpg', 'Il menù dei drink'],
+      [B + 'd2f58c7adab2cf9917caf60d5f0e480c.jpg', 'Il menù dei drink sul tavolo, accanto a due bicchieri'],
+      [B + 'c633fbf46dea9016fcc18f40f2a59658.jpg', 'Il barman al lavoro con la maglietta del locale'],
+      [B + 'b0efeccf1ca7be128673dbc6a52c4bcf.jpg', 'Il pannello con la scritta Underground ripetuta'],
+      [B + '354cfeaa0d1fbdc3750abfc72f55e059.jpg', 'Lo staff dietro al bancone con la maglietta Underground']
+    ];
+    this.L = ['55dd3fcb857f120e113f2a34f29df38e.jpg', '728a5efe1e605dfac2759cccb9d1d141.jpg', '351b82239366915da75e1506e014df7c.jpg', 'fa6fe9a2be39b36ebd07288418b7ef3f.jpg', '2761474b3d0181a7a23c7f8c1f34ffe3.jpg', '8cb761378d82aeeeb5a162678b6041d3.jpg'];
+    this.state = { sopra: '', dentro: false, mx: -100, my: -100, apertoC: false, apertoP: false, lb: -1 };
+  }
+  valsIndice() {
+    var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
+    return {
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function () { self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
+      apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
+      chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
+      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
+      muoviI: function (e) { var r = e.currentTarget.getBoundingClientRect(); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = (e.clientX - r.left) + 'px'; a.style.top = (e.clientY - r.top) + 'px'; } }
+    };
+  }
+  renderVals() {
+    var self = this, st = this.state, F = this.F;
+    var lista = F.concat(F);
+    var nomiL = ['Pittogramma in negativo', 'Pittogramma in positivo', 'Logo orizzontale in negativo', 'Logo orizzontale in positivo', 'Logo su due righe in negativo', 'Logo su due righe in positivo'];
+    return Object.assign(this.valsIndice(), {
+      nastro: lista.map(function (f, i) { var k = i % F.length; return { src: f[0], alt: f[1], apri: function () { self.setState({ lb: k }); } }; }),
+      loghi: this.L.map(function (id, i) { return { src: 'a/' + id, alt: nomiL[i] }; }),
+      lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',
+      lbSrc: st.lb >= 0 ? F[st.lb][0] : F[0][0], lbAlt: st.lb >= 0 ? F[st.lb][1] : '',
+      chiudiLb: function () { self.setState({ lb: -1 }); },
+      txC: st.apertoC ? '0%' : '100%', nascostoC: st.apertoC ? 'false' : 'true', tabC: st.apertoC ? 0 : -1,
+      apriC: function () { self.setState({ apertoC: true }); },
+      chiudiC: function () { self.setState({ apertoC: false }); },
+      txP: st.apertoP ? '0%' : '100%', nascostoP: st.apertoP ? 'false' : 'true',
+      apriP: function () { self.setState({ apertoP: true }); },
+      chiudiP: function () { self.setState({ apertoP: false }); },
+      bx: st.mx + 'px', by: st.my + 'px',
+      bw: st.sopra ? '90px' : '14px',
+      bbg: (st.apertoI || st.apertoC) ? (st.sopra ? 'radial-gradient(circle, #C9A8FF 0%, #C9A8FF 16%, rgba(155,93,229,.65) 34%, rgba(155,93,229,.2) 55%, rgba(155,93,229,0) 70%)' : '#C9A8FF') : (st.sopra ? 'radial-gradient(circle, #FF6A5E 0%, #FF6A5E 16%, rgba(230,30,30,.65) 34%, rgba(230,30,30,.2) 55%, rgba(230,30,30,0) 70%)' : '#FF6A5E'),
+      bop: st.dentro ? 1 : 0,
+      muovi: function (e) {
+        var r = e.currentTarget.getBoundingClientRect();
+        var t = e.target && e.target.closest ? e.target.closest('button,a') : null;
+        var k = t ? 'link' : '';
+        var mx = Math.round(e.clientX - r.left), my = Math.round(e.clientY - r.top);
+        self.state.mx = mx; self.state.my = my;
+        var b = e.currentTarget.querySelector('.bolla');
+        if (b) { b.style.left = mx + 'px'; b.style.top = my + 'px'; }
+        if (k !== st.sopra || !st.dentro) { self.setState({ sopra: k, dentro: true }); }
+      },
+      esci: function () { self.setState({ dentro: false }); }
+    });
+  }
+}
+DCStart(Component);
+</script>
+</body>
+</html>

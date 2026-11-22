@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progetto — Let's stop trying to make all the edges smooth  · Emma Simoncelli</title>
+<style>
+@font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#0A090B}
+a{color:#EFE8DF}a:hover{color:#E98BC0}
+.cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.fisarmonica{display:flex;gap:3px;height:100%}
+.pag{position:relative;flex:1 1 0;min-width:0;border:0;padding:0;margin:0;cursor:pointer;overflow:hidden;background:#151215;transition:flex-basis .9s cubic-bezier(.16,1,.3,1),filter .5s ease}
+.pag img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pag:not(.on):hover{filter:brightness(1.2)}
+.palco-v3,.palco-v3 *{cursor:none !important}
+.bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#FFFFFF;transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),filter .3s,opacity .2s}
+.pag:not(.on){filter:brightness(.85)}
+.pag:focus-visible{outline:3px solid #B0106E;outline-offset:-3px}
+.freccia{min-width:44px;height:44px;border:0;background:transparent;color:#EFE8DF;font:inherit;font-size:30px;font-weight:300;line-height:1;cursor:pointer;transition:color .2s,transform .2s}
+.freccia:hover{color:#E98BC0;transform:scale(1.15)}
+@media (prefers-reduced-motion: reduce){.pag{transition:none}}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu:hover{color:#E98BC0}
+.tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
+.lista-c a:hover{color:#D9C2FF}
+.tendinaP{position:absolute;inset:0;z-index:490;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.mappa path{stroke-dasharray:1;transition:stroke-dashoffset .5s cubic-bezier(.45,0,.2,1),opacity .7s ease}
+.nodo-m{position:absolute;transform:translate(-50%,-50%);padding:5px 8px;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;border:1px solid #E98BC0;background:#000;color:#FFFFFF;transition:background .4s,color .4s}
+.testo-p h2{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E98BC0}
+.testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#E6DFE8}
+.leg{flex:1 1 auto;min-width:0;border:0;font:inherit;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:6px 4px 5px;font-size:10px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;text-align:center;transition:opacity .35s}
+.leg:hover{opacity:1 !important}
+.tendinaI{position:absolute;inset:0;z-index:495;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#C9A8FF}
+.anteprima{position:absolute;left:-400px;top:-400px;pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.anteprima img{display:block;width:100%;height:auto}
+.anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
+.gira-i{animation:giraI 12s linear infinite}
+@keyframes giraI{to{transform:rotate(360deg)}}
+@media (max-width: 760px){
+.pagina{height:auto !important;min-height:100svh !important;overflow:visible !important}
+.riga-titolo{grid-template-columns:1fr !important;gap:14px !important;justify-content:stretch !important;align-items:start !important}
+.titolo{font-size:clamp(30px,9vw,56px) !important}
+.area-vis{flex:none !important;height:62svh !important;min-height:320px}
+.tendina,.tendinaP,.tendinaI,.lb{position:fixed !important}
+.tendina,.tendinaP,.tendinaI{overflow-y:auto !important}
+.griglia-p{grid-template-columns:1fr !important;align-content:start !important;justify-items:center !important;gap:28px !important;padding-top:20px !important;flex:none !important}
+.voce6{font-size:8.5vw !important;padding:12px 0 !important}
+.legenda-row{flex-wrap:wrap !important}
+.frase-hero{font-size:11vw !important}
+.riga-hero{flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+.riga-hero p{text-align:left !important}
+.griglia-cv{grid-template-columns:1fr !important;gap:36px !important}
+.cta6{font-size:9vw !important}
+.nome-scia{font-size:15vw !important}
+}
+@media (min-width: 761px) and (max-width: 1100px){
+.griglia-cv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.voce6{font-size:6vw !important}
+}
+@media (hover: none), (pointer: coarse){
+.bolla,.cursore,.anteprima{display:none !important}
+*{cursor:auto !important}
+}
+.tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+</style>
+<style>body{font-family:Switzer,sans-serif}</style>
+</head>
+<body>
+<template id="dc-template">
+
+<div class="pagina palco-v3" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; height: 100vh; min-height: 680px; overflow: hidden; background: #000000; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
+
+  <header class="cornice" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw 0">
+    <button type="button" class="btn-menu" onClick="{{apriI}}">← Progetti</button>
+    <nav aria-label="Menu" style="display: flex; gap: 28px">
+      <a href="index.html" style="text-decoration: none">About me</a>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </nav>
+  </header>
+
+  <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
+    <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Let's stop trying to make all the edges smooth</h1>
+    <div>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Una rivista contro l'omologazione visiva. Racconta l'alternative rock di oggi e ogni sezione ha palette, caratteri e ritmo propri, come l'artista di cui parla.</p>
+      <p class="cornice" style="margin: 0; color: #E98BC0">Tesi di laurea · UniRSM 2025 · Rivista A4, 68 pagine</p>
+      <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #FFFFFF; background: #8C0A55; padding: 6px 11px 5px">Approfondisci +</button>
+    </div>
+  </div>
+
+  <div class="area-vis contenitore-rivista" style="flex: 1 1 auto; min-height: 0; padding: 0 4vw">
+    <div class="fisarmonica">
+      <sc-for list="{{pagine}}" as="p" hint-placeholder-count="33">
+        <button type="button" class="pag {{p.cls}}" onClick="{{p.apri}}" aria-label="{{p.etichetta}}" aria-pressed="{{p.on}}" style="flex-grow: {{p.g}}; flex-shrink: 1; flex-basis: {{p.b}}">
+          <img src="{{p.src}}" alt="{{p.alt}}" loading="lazy" style="object-position: {{p.pos}}">
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; gap: 36px; padding: 18px 4vw 24px">
+    <button type="button" class="freccia" onClick="{{prev}}" aria-label="Pagina precedente">←</button>
+    <span style="font-weight: 700; font-size: 15px; letter-spacing: .04em; min-width: 80px; text-align: center; font-variant-numeric: tabular-nums">{{contatore}}</span>
+    <button type="button" class="freccia" onClick="{{next}}" aria-label="Pagina successiva">→</button>
+  </div>
+  <div class="tendinaP" aria-hidden="{{nascostoP}}" style="transform: translateX({{txP}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiP}}">← Torna alla rivista</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </div>
+    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 600px) minmax(0, 480px); justify-content: center; justify-items: start; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
+      <div style="display: flex; flex-direction: column; align-items: flex-start">
+        <div class="legenda-row" role="group" aria-label="Tipi di collegamento" style="display: flex; flex-wrap: nowrap; gap: 4px; width: min(60vh, 600px, 100%); margin-bottom: 10px">
+          <sc-for list="{{legenda}}" as="l" hint-placeholder-count="5">
+            <button type="button" class="leg" onClick="{{l.scegli}}" aria-pressed="{{l.premuto}}" style="background: {{l.bg}}; color: {{l.fg}}; opacity: {{l.op}}; outline: {{l.bordo}}; outline-offset: 2px">{{l.nome}}</button>
+          </sc-for>
+        </div>
+        <div style="position: relative; width: min(60vh, 600px, 100%); aspect-ratio: 1 / 1; background: #FFFFFF">
+          <img src="a/584146670e0b94444ef4a275a9242c8f.svg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%">
+          <div class="mappa-linee" aria-hidden="true" style="position: absolute; inset: 0"></div>
+          <img src="a/7e61b34814271c4088bf4ec943d80ecc.svg" alt="Mappa dei collegamenti tra Yungblud, Bring Me the Horizon, Wolf Alice, Fontaines D.C. e i brand, festival e format collegati" style="position: absolute; inset: 0; width: 100%; height: 100%">
+        </div>
+
+        <p style="margin: 12px 0 0; width: min(60vh, 600px, 100%); font-size: 13px; line-height: 1.45; color: #CFC6D3">Ogni linea è un punto di contatto reale o concettuale: un festival condiviso, una collaborazione musicale, un progetto fondato o un'estetica comune.</p>
+      </div>
+      <div class="testo-p">
+        <h2>Concept</h2>
+        <p>Let's stop trying to make all the edges smooth nasce da una domanda: come costruiscono oggi i giovani la propria identità, in un sistema in cui tutto è esposto, giudicato e copiato? La rivista rifiuta la coerenza formale come regola e usa la varietà come metodo.</p>
+        <h2>Metodo</h2>
+        <p style="margin-bottom: 0">La rivista è dedicata all'alternative rock contemporaneo. Yungblud, Bring Me the Horizon, Fontaines D.C. e Wolf Alice sono i punti di partenza; attorno a loro gravitano brand, festival e format, legati da collegamenti reali o concettuali. Ogni sezione prende palette e caratteri dal mondo che racconta.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tendinaI" aria-hidden="{{nascostoI}}" onMouseMove="{{muoviI}}" style="transform: translateX({{txI}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudiI}}">← Torna al progetto</button>
+      <nav aria-label="Menu" style="display: flex; gap: 28px"><a href="index.html" style="text-decoration: none">About me</a><button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button></nav>
+    </div>
+    <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
+      <sc-for list="{{indice}}" as="p" hint-placeholder-count="6">
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+      </sc-for>
+    </nav>
+    <div class="anteprima" aria-hidden="true" style="width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+      <img class="{{icls}}" src="{{iimg}}" alt="">
+      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
+    </div>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascostoC}}" style="transform: translateX({{txC}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiC}}">← Torna al progetto</button>
+      <a href="index.html" style="text-decoration: none">About me</a>
+    </div>
+    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
+      <div class="lista-c" style="width: min(360px, 100%)">
+        <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
+        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
+        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
+        <span>Riccione (RN), Italia</span>
+        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
+        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="bolla" aria-hidden="true" style="left: {{bx}}; top: {{by}}; width: {{bw}}; height: {{bw}}; background: {{bbg}}; filter: {{bfi}}; opacity: {{bop}}">{{btesto}}</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<script src="dc.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "mind", "href": "mind.html", "img": "a/a16172e6abb63de71a2dffe82b94600e.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    var B = 'a/';
+    var ids = ['0ed8c20a03e5ba72ec79e5722bef2051.jpg','3b23ef49bc261eaf70a126a8796e0c9b.jpg','1203b1e8285bcf03e1e6b77d8dc5d401.jpg','79c2ccc8e75185886f6588fd2da737ce.jpg','231e1e6761b8a38e6da590df0410debc.jpg','9e76e8139b0a2e64181f25cd75035fc1.jpg','d2b4bc93600dbdb5be01c135a5a8920f.jpg','dc6830cc09a602fa09b8e4264f5dd542.jpg','ed5fd2086b191d9e2b39e6901e86c310.jpg','36896bf9b23aeef5567838ff3d53a121.jpg','58980149ee1271d603af5bb3d3e10dba.jpg','3afdf791d365c98e06e62e4d1f1589b4.jpg','7d0397ab26fa28c34edcf808209e6275.jpg','4758196775583ce95a929a0ec9b9daa0.jpg','411318d68a59506e953491af1f7ffb5d.jpg','3c71e576aaa5330cb96b713aa13293ec.jpg','4e19ed2b513d3c7ef517736baa24156d.jpg','c728d7e4379a699dfbfb9442b5e12919.jpg','f92a6d33a00b2e2017424f0a96d065b6.jpg','b00cf5928894d0e021b3870ec079b8c1.jpg','68ed4f4e8479714bfdeea7ce8319e20b.jpg','19ad3fc632c23bc9957ac51e4bb508b2.jpg','86c9a925c8d00974bc3ae57cf2005a2a.jpg','5d00716b7d75e7ad6f37ec4d6c1bbd51.jpg','74bb8aea8319ade436ddaaec70747ccb.jpg','b42d3697682425b83661520563d8aec4.jpg','2e2dd7a3fa6651b5ffe764d6b773f0d9.jpg','4626dec8dab1bfd248da89a241480252.jpg','91c9b6cc05ec4e84a3c2c156e801bf54.jpg','ecc2295ff833e3607fe7587b5bde6b0e.jpg','5f960202f7888699c86455cb9212151d.jpg','c73a2fec2d8499359edb7b80287347de.jpg','f8bffdc771cea2a4c19735a0fdbda6ca.jpg','2bb964ec4d239997c7a832ad5108a708.jpg','b6e6f67c4299494559223324957d8eda.jpg'];
+    var comune = 'Le pagine comuni a ogni numero: bianco, nero e un accento magenta, in Object Sans.';
+    var info = [
+      ['Copertina', '', 'Carta nera colorata in pasta, soft touch, titolo in UV lucida a riserva: liscia alla vista, imperfetta al tatto.'],
+      ['Apertura', 'p. 1', comune],
+      ['Tutti uguali', 'pp. 2–3', comune],
+      ['Fitting in is out', 'pp. 4–5', comune],
+      ['Oggi conta solo farsi vedere', 'pp. 6–7', comune],
+      ['Niente regole, solo varietà', 'pp. 8–9', comune],
+      ['Primo numero', 'pp. 10–11', comune],
+      ['Indice', 'pp. 12–13', comune],
+      ['Yungblud', 'pp. 14–15', 'Nero, bianco e il rosa dei suoi calzini. Macchina da scrivere, grottesco e scritte a mano.'],
+      ['Yungblud', 'pp. 16–17', 'Nero, bianco e il rosa dei suoi calzini. Macchina da scrivere, grottesco e scritte a mano.'],
+      ['Yungblud', 'pp. 18–19', 'Nero, bianco e il rosa dei suoi calzini. Macchina da scrivere, grottesco e scritte a mano.'],
+      ['BludFest', 'pp. 20–21', 'Il festival fondato da Yungblud, raccontato con le stesse regole grafiche dell’artista.'],
+      ['Chicken Shop Date', 'pp. 22–23', 'I colori di Yungblud più il rosso del format; gli scacchi del fast food.'],
+      ['Ozzy Osbourne', 'pp. 24–25', 'Solo bianco e nero, macchina da scrivere e scritte a mano: un omaggio al Prince of Darkness.'],
+      ['Justine Clenquet', 'pp. 26–27', 'Bianco e nero per far brillare il metallo dei gioielli; NB International.'],
+      ['Fontaines D.C.', 'pp. 28–29', 'Bianco, nero, fucsia, verde acido e blu: l’energia notturna e post-punk della band.'],
+      ['Fontaines D.C.', 'pp. 30–31', 'Bianco, nero, fucsia, verde acido e blu: l’energia notturna e post-punk della band.'],
+      ['Bird', 'pp. 32–33', 'Gli stessi colori si sovrappongono come proiezioni, come nella fotografia del film.'],
+      ['Kneecap', 'pp. 34–35', 'I colori della bandiera irlandese sul nero; testi serrati come volantini di protesta.'],
+      ['Kneecap', 'pp. 36–37', 'I colori della bandiera irlandese sul nero; testi serrati come volantini di protesta.'],
+      ['Bring Me the Horizon', 'pp. 38–39', 'Rosso olografico, caratteri pixel e griglie luminose: la pagina diventa un’interfaccia.'],
+      ['Bring Me the Horizon', 'pp. 40–41', 'Rosso olografico, caratteri pixel e griglie luminose: la pagina diventa un’interfaccia.'],
+      ['Bring Me the Horizon', 'pp. 42–43', 'Rosso olografico, caratteri pixel e griglie luminose: la pagina diventa un’interfaccia.'],
+      ['Drop Dead', 'pp. 44–45', 'Nero, bianco e grigio; l’impaginato simula cartelle e finestre di un desktop.'],
+      ['Drop Dead', 'pp. 46–47', 'Il logo del brand contro le foto reali dei capi.'],
+      ['Church — Temple of Fun', 'pp. 48–49', 'Bianco e nero da vecchio quotidiano, foto invertite: sacro e ironico insieme.'],
+      ['Wolf Alice', 'pp. 50–51', 'Bordeaux, blu e nero come le luci di palco anni ’70; il testo gira come un vinile.'],
+      ['Wolf Alice', 'pp. 52–53', 'Le lettere si comportano come la luce di un faro sul palco.'],
+      ['Wolf Alice', 'pp. 54–55', 'Le foto del live, tra riflettori e ombre.'],
+      ['Glastonbury', 'pp. 56–57', 'Colori pieni su fondo nero: ogni lettera del titolo ha un colore e un font diversi.'],
+      ['Tiny Desk Concerts', 'pp. 58–59', 'Rosso, bianco e nero; una linea disegna il microfono del format.'],
+      ['Che si dice?', 'pp. 60–61', comune],
+      ['Colophon', 'pp. 62–63', comune],
+      ['Crediti', 'pp. 64–65', comune],
+      ['Retro di copertina', '', 'Il retro della rivista, in carta nera.']
+    ];
+    this.P = ids.map(function (id, i) {
+      return { src: B + id, r: (i === 0 || i === ids.length - 1) ? 0.7071 : 1.4142, nome: info[i][0], pp: info[i][1], d: info[i][2] };
+    });
+    this.state = { a: -1, h: 620, mx: -100, my: -100, sopra: '', dentro: false, apertoC: false, apertoP: false, passo: 0 };
+    this.g = this.P.map(function () { return 1; });
+    this.t = this.P.map(function () { return 1; });
+    this.raf = null;
+    this.tipi = [{ id: 'p', nome: 'Partecipazione', col: '#700042', fg: '#FFFFFF' }, { id: 'c', nome: 'Collaborazione', col: '#1D1D1B', fg: '#FFFFFF' }, { id: 'f', nome: 'Fondazione', col: '#646363', fg: '#FFFFFF' }, { id: 'l', nome: 'Legame', col: '#B2B2B2', fg: '#000000' }, { id: 'a', nome: 'Affinità', col: '#E3E3E3', fg: '#000000' }];
+    this.archi = [["p", "M 0.00164464 0.00162208 C 2.47092 -24.018046 3.668381 -78.400796 -26.686875 -134.614958 C -41.19729 -161.487402 -68.492367 -187.772855 -82.599715 -200.678828", "matrix(0.998205, 0, 0, -0.998205, 200.670233, 123.810213)"], ["p", "M 0.000019171 -0.00104535 C -19.159364 -3.890838 -90.760514 -11.193005 -144.783244 26.053524 C -172.180066 44.946805 -190.298518 87.597564 -199.964302 103.133256", "matrix(0.998205, 0, 0, -0.998205, 317.828106, 222.096613)"], ["p", "M -0.000178472 -0.00116016 C -4.778284 2.080701 -32.856016 15.972819 -41.199113 44.891904 C -50.301386 76.448535 -32.272938 114.661643 4.664443 133.151856", "matrix(0.998205, 0, 0, -0.998205, 318.535334, 252.061342)"], ["p", "M -0.000178472 -0.00116016 C -2.215091 -5.925855 -4.281299 -13.361073 -5.134392 -22.064192 C -7.380611 -44.992056 0.121133 -63.192688 4.664443 -72.197128", "matrix(0.998205, 0, 0, -0.998205, 318.535334, 252.061342)"], ["p", "M 0.00164464 0.00162208 C 2.322215 -25.716406 10.007883 -80.615709 49.715861 -134.039707 C 74.799939 -167.791684 103.171166 -188.668994 122.741443 -200.678828", "matrix(0.998205, 0, 0, -0.998205, 200.670233, 123.810213)"], ["p", "M -0.0018153 0.00077198 C 33.765815 6.931178 72.76549 17.442228 114.848825 33.654917 C 147.309422 46.161737 175.954578 58.746822 200.674722 72.19674", "matrix(0.998205, 0, 0, -0.998205, 118.220562, 324.129677)"], ["p", "M -0.0018153 0.0010564 C 17.396595 -22.789844 46.687441 -55.586982 91.079607 -84.380843 C 133.476003 -111.875497 173.43443 -126.346779 200.674722 -133.15196", "matrix(0.998205, 0, 0, -0.998205, 118.220562, 119.149492)"], ["p", "M 0.00133316 0.00162208 C -0.628704 -11.538619 -3.234943 -49.062991 22.479171 -84.505502 C 41.161135 -110.262663 64.621205 -123.509091 76.036222 -128.48286", "matrix(0.998205, 0, 0, -0.998205, 242.635388, 123.810213)"], ["p", "M 0.000019171 -0.00104535 C -3.748896 -2.345096 -23.69876 -14.542767 -27.968141 -38.327638 C -32.33144 -62.613408 -19.108491 -88.566233 5.372943 -102.215728", "matrix(0.998205, 0, 0, -0.998205, 317.828106, 222.096613)"], ["c", "M -0.0000574253 0.00077198 C -18.56071 16.890457 -54.23019 54.152639 -72.301684 113.207838 C -83.063184 148.384246 -81.916595 179.408672 -80.699567 200.681222", "matrix(0.998205, 0, 0, -0.998205, 323.191464, 324.129677)"], ["c", "M -0.00169425 -0.00104535 C 14.684818 2.714766 75.446203 12.998847 134.924035 -25.863865 C 174.17416 -51.50754 193.036134 -85.877815 200.674843 -102.215728", "matrix(0.998205, 0, 0, -0.998205, 122.876691, 222.096613)"], ["c", "M -0.0000574253 0.00077198 C -9.517137 20.952434 -24.649762 61.857873 -22.094395 114.663575 C -20.153412 154.743314 -8.773615 186.116021 -0.0000574253 205.349756", "matrix(0.998205, 0, 0, -0.998205, 323.191464, 324.129677)"], ["f", "M -0.0018153 0.0010564 C 16.058256 -6.878477 71.556289 -36.419773 102.67072 -96.504161 C 125.47336 -140.548046 125.837295 -180.831275 124.639833 -199.779341", "matrix(0.998205, 0, 0, -0.998205, 118.220562, 119.149492)"], ["f", "M -0.00169425 -0.00116016 C 18.128498 -0.564671 75.00009 1.219781 128.373216 41.009938 C 166.977651 69.788145 193.024394 115.448211 200.674843 133.151856", "matrix(0.998205, 0, 0, -0.998205, 122.876691, 252.061342)"], ["f", "M -0.00169425 -0.000936539 C 27.234684 -2.81458 84.364552 -4.30945 142.198809 27.528937 C 162.273898 38.580019 188.55935 61.94617 200.674843 73.588156", "matrix(0.998205, 0, 0, -0.998205, 122.876691, 192.604534)"], ["l", "M 0.00154464 -0.00154098 C -0.381956 25.113843 -5.469211 70.719123 -29.83716 117.337941 C -43.275338 143.040316 -69.408173 186.129361 -82.599815 199.778856", "matrix(0.998205, 0, 0, -0.998205, 200.670333, 318.568774)"], ["l", "M -0.0018153 0.0010564 C 22.487763 -9.085563 62.105736 -21.670648 112.422596 -19.878369 C 152.666692 -18.442198 184.732049 -8.349868 205.339343 0.0010564", "matrix(0.998205, 0, 0, -0.998205, 118.220562, 119.149492)"], ["a", "M 0.000019171 -0.000936539 C -25.561478 -0.169207 -67.644813 -1.026214 -111.313023 18.31318 C -150.210953 35.539406 -190.239819 58.96817 -199.964302 73.588156", "matrix(0.998205, 0, 0, -0.998205, 317.828106, 192.604534)"], ["a", "M -0.0000574253 0.00077198 C -3.275467 3.483585 -41.312477 45.210811 -27.936911 94.291077 C -23.096193 112.041682 -12.682974 124.239353 -5.372981 131.760663", "matrix(0.998205, 0, 0, -0.998205, 323.191464, 324.129677)"]];
+    this.sel = null;
+    this.sc = this.programma(null);
+    this.timer = null;
+  }
+  componentDidMount() {
+    var self = this;
+    this.disegna();
+    this.misura = function () {
+      var el = document.querySelector('.contenitore-rivista');
+      if (el && el.clientHeight > 0) { self.setState({ h: el.clientHeight, w: el.clientWidth }); }
+    };
+    this.misura();
+    setTimeout(this.misura, 300);
+    window.addEventListener('resize', this.misura);
+  }
+  componentWillUnmount() { if (this.misura) { window.removeEventListener('resize', this.misura); } if (this.raf) { cancelAnimationFrame(this.raf); } if (this.timer) { clearInterval(this.timer); } }
+  programma(sel) {
+    var tutti = this.archi.map(function (e, i) { return i; });
+    if (sel === null) { return [{ on: tutti, t: null, op: 1 }]; }
+    var sc = [{ on: [], t: sel, op: 1 }], on = [];
+    this.archi.forEach(function (e, i) { if (e[0] === sel) { on = on.concat([i]); sc.push({ on: on, t: sel, op: 1 }); } });
+    return sc;
+  }
+  scegli(id) {
+    this.sel = (id === null || this.sel === id) ? null : id;
+    this.sc = this.programma(this.sel);
+    this.avviaMappa();
+  }
+  disegna() {
+    var box = document.querySelector('.mappa-linee'); if (!box) { return; }
+    var self = this, col = {};
+    this.tipi.forEach(function (t) { col[t.id] = t.col; });
+    if (!box.firstChild) {
+      var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('viewBox', '0 0 442.205 442.205'); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
+      svg.style.position = 'absolute'; svg.style.inset = '0';
+      this.archi.forEach(function (e) {
+        var p = document.createElementNS(ns, 'path');
+        p.setAttribute('d', e[1]); p.setAttribute('transform', e[2]); p.setAttribute('pathLength', '1');
+        p.setAttribute('fill', 'none'); p.setAttribute('stroke', col[e[0]]); p.setAttribute('stroke-width', '2');
+        p.setAttribute('stroke-linecap', 'round'); p.setAttribute('stroke-linejoin', 'round');
+        p.style.strokeDasharray = '1'; p.style.strokeDashoffset = '1'; p.style.opacity = '0';
+        p.style.transition = 'stroke-dashoffset .5s cubic-bezier(.45,0,.2,1), opacity .7s ease';
+        svg.appendChild(p);
+      });
+      box.appendChild(svg);
+    }
+    var st = this.sc[this.state.passo] || this.sc[0], linee = box.querySelectorAll('path');
+    for (var i = 0; i < linee.length; i++) { var v = st.on.indexOf(i) >= 0; linee[i].style.strokeDashoffset = v ? '0' : '1'; linee[i].style.opacity = v ? String(st.op) : '0'; }
+  }
+  avviaMappa() {
+    var self = this, tot = this.sc.length;
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    this.setState({ passo: 0 });
+    setTimeout(function () { self.disegna(); }, 0);
+    if (tot < 2) { return; }
+    this.timer = setInterval(function () {
+      var p = self.state.passo + 1;
+      self.setState({ passo: p }); setTimeout(function () { self.disegna(); }, 0);
+      if (p >= tot - 1) { clearInterval(self.timer); self.timer = null; }
+    }, 420);
+  }
+  fermaMappa() { if (this.timer) { clearInterval(this.timer); this.timer = null; } }
+  bersagli(clientX) {
+    var el = document.querySelector('.fisarmonica'); if (!el) { return; }
+    var r = el.getBoundingClientRect(), a = this.state.a, n = this.P.length, gap = 3;
+    var A = a >= 0 ? Math.min(this.state.h * this.P[a].r, (this.state.w || 99999) * 0.82) : 0;
+    var R = r.width - A - gap * (n - 1), som = 0, i;
+    for (i = 0; i < n; i++) { if (i !== a) { som += this.g[i]; } }
+    var x = r.left, mx = clientX;
+    for (i = 0; i < n; i++) {
+      var w = i === a ? A : R * this.g[i] / som;
+      var c = x + w / 2;
+      if (i !== a) { var d = (mx - c) / 95; this.t[i] = 1 + 1.35 * Math.exp(-d * d); }
+      x += w + gap;
+    }
+    this.avvia();
+  }
+  riposo() { for (var i = 0; i < this.t.length; i++) { this.t[i] = 1; } this.avvia(); }
+  avvia() {
+    var self = this;
+    if (this.raf) { return; }
+    function passo() {
+      var fermo = true;
+      for (var i = 0; i < self.g.length; i++) {
+        var d = self.t[i] - self.g[i];
+        if (Math.abs(d) > 0.002) { self.g[i] += d * 0.12; fermo = false; } else { self.g[i] = self.t[i]; }
+      }
+      var el = document.querySelectorAll('.fisarmonica .pag');
+      for (var j = 0; j < el.length; j++) { if (j !== self.state.a) { el[j].style.flexGrow = self.g[j].toFixed(4); } }
+      if (fermo) { self.raf = null; return; }
+      self.raf = requestAnimationFrame(passo);
+    }
+    this.raf = requestAnimationFrame(passo);
+  }
+  valsIndice() {
+    var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
+    return {
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function () { self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
+      apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
+      chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
+      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
+      muoviI: function (e) { var r = e.currentTarget.getBoundingClientRect(); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = (e.clientX - r.left) + 'px'; a.style.top = (e.clientY - r.top) + 'px'; } }
+    };
+  }
+  renderVals() {
+    var self = this, g = this.g, a = this.state.a, h = this.state.h, n = this.P.length, cur = a >= 0 ? this.P[a] : { nome: 'Tutte le pagine', pp: '', d: 'Clicca su una pagina per aprirla, riclicca per richiuderla.' };
+    function pad(x) { return (x < 10 ? '0' : '') + x; }
+    return Object.assign(this.valsIndice(), {
+      pagine: this.P.map(function (p, i) {
+        var on = i === a;
+        return {
+          src: p.src, alt: on ? ('Pagine della rivista: ' + p.nome + ' ' + p.pp) : '', etichetta: p.nome + ' ' + p.pp,
+          cls: on ? 'on' : '', on: on ? 'true' : 'false',
+          g: on ? 0 : g[i].toFixed(4), b: on ? (Math.round(Math.min(h * p.r, (self.state.w || 99999) * 0.82)) + 'px') : '0px',
+          pos: (on || a < 0) ? 'center' : (i < a ? '8% 50%' : '92% 50%'),
+          apri: function () { self.setState({ a: self.state.a === i ? -1 : i }); }
+        };
+      }),
+      bx: this.state.mx + 'px', by: this.state.my + 'px',
+      bw: this.state.sopra ? '90px' : '14px',
+      bbg: (this.state.apertoI || this.state.apertoC) ? (this.state.sopra ? 'radial-gradient(circle, #C9A8FF 0%, #C9A8FF 16%, rgba(155,93,229,.65) 34%, rgba(155,93,229,.2) 55%, rgba(155,93,229,0) 70%)' : '#C9A8FF') : (this.state.sopra ? 'radial-gradient(circle, #E98BC0 0%, #E98BC0 16%, rgba(200,30,120,.65) 34%, rgba(200,30,120,.2) 55%, rgba(200,30,120,0) 70%)' : '#E98BC0'),
+      bfi: 'none',
+      btesto: '',
+      bop: this.state.dentro ? 1 : 0,
+      muovi: function (e) {
+        var r = e.currentTarget.getBoundingClientRect();
+        var t = e.target && e.target.closest ? e.target.closest('button,a') : null;
+        var k = '';
+        if (t) { k = (t.classList && t.classList.contains('pag')) ? 'pag' : 'link'; }
+        var mx = Math.round(e.clientX - r.left), my = Math.round(e.clientY - r.top);
+        self.state.mx = mx; self.state.my = my;
+        var b = e.currentTarget.querySelector('.bolla');
+        if (b) { b.style.left = mx + 'px'; b.style.top = my + 'px'; }
+        if (k !== self.state.sopra || !self.state.dentro) { self.setState({ sopra: k, dentro: true }); }
+        if (k === 'pag') { self.bersagli(e.clientX); } else { self.riposo(); }
+      },
+      esci: function () { self.setState({ dentro: false }); self.riposo(); },
+      txC: this.state.apertoC ? '0%' : '100%', nascostoC: this.state.apertoC ? 'false' : 'true', tabC: this.state.apertoC ? 0 : -1,
+      apriC: function () { self.setState({ apertoC: true }); },
+      apriP: function () { self.setState({ apertoP: true }); self.sel = null; self.sc = self.programma(null); self.avviaMappa(); },
+      chiudiP: function () { self.setState({ apertoP: false }); self.fermaMappa(); },
+      txP: this.state.apertoP ? '0%' : '100%', nascostoP: this.state.apertoP ? 'false' : 'true',
+      legenda: (function () {
+        var st = self.sc[self.state.passo] || self.sc[0], sel = self.sel;
+        var voci = self.tipi;
+        return voci.map(function (t) {
+          var attivo = sel === null ? true : t.id === sel;
+          var scelto = t.id === sel;
+          return { nome: t.nome, bg: t.col, fg: t.fg, op: attivo ? 1 : 0.35, premuto: scelto ? 'true' : 'false', bordo: scelto ? '1px solid #E98BC0' : 'none', scegli: function () { self.scegli(t.id); } };
+        });
+      })(),
+      chiudiC: function () { self.setState({ apertoC: false }); },
+      contatore: (a >= 0 ? pad(a + 1) : '––') + ' / ' + n,
+      sezione: cur.nome, pp: cur.pp, descr: cur.d,
+      prev: function () { self.setState({ a: Math.max(0, self.state.a - 1) }); },
+      next: function () { self.setState({ a: Math.min(n - 1, self.state.a + 1) }); }
+    });
+  }
+}
+DCStart(Component);
+</script>
+</body>
+</html>

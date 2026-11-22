@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emma Simoncelli — graphic designer (nome 3) · Emma Simoncelli</title>
+<style>
+@font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#000}
+a{color:#FFFFFF}a:hover{color:#D9C2FF}
+.palco8,.palco8 *{cursor:none !important}
+.cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#FFFFFF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu:hover{color:#D9C2FF}
+.nome6{margin:0;font-weight:900;font-size:8.6vw;line-height:.84;letter-spacing:-.05em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap}
+.blocco h3{margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D9C2FF}
+.riga6{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid rgba(255,255,255,.28);font-size:17px;font-weight:600}
+.riga6 span{font-weight:400;color:#E6DAFF;white-space:nowrap}
+.cta6{display:flex;width:100%;justify-content:space-between;align-items:center;padding:34px 4vw;background:#000;color:#FFFFFF;border:0;font:inherit;font-weight:900;font-size:6vw;line-height:1;letter-spacing:-.04em;text-transform:uppercase;text-align:left;transition:color .3s}
+.cta6:hover{color:#C9A8FF}
+.cta6 .fr{display:inline-block;transition:transform .3s}
+.cta6:hover .fr{transform:translateX(18px)}
+.tendina{position:fixed;inset:0;z-index:500;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#C9A8FF}
+.cursore{position:fixed;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+@keyframes rivela{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.rivela{animation:rivela linear both;animation-timeline:view();animation-range:entry 0% cover 25%}}
+@media (prefers-reduced-motion: reduce){.rivela{animation:none}.tendina,.voce6{transition:none}}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
+.lista-c a:hover{color:#D9C2FF}
+.anteprima{pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.anteprima img{display:block;width:100%;height:auto}
+.anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
+.gira-i{animation:giraI 12s linear infinite}
+@keyframes giraI{to{transform:rotate(360deg)}}
+@media (max-width: 760px){
+.pagina{height:auto !important;min-height:100svh !important;overflow:visible !important}
+.riga-titolo{grid-template-columns:1fr !important;gap:14px !important;justify-content:stretch !important;align-items:start !important}
+.titolo{font-size:clamp(30px,9vw,56px) !important}
+.area-vis{flex:none !important;height:62svh !important;min-height:320px}
+.tendina,.tendinaP,.tendinaI,.lb{position:fixed !important}
+.tendina,.tendinaP,.tendinaI{overflow-y:auto !important}
+.griglia-p{grid-template-columns:1fr !important;align-content:start !important;justify-items:center !important;gap:28px !important;padding-top:20px !important;flex:none !important}
+.voce6{font-size:8.5vw !important;padding:12px 0 !important}
+.legenda-row{flex-wrap:wrap !important}
+.frase-hero{font-size:11vw !important}
+.riga-hero{flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+.riga-hero p{text-align:left !important}
+.griglia-cv{grid-template-columns:1fr !important;gap:36px !important}
+.cta6{font-size:9vw !important}
+.nome-scia{font-size:15vw !important}
+}
+@media (min-width: 761px) and (max-width: 1100px){
+.griglia-cv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.voce6{font-size:6vw !important}
+}
+@media (hover: none), (pointer: coarse){
+.bolla,.cursore,.anteprima{display:none !important}
+*{cursor:auto !important}
+}
+.eroe-nome .foto-viola{animation:respira 9s ease-in-out infinite alternate}
+@keyframes respira{from{transform:translate(-50%,-52%) scale(1)}to{transform:translate(-50%,-52%) scale(1.04)}}
+.nome-mano{animation:scrivi 2.2s cubic-bezier(.6,0,.3,1) .3s both}
+@keyframes scrivi{from{clip-path:inset(-20% 100% -20% 0)}to{clip-path:inset(-20% 0 -20% 0)}}
+.nastro-p{overflow:hidden;background:#000;padding:26px 0;display:flex;align-items:center}
+.nastro-p .nastro-in{display:flex;align-items:center;gap:14px;width:max-content;animation:scorriP 38s linear infinite}
+.nastro-p:hover .nastro-in{animation-play-state:paused}
+@keyframes scorriP{to{transform:translateX(-50%)}}
+.voce-n{text-decoration:none;color:#FFFFFF;font-weight:900;font-size:4.4vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+.voce-n.vuota{color:transparent;-webkit-text-stroke:1.5px #FFFFFF}
+.voce-n:hover{color:#C9A8FF;-webkit-text-stroke:0}
+.stella-n{color:#C9A8FF;font-size:2.4vw;line-height:1}
+@media (max-width: 760px){.voce-n{font-size:10vw}.stella-n{font-size:6vw}.nastro-p{padding:22px 0}}
+@media (prefers-reduced-motion: reduce){.nome-mano,.eroe-nome .foto-viola,.nastro-p .nastro-in{animation:none}}
+.piede .lista-c a,.piede .lista-c span{border-top:1px solid rgba(255,255,255,.28)}
+@media (max-width: 760px){.piede-griglia{grid-template-columns:1fr !important;gap:20px !important}.piede-griglia p{font-size:10vw !important}.frase-cv{font-size:7.5vw !important}}
+header.testata .btn-menu{color:#1D1D1B}
+header.testata .btn-menu:hover{color:#6E3BD8}
+@media (max-width: 760px){.foto-b{height:min(56vh,460px) !important}}
+.tag-c{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:14px 26px;border:1.5px solid #C9A8FF;border-radius:999px;color:#FFFFFF;font-weight:700;font-size:clamp(16px,1.9vw,30px);line-height:1;letter-spacing:-.01em;transition:background .25s,color .25s}
+.tag-c:hover{background:#C9A8FF;color:#000}
+@media (max-width: 760px){.nastro-p{padding:18px 0}.tag-c{padding:10px 18px;font-size:16px}}
+</style>
+<style>body{font-family:Switzer,sans-serif}</style>
+</head>
+<body>
+<template id="dc-template">
+
+<div class="palco8" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #000; color: #FFFFFF; font-family: Switzer, sans-serif">
+
+
+  <header class="cornice testata" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: flex-end; align-items: center; padding: 22px 4vw">
+    <nav aria-label="Menu" style="display: flex; gap: 28px">
+      <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </nav>
+  </header>
+
+  <section class="eroe-nome" style="position: relative; background: #FFFFFF; color: #1D1D1B; padding: 84px 4vw 56px; display: flex; justify-content: center; overflow: hidden">
+    <div style="position: relative; display: flex; justify-content: center; width: 100%">
+      <div class="foto-b" style="height: min(64vh, 600px); aspect-ratio: 3 / 4; overflow: hidden">
+        <img src="a/db431695f9f2f720f216029de6e3f401.jpg" alt="" aria-hidden="true" style="display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1)">
+      </div>
+    <h1 style="position: absolute; left: 50%; top: 50%; z-index: 1; margin: 0; width: min(84vw, 1180px); transform: translate(-50%, -50%)"><img class="nome-mano" src="a/1b29a7063c3857fb262a6750c3d0fb79.svg" alt="Emma Simoncelli" style="display: block; width: 100%; height: auto; aspect-ratio: 437 / 47.3; filter: none"></h1>
+    </div>
+    <p class="cornice" style="position: absolute; left: 4vw; bottom: 28px; z-index: 1; margin: 0; color: #6E3BD8">Graphic designer · Riccione (RN)</p>
+  </section>
+
+  <section style="background: #4B1F8F; padding: 90px 4vw 100px">
+    <p class="frase-cv" style="margin: 0 0 64px; max-width: 1100px; font-weight: 800; font-size: 3.6vw; line-height: 1.02; letter-spacing: -.03em">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un segno.</p>
+    <div class="griglia-cv rivela" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; align-items: start">
+      <div class="blocco">
+        <h3>Esperienza</h3>
+        <div class="riga6">Graphic designer, Simbiosi Group <span>dal 2026</span></div>
+        <div class="riga6">Stage, Simbiosi Group <span>2025</span></div>
+      </div>
+      <div class="blocco">
+        <h3>Studi</h3>
+        <div class="riga6">Laurea in Design, UniRSM <span>2025</span></div>
+        <div class="riga6">Maturità artistica, Liceo Mengaroni <span>2021</span></div>
+        <div class="riga6">Inglese <span>B2</span></div>
+      </div>
+      <div class="blocco">
+        <h3>Strumenti</h3>
+        <div class="riga6">Illustrator, InDesign, Photoshop</div>
+        <div class="riga6">Figma</div>
+        <div class="riga6">After Effects, Premiere <span>basi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nastro-p" aria-label="Competenze">
+    <div class="nastro-in">
+      <sc-for list="{{tags}}" as="t" hint-placeholder-count="16">
+        <span class="tag-c">{{t.nome}}</span>
+      </sc-for>
+    </div>
+  </div>
+  <footer class="piede" style="background: #4B1F8F; padding: 56px 4vw 36px">
+    <div class="piede-griglia" style="display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px; align-items: end">
+      <p style="margin: 0; font-weight: 900; font-size: 3.4vw; line-height: .95; letter-spacing: -.04em; text-transform: uppercase">Lavoriamo insieme</p>
+      <div class="lista-c"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><a href="tel:+393288224848">+39 328 822 4848</a></div>
+      <div class="lista-c"><a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/">LinkedIn</a><a href="https://www.instagram.com/emmasimoncelli/">Instagram</a></div>
+      <div class="lista-c"><span>Riccione (RN), Italia</span><span style="color: #D9C2FF">© 2026 Emma Simoncelli</span></div>
+    </div>
+  </footer>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascosto}}" style="transform: translateX({{tx}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </div>
+    <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
+      <sc-for list="{{progetti}}" as="p" hint-placeholder-count="6">
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+      </sc-for>
+    </nav>
+    <div class="anteprima" aria-hidden="true" style="position: fixed; left: {{cx}}; top: {{cy}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+      <img class="{{icls}}" src="{{iimg}}" alt="">
+      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
+    </div>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascostoC}}" style="transform: translateX({{txC}}); background: #4B1F8F; z-index: 510">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
+      <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
+    </div>
+    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
+      <div class="lista-c" style="width: min(360px, 100%); opacity: {{opC}}; transform: translateX({{trC}}); transition: opacity .5s .3s, transform .6s .3s cubic-bezier(.2,.8,.2,1)">
+        <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
+        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
+        <a href="tel:+393288224848" tabindex="{{tabC}}">+39 328 822 4848</a>
+        <span>Riccione (RN), Italia</span>
+        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
+        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursore" aria-hidden="true" style="left: {{cx}}; top: {{cy}}; width: {{cw}}; height: {{cw}}; background: {{cbg}}; opacity: {{cop}}"></div>
+</div>
+</template>
+<div id="dc-root"></div>
+<script src="dc.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var B = 'a/';
+    this.P = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "mind", "href": "mind.html", "img": "a/a16172e6abb63de71a2dffe82b94600e.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "r": -3, "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp"}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    this.state = { aperto: false, apertoC: false, h: -1, x: -200, y: -200, sopra: false, dentro: false };
+  }
+  componentDidMount() {
+    try { if (window.location.hash === '#progetti') { this.setState({ aperto: true }); } } catch (e) {}
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    return {
+      tx: st.aperto ? '0%' : '100%', nascosto: st.aperto ? 'false' : 'true',
+      progetti: this.P.map(function (p, i) {
+        return { titolo: p.t, href: p.href, tab: st.aperto ? 0 : -1,
+          tx: st.aperto ? '0px' : '120px', op: st.aperto ? 1 : 0, del: st.aperto ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s',
+          su: function () { self.setState({ h: i }); }, giu: function () { self.setState({ h: -1 }); } };
+      }),
+      tags: ["Brand identity", "Editoria", "Impaginazione", "Illustrazione", "Poster design", "Lettering", "Social media", "Merchandising", "Brand identity", "Editoria", "Impaginazione", "Illustrazione", "Poster design", "Lettering", "Social media", "Merchandising"].map(function (n) { return { nome: n }; }),
+      iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: (st.aperto && st.h >= 0) ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '300px' : '280px',
+      apri: function () { self.setState({ aperto: true, apertoC: false }); },
+      apriC: function () { self.setState({ apertoC: true, aperto: false, h: -1 }); },
+      chiudi: function () { self.setState({ aperto: false, apertoC: false, h: -1 }); },
+      txC: st.apertoC ? '0%' : '100%', nascostoC: st.apertoC ? 'false' : 'true', opC: st.apertoC ? 1 : 0, trC: st.apertoC ? '0px' : '80px', tabC: st.apertoC ? 0 : -1,
+      contatti: function () {
+        self.setState({ aperto: false, h: -1 });
+        var el = document.getElementById('contatti'); if (el) { setTimeout(function () { el.scrollIntoView({ behavior: 'smooth' }); }, 500); }
+      },
+      cx: st.x + 'px', cy: st.y + 'px',
+      cw: st.sopra ? '90px' : '14px',
+      cbg: st.sopra ? 'radial-gradient(circle, #C9A8FF 0%, #C9A8FF 16%, rgba(155,93,229,.65) 34%, rgba(155,93,229,.2) 55%, rgba(155,93,229,0) 70%)' : '#C9A8FF',
+      cop: st.dentro ? 1 : 0,
+      muovi: function (e) {
+        var t = e.target && e.target.closest ? e.target.closest('a,button') : null;
+        self.setState({ x: e.clientX, y: e.clientY, sopra: !!t, dentro: true });
+      },
+      esci: function () { self.setState({ dentro: false }); }
+    };
+  }
+}
+DCStart(Component);
+</script>
+</body>
+</html>

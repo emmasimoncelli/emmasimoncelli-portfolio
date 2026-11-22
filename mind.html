@@ -42,6 +42,15 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 .payoff1 b{color:#B4A9B8}
 @keyframes appare1{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.logo1 img,.onda1,.payoff1{animation:none}}
+.galleria-m{width:min(100%, 820px, calc((100vh - 250px) * 1.6))}
+.vetrina-m{position:relative;width:100%;aspect-ratio:16/10;background:#111;overflow:hidden}
+.vetrina-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .8s ease}
+.miniature-m{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
+.miniature-m button{padding:0;border:0;background:transparent;color:#EFE8DF;font:inherit;text-align:left;cursor:pointer;transition:opacity .3s}
+.miniature-m button:hover{opacity:1 !important}
+.miniature-m img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.miniature-m span{display:block;margin-top:6px;padding-top:6px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B4A9B8}
+@media (max-width: 760px){.miniature-m{grid-template-columns:repeat(3,minmax(0,1fr))}.galleria-m{width:100%}}
 .orbita{position:relative;width:min(100%, calc(100vh - 170px), 640px);aspect-ratio:1}
 .anello{position:absolute;inset:13%;border-radius:50%;border:1px solid rgba(180,169,184,.35)}
 .anello.a2{inset:30%;border-color:rgba(180,169,184,.18)}
@@ -88,7 +97,16 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 *{cursor:auto !important}
 }
 .tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
-@media (max-width: 760px){.orbita{width:74vw;margin:10px 0 26px}.sat span{font-size:9px}}
+@media (max-width: 760px){.galleria-m{width:min(100%, 820px, calc((100vh - 250px) * 1.6))}
+.vetrina-m{position:relative;width:100%;aspect-ratio:16/10;background:#111;overflow:hidden}
+.vetrina-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .8s ease}
+.miniature-m{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
+.miniature-m button{padding:0;border:0;background:transparent;color:#EFE8DF;font:inherit;text-align:left;cursor:pointer;transition:opacity .3s}
+.miniature-m button:hover{opacity:1 !important}
+.miniature-m img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.miniature-m span{display:block;margin-top:6px;padding-top:6px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B4A9B8}
+@media (max-width: 760px){.miniature-m{grid-template-columns:repeat(3,minmax(0,1fr))}.galleria-m{width:100%}}
+.orbita{width:74vw;margin:10px 0 26px}.sat span{font-size:9px}}
 @media (max-width: 760px){.pagina .area-vis.scena1{height:62svh !important;justify-content:center !important;overflow:visible !important;gap:3vh !important}.logo1{width:80vw}.onda1{width:min(54svh, 88vw)}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
@@ -132,13 +150,16 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
       <button type="button" class="btn-menu" onClick="{{chiudiP}}">← Torna al progetto</button>
       <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
     </div>
-    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 680px) minmax(0, 420px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
-      <div class="orbita">
-        <span class="anello"></span><span class="anello a2"></span>
-        <img class="centro" src="a/ace5aa989904e2ef6cdb4d3717bcd614.svg" alt="Il pittogramma di mind">
-        <div class="giro">
-          <sc-for list="{{manifesti}}" as="m" hint-placeholder-count="4">
-            <div class="sat" style="--a: {{m.ang}}"><div class="sat-in"><button type="button" onClick="{{m.apri}}" aria-label="{{m.alt}}"><img src="{{m.src}}" alt=""></button><span>{{m.et}}</span></div></div>
+    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 820px) minmax(0, 400px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
+      <div class="galleria-m" onMouseEnter="{{fermaG}}" onMouseLeave="{{riprendiG}}">
+        <div class="vetrina-m">
+          <sc-for list="{{foto}}" as="f" hint-placeholder-count="5">
+            <img src="{{f.src}}" alt="{{f.alt}}" style="opacity: {{f.op}}">
+          </sc-for>
+        </div>
+        <div class="miniature-m">
+          <sc-for list="{{foto}}" as="f" hint-placeholder-count="5">
+            <button type="button" onClick="{{f.scegli}}" aria-label="{{f.alt}}" aria-pressed="{{f.premuto}}" style="opacity: {{f.opm}}"><img src="{{f.src}}" alt=""><span style="border-top: {{f.bordo}}">{{f.et}}</span></button>
           </sc-for>
         </div>
       </div>
@@ -147,6 +168,8 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
         <p>Nel logo la i è una persona con le braccia aperte, che si allunga nelle lettere vicine e le stringe a sé. È quello che succede da Mind: ci si prende cura del corpo e insieme si ascolta tutto il resto.</p>
         <h2>Il payoff</h2>
         <p>Abbraccia il tuo <b>equilibrio</b>: la parola chiave, in un peso più forte, abbraccia la frase come la i abbraccia il logo.</p>
+        <h2>Le applicazioni</h2>
+        <p>Biglietti da visita, poster, post e storie per Instagram, un buono regalo e il sito: ogni supporto usa la stessa materia, la stessa voce calma e il pittogramma che esce dal formato.</p>
         <h2>La materia</h2>
         <p style="margin-bottom: 0">Ogni colore è un materiale: intonaco, sabbia, pelle. Il pittogramma si imprime nella sabbia, si disegna con la crema, si incide nell'intonaco e si stampa a secco sulla carta. Prugna e avorio con toni di terra, e un solo carattere, Hanken Grotesk.</p>
       </div>
@@ -202,7 +225,7 @@ class Component extends DCLogic {
       [B + 'e4d10cf09a0cd5e933328163f22268da.jpg', 'Il pittogramma in rilievo sulla carta', 'rilievo su carta'],
       [B + '9fbdbbd589fdea286f439c5ce75a46ab.jpg', "Il pittogramma inciso nell'intonaco", "inciso nell'intonaco"]
     ];
-    this.F = [];
+    this.F = [["a/ad369f6b041aeea78fa6e62d3b745d8b.jpg", "Biglietti da visita di Mind", "Biglietti da visita"], ["a/8d29255f5eb0ffaa2cb4be81e5224179.jpg", "Serie di poster di Mind", "Poster"], ["a/00e742812f9ce9627ca1bf7019fceb45.jpg", "Post e storia Instagram di Mind", "Instagram"], ["a/68196dc33693c1501ec95febb59429f6.jpg", "Buono regalo di Mind", "Buono regalo"], ["a/6712ffc4442d72760443eb1ac68353b1.jpg", "Homepage del sito di Mind", "Sito web"]];
     this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0 };
   }
   posI(e) {
@@ -222,11 +245,18 @@ class Component extends DCLogic {
       muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
+  componentDidMount() {
+    var self = this;
+    var calmo = false; try { calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (!calmo) { this.giroG = setInterval(function () { if (!self.pausa && self.state.apertoP) { self.setState({ fi: (self.state.fi + 1) % self.F.length }); } }, 4500); }
+  }
+  componentWillUnmount() { if (this.giroG) { clearInterval(this.giroG); } }
   renderVals() {
     var self = this, st = this.state;
     return Object.assign(this.valsIndice(), {
       manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], et: m[2], ang: (i * 90 - 45) + 'deg', apri: function () { self.setState({ lb: i }); } }; }),
-      foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
+      fermaG: function () { self.pausa = true; }, riprendiG: function () { self.pausa = false; },
+      foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], et: f[2], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
       lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',
       lbSrc: st.lb >= 0 ? this.M[st.lb][0] : this.M[0][0], lbAlt: st.lb >= 0 ? this.M[st.lb][1] : '',
       chiudiLb: function () { self.setState({ lb: -1 }); },

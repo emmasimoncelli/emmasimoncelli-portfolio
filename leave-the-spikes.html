@@ -217,7 +217,7 @@ class Component extends DCLogic {
           var g = it.g; c.strokeStyle = col; c.lineWidth = sp * 2.1;
           c.beginPath(); c.moveTo(g.x0, g.y0); c.lineTo(g.x1, g.y1); c.stroke();
         } else {
-          var p = it.p, L = sp * 3.6, Bw = sp * 1.9, d0 = sp * 0.35;
+          var p = it.p, L = sp * 3.6, Bw = sp * 1.0, d0 = sp * 0.15;
           c.fillStyle = col; c.beginPath();
           c.moveTo(p.px + p.ox * L, p.py + p.oy * L);
           c.lineTo(p.px + p.ox * d0 + p.tx * Bw, p.py + p.oy * d0 + p.ty * Bw);

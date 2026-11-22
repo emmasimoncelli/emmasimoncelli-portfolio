@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progetto — mind (proposta 3: la materia si apre a cerchio) · Emma Simoncelli</title>
+<style>
+@font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#000000}
+a{color:#EFE8DF}a:hover{color:#B4A9B8}
+.palco-ed,.palco-ed *{cursor:none !important}
+.cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu:hover{color:#B4A9B8}
+.manif{display:block;padding:0;border:0;background:transparent;flex:none;height:max(220px, min(calc(100vh - 340px), calc(21vw * 1.3333)));aspect-ratio:3/4;cursor:pointer}
+.manif img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.manif:hover img{transform:scale(1.04);box-shadow:0 16px 36px rgba(180,169,184,.22)}
+.tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.tendinaP{position:absolute;inset:0;z-index:490;background:#000000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
+.lista-c a:hover{color:#D9C2FF}
+.testo-p h2{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
+.testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#E6DFE8}
+.testo-p p b{font-weight:700;color:#B4A9B8}
+.bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.lb{position:absolute;inset:0;z-index:600;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:40px;transition:opacity .35s}
+.tendinaI{position:absolute;inset:0;z-index:495;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#C9A8FF}
+.anteprima{position:absolute;left:-400px;top:-400px;pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.anteprima img{display:block;width:100%;height:auto}
+.anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
+.gira-i{animation:giraI 12s linear infinite}
+.scena3{position:relative;overflow:hidden;background:#0B090B}
+.strato3{position:absolute;inset:0;clip-path:circle(0% at 50% 50%);transition:clip-path 1.8s cubic-bezier(.65,0,.25,1);cursor:pointer}
+.strato3.on{clip-path:circle(80% at 50% 50%)}
+.strato3 .sfondo3{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);object-fit:cover;filter:blur(36px) brightness(.45) saturate(1.2)}
+.strato3 .foto3{position:absolute;left:50%;top:50%;height:calc(100% - 7vh);aspect-ratio:3/4;transform:translate(-50%,-50%);object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.dida3{position:absolute;left:24px;bottom:18px;z-index:50;margin:0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8;transition:opacity .5s}
+.logo3{position:absolute;right:24px;bottom:18px;z-index:50;width:110px;height:auto}
+@media (prefers-reduced-motion: reduce){.strato3{transition:none}}
+.materia-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(100%, calc((100vh - 150px) * .75), 600px)}
+.materia-g button{position:relative;display:block;padding:0;border:0;background:#3E2A3D;aspect-ratio:3/4;overflow:hidden;cursor:pointer}
+.materia-g img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.materia-g button:hover img{transform:scale(1.04)}
+.materia-g span{position:absolute;left:12px;bottom:10px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#EFE8DF;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+
+@keyframes giraI{to{transform:rotate(360deg)}}
+@media (max-width: 760px){
+.pagina .area-vis{justify-content:flex-start !important;overflow-x:auto !important;gap:14px !important;padding-top:12px !important}
+.pagina .manif{height:min(52svh, 112vw) !important}
+.pagina{height:auto !important;min-height:100svh !important;overflow:visible !important}
+.riga-titolo{grid-template-columns:1fr !important;gap:14px !important;justify-content:stretch !important;align-items:start !important}
+.titolo{font-size:clamp(30px,9vw,56px) !important}
+.area-vis{flex:none !important;height:62svh !important;min-height:320px}
+.tendina,.tendinaP,.tendinaI,.lb{position:fixed !important}
+.tendina,.tendinaP,.tendinaI{overflow-y:auto !important}
+.griglia-p{grid-template-columns:1fr !important;align-content:start !important;justify-items:center !important;gap:28px !important;padding-top:20px !important;flex:none !important}
+.voce6{font-size:8.5vw !important;padding:12px 0 !important}
+.legenda-row{flex-wrap:wrap !important}
+.frase-hero{font-size:11vw !important}
+.riga-hero{flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+.riga-hero p{text-align:left !important}
+.griglia-cv{grid-template-columns:1fr !important;gap:36px !important}
+.cta6{font-size:9vw !important}
+.nome-scia{font-size:15vw !important}
+}
+@media (min-width: 761px) and (max-width: 1100px){
+.griglia-cv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.voce6{font-size:6vw !important}
+}
+@media (hover: none), (pointer: coarse){
+.bolla,.cursore,.anteprima{display:none !important}
+*{cursor:auto !important}
+}
+.tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+@media (max-width: 760px){.materia-g{width:100%}}
+@media (max-width: 760px){.pagina .area-vis.scena3{height:auto !important;aspect-ratio:3/4.2;min-height:0 !important}.strato3 .foto3{height:calc(100% - 64px)}.logo3{width:84px}}
+</style>
+<style>body{font-family:Switzer,sans-serif}</style>
+</head>
+<body>
+<template id="dc-template">
+
+<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: #000000; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
+
+  <header class="cornice" style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw 0">
+    <button type="button" class="btn-menu" onClick="{{apriI}}">← Progetti</button>
+    <nav aria-label="Menu" style="display: flex; gap: 28px">
+      <a href="index.html" style="text-decoration: none">About me</a>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </nav>
+  </header>
+
+  <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
+    <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">mind</h1>
+    <div>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Brand identity per mind, lo spazio di Lorena dedicato a massaggi, estetica e percorsi olistici.</p>
+      <p class="cornice" style="margin: 0; color: #B4A9B8">Brand identity · Logo, payoff, linee guida</p>
+      <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #B4A9B8; padding: 6px 11px 5px">Approfondisci +</button>
+    </div>
+  </div>
+
+  <div class="area-vis scena3" style="flex: 1 1 auto; min-height: 0; margin: 0 4vw 4vh">
+    <sc-for list="{{manifesti}}" as="m" hint-placeholder-count="4">
+      <div class="strato3" onClick="{{m.apri}}"><img class="sfondo3" src="{{m.src}}" alt=""><img class="foto3" src="{{m.src}}" alt="{{m.alt}}"></div>
+    </sc-for>
+    <p class="dida3"></p>
+    <img class="logo3" src="a/9a33b35417b26ee3e5e51f35a79969ba.svg" alt="mind">
+  </div>
+
+  <div class="lb" role="dialog" aria-label="Immagine ingrandita" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
+    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,.4)">
+  </div>
+
+  <div class="tendinaP" aria-hidden="{{nascostoP}}" style="transform: translateX({{txP}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiP}}">← Torna al progetto</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </div>
+    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 820px) minmax(0, 420px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
+      <div class="materia-g">
+        <sc-for list="{{manifesti}}" as="m" hint-placeholder-count="4">
+          <button type="button" onClick="{{m.apri}}" aria-label="{{m.alt}}"><img src="{{m.src}}" alt=""><span>{{m.et}}</span></button>
+        </sc-for>
+      </div>
+      <div class="testo-p">
+        <h2>Il concetto</h2>
+        <p>Nel logo la i è una persona con le braccia aperte, che si allunga nelle lettere vicine e le stringe a sé. È quello che succede nella cabina di Lorena: ci si prende cura del corpo e insieme si ascolta tutto il resto.</p>
+        <h2>Il payoff</h2>
+        <p>Abbraccia il tuo <b>equilibrio</b>: la parola chiave, in un peso più forte, abbraccia la frase come la i abbraccia il logo.</p>
+        <h2>La materia</h2>
+        <p style="margin-bottom: 0">Ogni colore è un materiale: intonaco, sabbia, pelle. Il pittogramma si imprime nella sabbia, si disegna con la crema, si incide nell'intonaco e si stampa a secco sulla carta. Prugna e avorio con toni di terra, e un solo carattere, Hanken Grotesk.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tendinaI" aria-hidden="{{nascostoI}}" onMouseMove="{{muoviI}}" style="transform: translateX({{txI}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudiI}}">← Torna al progetto</button>
+      <nav aria-label="Menu" style="display: flex; gap: 28px"><a href="index.html" style="text-decoration: none">About me</a><button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button></nav>
+    </div>
+    <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
+      <sc-for list="{{indice}}" as="p" hint-placeholder-count="6">
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+      </sc-for>
+    </nav>
+    <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+      <img class="{{icls}}" src="{{iimg}}" alt="">
+      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
+    </div>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascostoC}}" style="transform: translateX({{txC}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiC}}">← Torna al progetto</button>
+      <a href="index.html" style="text-decoration: none">About me</a>
+    </div>
+    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
+      <div class="lista-c" style="width: min(360px, 100%)">
+        <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
+        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
+        <span>Riccione (RN), Italia</span>
+        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
+        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bolla" aria-hidden="true" style="left: {{bx}}; top: {{by}}; width: {{bw}}; height: {{bw}}; background: {{bbg}}; opacity: {{bop}}"></div>
+</div>
+</template>
+<div id="dc-root"></div>
+<script src="dc.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "mind", "href": "mind.html", "img": "a/a16172e6abb63de71a2dffe82b94600e.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    var B = 'a/';
+    this.M = [
+      [B + 'a16172e6abb63de71a2dffe82b94600e.jpg', 'Il pittogramma disegnato con la crema sulla pelle', 'crema sulla pelle'],
+      [B + 'ed3597dab6b827d3862ca046fc2486be.jpg', 'Il pittogramma impresso nella sabbia', 'impronta nella sabbia'],
+      [B + 'e4d10cf09a0cd5e933328163f22268da.jpg', 'Il pittogramma in rilievo sulla carta', 'rilievo su carta'],
+      [B + '9fbdbbd589fdea286f439c5ce75a46ab.jpg', "Il pittogramma inciso nell'intonaco", "inciso nell'intonaco"]
+    ];
+    this.F = [];
+    this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0 };
+  }
+  posI(e) {
+    if (!e || e.clientX === undefined) { return; }
+    var t = e.currentTarget && e.currentTarget.closest ? e.currentTarget.closest('.tendinaI') : null; if (!t) { return; }
+    var r = t.getBoundingClientRect(); this._ix = (e.clientX - r.left) + 'px'; this._iy = (e.clientY - r.top) + 'px';
+  }
+  valsIndice() {
+    var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
+    return {
+      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
+      apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
+      chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
+      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
+      ilx: this._ix || '-400px', ily: this._iy || '-400px',
+      muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
+    };
+  }
+  componentDidMount() {
+    var self = this; this.k = -1; this.z = 1;
+    this.passa();
+    var calmo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!calmo) { this.giro = setInterval(function () { self.passa(); }, 4200); }
+  }
+  componentWillUnmount() { if (this.giro) { clearInterval(this.giro); } }
+  passa() {
+    var st = document.querySelectorAll('.strato3'); if (!st.length) { return; }
+    var self = this, n = st.length; this.k = (this.k + 1) % n;
+    var el = st[this.k]; el.classList.remove('on'); el.style.zIndex = String(++this.z); void el.offsetWidth; el.classList.add('on');
+    var d = document.querySelector('.dida3'); if (d) { d.style.opacity = '0'; setTimeout(function () { d.textContent = self.M[self.k][2]; d.style.opacity = '1'; }, 500); }
+    var k = this.k; setTimeout(function () { for (var i = 0; i < st.length; i++) { if (i !== k) { st[i].classList.remove('on'); } } }, 1900);
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    return Object.assign(this.valsIndice(), {
+      manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], et: m[2], apri: function () { self.setState({ lb: i }); } }; }),
+      foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
+      lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',
+      lbSrc: st.lb >= 0 ? this.M[st.lb][0] : this.M[0][0], lbAlt: st.lb >= 0 ? this.M[st.lb][1] : '',
+      chiudiLb: function () { self.setState({ lb: -1 }); },
+      txC: st.apertoC ? '0%' : '100%', nascostoC: st.apertoC ? 'false' : 'true', tabC: st.apertoC ? 0 : -1,
+      apriC: function () { self.setState({ apertoC: true }); },
+      chiudiC: function () { self.setState({ apertoC: false }); },
+      txP: st.apertoP ? '0%' : '100%', nascostoP: st.apertoP ? 'false' : 'true',
+      apriP: function () { self.setState({ apertoP: true }); },
+      chiudiP: function () { self.setState({ apertoP: false }); },
+      bx: st.mx + 'px', by: st.my + 'px',
+      bw: st.sopra ? '90px' : '14px',
+      bbg: (st.apertoI || st.apertoC) ? (st.sopra ? 'radial-gradient(circle, #C9A8FF 0%, #C9A8FF 16%, rgba(155,93,229,.65) 34%, rgba(155,93,229,.2) 55%, rgba(155,93,229,0) 70%)' : '#C9A8FF') : (st.sopra ? 'radial-gradient(circle, #B4A9B8 0%, #B4A9B8 16%, rgba(180,169,184,.65) 34%, rgba(180,169,184,.2) 55%, rgba(180,169,184,0) 70%)' : '#B4A9B8'),
+      bop: st.dentro ? 1 : 0,
+      muovi: function (e) {
+        var r = e.currentTarget.getBoundingClientRect();
+        var t = e.target && e.target.closest ? e.target.closest('button,a') : null;
+        var k = t ? 'link' : '';
+        var mx = Math.round(e.clientX - r.left), my = Math.round(e.clientY - r.top);
+        self.state.mx = mx; self.state.my = my;
+        var el = e.currentTarget;
+        var b = el.querySelector('.bolla');
+        if (b) { b.style.left = mx + 'px'; b.style.top = my + 'px'; }
+        if (k !== st.sopra || !st.dentro) { self.setState({ sopra: k, dentro: true }); }
+      },
+      esci: function () { self.setState({ dentro: false }); }
+    });
+  }
+}
+DCStart(Component);
+</script>
+</body>
+</html>

@@ -34,8 +34,8 @@ a{color:#EFE8DF}a:hover{color:#FF5A4F}
 .bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
 .lb{position:absolute;inset:0;z-index:600;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:40px;border:0;width:100%;transition:opacity .35s}
 @media (prefers-reduced-motion: reduce){.neon-linea,.alone,.neon-img,.compari{animation:none;opacity:1}.nastro{animation:none}}
-.palco-picto{position:relative;width:min(100%,58vh,460px);aspect-ratio:600/599;filter:drop-shadow(0 0 2px #FF5A5A) drop-shadow(0 0 10px #FF2020) drop-shadow(0 0 26px rgba(255,0,0,.8))}
-.palco-picto img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.palco-picto{position:relative;width:min(100%,58vh,460px);aspect-ratio:600/599}
+.palco-picto img{position:absolute;inset:0;width:100%;height:100%;display:block;filter:drop-shadow(0 0 2px #FF5A5A) drop-shadow(0 0 10px #FF2020) drop-shadow(0 0 26px rgba(255,0,0,.8))}
 .p-gira{transform-origin:50% 50.9%;animation:gira 7s linear infinite}
 @keyframes gira{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion: reduce){.p-gira{animation:none}}
@@ -75,6 +75,7 @@ a{color:#EFE8DF}a:hover{color:#FF5A4F}
 *{cursor:auto !important}
 }
 .tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+@media (max-width: 760px){.nastro{animation-duration:11s}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>

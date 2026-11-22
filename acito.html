@@ -22,9 +22,11 @@ a{color:#EFE8DF}a:hover{color:#6CC3F0}
 @media (prefers-reduced-motion: reduce){.pag{transition:none}}
 @media (max-width: 760px){
 .area-vis.contenitore-rivista{height:auto !important;min-height:0 !important;padding:0 !important}
-.fisarmonica{height:auto !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px !important;padding:4px 4vw 10px;scroll-padding-left:4vw}
-.fisarmonica .pag{flex:0 0 auto !important;height:min(60vw, 46svh);aspect-ratio:var(--r);filter:none !important;scroll-snap-align:start}
-.fisarmonica .pag img{object-fit:contain}
+.fisarmonica{height:calc(86vw / 1.4142) !important;overflow-x:auto;gap:3px !important;padding:0 7vw;scrollbar-width:none}
+.fisarmonica::-webkit-scrollbar{display:none}
+.fisarmonica .pag{flex:0 0 11px !important;height:100%}
+.fisarmonica .pag.on{flex:0 0 auto !important;aspect-ratio:var(--r)}
+.fisarmonica .pag img{object-fit:cover}
 }
 .btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
 .btn-menu:hover{color:#6CC3F0}
@@ -190,7 +192,16 @@ class Component extends DCLogic {
     this.sc = this.programma(null);
     this.timer = null;
   }
+  mob() { try { return window.matchMedia('(max-width: 760px)').matches; } catch (e) { return false; } }
+  componentDidUpdate() { this.centra(); }
+  centra() {
+    if (!this.mob() || this._ca === this.state.a) { return; }
+    this._ca = this.state.a;
+    var el = document.querySelector('.fisarmonica .pag.on'), box = document.querySelector('.fisarmonica');
+    if (el && box) { setTimeout(function () { var r = el.getBoundingClientRect(), rb = box.getBoundingClientRect(); box.scrollTo({ left: box.scrollLeft + (r.left - rb.left) - (rb.width - r.width) / 2, behavior: 'smooth' }); }, 60); }
+  }
   componentDidMount() {
+    if (this.mob() && this.state.a < 0) { this.setState({ a: 0 }); }
     var self = this;
     this.disegna();
     this.misura = function () {
@@ -309,7 +320,7 @@ class Component extends DCLogic {
           cls: on ? 'on' : '', on: on ? 'true' : 'false',
           ar: p.r, g: on ? 0 : g[i].toFixed(4), b: on ? (Math.round(Math.min(h * p.r, (self.state.w || 99999) * 0.82)) + 'px') : '0px',
           pos: on ? 'center' : '25% 50%',
-          apri: function () { self.setState({ a: self.state.a === i ? -1 : i }); }
+          apri: function () { self.setState({ a: (self.state.a === i && !self.mob()) ? -1 : i }); }
         };
       }),
       bx: this.state.mx + 'px', by: this.state.my + 'px',

@@ -99,7 +99,7 @@ a{color:#EFE8DF}a:hover{color:#6CC3F0}
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Monica Acito: un racconto e un punto di vista</h1>
     <div>
-      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Una rivista dedicata alla scrittrice napoletana Monica Acito, sospesa tra la sua vita e la sua immaginazione.</p>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Una rivista di 68 pagine su Monica Acito, giovane scrittrice napoletana: l'abbiamo progettata, scritta, fotografata e impaginata in tre.</p>
       <p class="cornice" style="margin: 0; color: #6CC3F0">Progetto universitario · UniRSM 2025 · Rivista 17,5 × 25 cm, 68 pagine</p>
       <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #2D9DD5; padding: 6px 11px 5px">Approfondisci +</button>
     </div>
@@ -132,11 +132,11 @@ a{color:#EFE8DF}a:hover{color:#6CC3F0}
       </div>
       <div class="testo-p">
         <h2>Concept</h2>
-        <p>Due piani intrecciati: la persona reale e il mondo dei suoi racconti. La rivista alterna biografia, intervista, il racconto “Grazia” e “Richiesta e risposta”.</p>
+        <p>Raccontare la scrittrice intrecciando la sua vita reale e il mondo dei suoi racconti. La rivista si divide in biografia, intervista, il racconto “Grazia” e una sezione finale, “Richiesta e risposta”.</p>
         <h2>Metodo</h2>
-        <p>La persona l'abbiamo fotografata noi; il racconto l'abbiamo illustrato con l'intelligenza artificiale. In “Richiesta e risposta” i due linguaggi rispondono alla stessa idea.</p>
+        <p>Per biografia e intervista abbiamo scattato noi le fotografie, per un ritratto autentico; per il racconto abbiamo generato immagini con l'intelligenza artificiale, sospese tra realtà e fantasia. In “Richiesta e risposta” le due si confrontano: alla stessa idea rispondono una nostra foto e un'immagine generata.</p>
         <h2>Crediti</h2>
-        <p style="margin-bottom: 0">Marco Bruni, Riccardo Giordani, Emma Simoncelli.</p>
+        <p style="margin-bottom: 0">Fotografie, intervista e impaginazione di Marco Bruni, Riccardo Giordani ed Emma Simoncelli. Laboratorio di comunicazione 3, UniRSM, A.A. 2024-2025, prof.ssa Lucia Roscini con Sara Guazzarini.</p>
       </div>
     </div>
   </div>
@@ -310,7 +310,7 @@ class Component extends DCLogic {
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
-      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
+      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '220px' : '200px',
       ilx: this._ix || '-400px', ily: this._iy || '-400px',
       muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };

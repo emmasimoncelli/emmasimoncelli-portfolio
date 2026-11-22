@@ -248,7 +248,7 @@ class Component extends DCLogic {
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
-      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '300px' : '280px',
+      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '220px' : '200px',
       ilx: this._ix || '-400px', ily: this._iy || '-400px',
       muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };

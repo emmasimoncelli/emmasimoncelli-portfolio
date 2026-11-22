@@ -227,7 +227,7 @@ class Component extends DCLogic {
           tx: st.aperto ? '0px' : '120px', op: st.aperto ? 1 : 0, del: st.aperto ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s',
           su: function (e) { var o = { h: i }; if (e && e.clientX !== undefined) { o.x = e.clientX; o.y = e.clientY; } self.setState(o); }, giu: function () { self.setState({ h: -1 }); } };
       }),
-      iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: (st.aperto && st.h >= 0) ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '300px' : '280px',
+      iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: (st.aperto && st.h >= 0) ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '220px' : '200px',
       apri: function () { self.setState({ aperto: true, apertoC: false }); },
       apriC: function () { self.setState({ apertoC: true, aperto: false, h: -1 }); },
       chiudi: function () { self.setState({ aperto: false, apertoC: false, h: -1 }); },

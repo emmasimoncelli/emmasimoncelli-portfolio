@@ -12,22 +12,21 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
-body{margin:0;background:#000000}
+body{margin:0;background:#000}
 a{color:#EFE8DF}a:hover{color:#B4A9B8}
 .palco-ed,.palco-ed *{cursor:none !important}
 .cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
 .btn-menu:hover{color:#B4A9B8}
-.manif{display:block;padding:0;border:0;background:transparent;flex:none;height:max(220px, min(calc(100vh - 340px), calc(21vw * 1.3333)));aspect-ratio:3/4;cursor:pointer}
+.manif{display:block;padding:0;border:0;background:transparent;flex:none;height:max(220px, min(calc(100vh - 340px), calc(27vw * 1.4)));aspect-ratio:1100/1540;cursor:pointer}
 .manif img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
-.manif:hover img{transform:scale(1.04);box-shadow:0 16px 36px rgba(180,169,184,.22)}
+.manif:hover img{transform:scale(1.04);box-shadow:0 16px 36px rgba(180,169,184,.2)}
 .tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
-.tendinaP{position:absolute;inset:0;z-index:490;background:#000000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.tendinaP{position:absolute;inset:0;z-index:490;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
 .lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
 .lista-c a:hover{color:#D9C2FF}
 .testo-p h2{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
 .testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#E6DFE8}
-.testo-p p b{font-weight:700;color:#B4A9B8}
 .bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
 .lb{position:absolute;inset:0;z-index:600;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:40px;transition:opacity .35s}
 .tendinaI{position:absolute;inset:0;z-index:495;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
@@ -37,43 +36,6 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 .anteprima img{display:block;width:100%;height:auto}
 .anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
 .gira-i{animation:giraI 12s linear infinite}
-.scena1{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5vh;overflow:visible}
-.logo1{position:relative;width:min(58vw, calc((100vh - 430px) * 2.35), 820px);min-width:230px;aspect-ratio:354.5/151}
-.logo1 img{position:relative;z-index:1;pointer-events:none;display:block;width:100%;height:100%;animation:scrivi1 3s cubic-bezier(.6,0,.3,1) .3s both}
-@keyframes scrivi1{from{clip-path:inset(-10% 100% -10% 0)}to{clip-path:inset(-10% 0 -10% 0)}}
-.onda1{position:absolute;left:45.5%;top:62%;width:min(calc(100vh - 470px), 86vw);min-width:200px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(180,169,184,.55);transform:translate(-50%,-50%) scale(.4);opacity:0;animation:onda1 7s ease-out 3s infinite}
-.onda1.o2{animation-delay:5.33s}.onda1.o3{animation-delay:7.66s}
-@keyframes onda1{0%{transform:translate(-50%,-50%) scale(.07);opacity:0}10%{opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:0}}
-.payoff1{margin:0;font-weight:900;font-size:clamp(16px,1.6vw,24px);letter-spacing:-.01em;text-transform:uppercase;color:#EFE8DF;animation:appare1 1s ease 2.8s both}
-.payoff1 b{color:#B4A9B8}
-@keyframes appare1{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){.logo1 img,.onda1,.payoff1{animation:none}}
-.galleria-m{width:min(100%, 820px, calc((100vh - 250px) * 1.6))}
-.vetrina-m{position:relative;width:100%;aspect-ratio:16/10;background:#111;overflow:hidden}
-.vetrina-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .8s ease}
-.miniature-m{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
-.miniature-m button{padding:0;border:0;background:transparent;color:#EFE8DF;font:inherit;text-align:left;cursor:pointer;transition:opacity .3s}
-.miniature-m button:hover{opacity:1 !important}
-.miniature-m img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
-.miniature-m span{display:block;margin-top:6px;padding-top:6px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B4A9B8}
-@media (max-width: 760px){.miniature-m{grid-template-columns:repeat(3,minmax(0,1fr))}.galleria-m{width:100%}}
-.orbita{position:relative;width:min(100%, calc(100vh - 170px), 640px);aspect-ratio:1}
-.anello{position:absolute;inset:13%;border-radius:50%;border:1px solid rgba(180,169,184,.35)}
-.anello.a2{inset:30%;border-color:rgba(180,169,184,.18)}
-.centro{position:absolute;left:50%;top:50%;width:24%;transform:translate(-50%,-50%);animation:respiraO 6s ease-in-out infinite}
-@keyframes respiraO{0%,100%{transform:translate(-50%,-50%) scale(.94)}50%{transform:translate(-50%,-50%) scale(1.08)}}
-.giro{position:absolute;inset:0;animation:giraO 70s linear infinite}
-.giro:hover,.giro:hover .sat-in{animation-play-state:paused}
-@keyframes giraO{to{transform:rotate(360deg)}}
-.sat{position:absolute;left:50%;top:50%;width:25%;aspect-ratio:1;margin:-12.5% 0 0 -12.5%;transform:rotate(var(--a)) translate(150%) rotate(calc(-1 * var(--a)))}
-.sat-in{width:100%;height:100%;animation:controO 70s linear infinite}
-@keyframes controO{to{transform:rotate(-360deg)}}
-.sat button{display:block;width:100%;height:100%;padding:0;border:0;border-radius:50%;overflow:hidden;background:#222;cursor:pointer;box-shadow:0 0 0 1px rgba(180,169,184,.5);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
-.sat button:hover{transform:scale(1.12);box-shadow:0 0 0 2px #B4A9B8,0 18px 40px rgba(0,0,0,.5)}
-.sat img{display:block;width:100%;height:100%;object-fit:cover}
-.sat span{position:absolute;left:50%;top:104%;transform:translateX(-50%);white-space:nowrap;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
-@media (prefers-reduced-motion: reduce){.giro,.sat-in,.centro{animation:none}}
-
 @keyframes giraI{to{transform:rotate(360deg)}}
 @media (max-width: 760px){
 .pagina .area-vis{justify-content:flex-start !important;overflow-x:auto !important;gap:14px !important;padding-top:12px !important}
@@ -103,24 +65,45 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 *{cursor:auto !important}
 }
 .tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
-@media (max-width: 760px){.galleria-m{width:min(100%, 820px, calc((100vh - 250px) * 1.6))}
-.vetrina-m{position:relative;width:100%;aspect-ratio:16/10;background:#111;overflow:hidden}
-.vetrina-m img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .8s ease}
-.miniature-m{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}
-.miniature-m button{padding:0;border:0;background:transparent;color:#EFE8DF;font:inherit;text-align:left;cursor:pointer;transition:opacity .3s}
-.miniature-m button:hover{opacity:1 !important}
-.miniature-m img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
-.miniature-m span{display:block;margin-top:6px;padding-top:6px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B4A9B8}
-@media (max-width: 760px){.miniature-m{grid-template-columns:repeat(3,minmax(0,1fr))}.galleria-m{width:100%}}
-.orbita{width:74vw;margin:10px 0 26px}.sat span{font-size:9px}}
-@media (max-width: 760px){.pagina .area-vis.scena1{height:62svh !important;justify-content:center !important;overflow:visible !important;gap:3vh !important}.logo1{width:80vw}.onda1{width:min(54svh, 88vw)}}
+@property --lx{syntax:'<percentage>';inherits:true;initial-value:68%}
+@property --ly{syntax:'<percentage>';inherits:true;initial-value:40%}
+.scena4{position:relative;overflow:hidden;background:#CFC6BA;--lx:68%;--ly:40%;animation:vaga4 14s ease-in-out infinite alternate}
+.scena4.segui{animation:none}
+@keyframes vaga4{0%{--lx:58%;--ly:22%}35%{--lx:82%;--ly:48%}70%{--lx:66%;--ly:78%}100%{--lx:88%;--ly:30%}}
+.scena4 img.buio4,.scena4 img.luce4{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;pointer-events:none}
+.buio4{filter:brightness(.72) saturate(.9)}
+.luce4{filter:brightness(1) contrast(1.3);-webkit-mask-image:radial-gradient(circle at var(--lx) var(--ly),#000 0,rgba(0,0,0,.75) 14%,transparent 40%);mask-image:radial-gradient(circle at var(--lx) var(--ly),#000 0,rgba(0,0,0,.75) 14%,transparent 40%)}
+.bagliore4{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--lx) var(--ly),rgba(255,236,210,.12),rgba(255,236,210,0) 32%);mix-blend-mode:soft-light}
+.logo4{position:absolute;left:4%;bottom:7%;width:min(24vw,280px);height:auto;pointer-events:none}
+.palco-m{width:min(100%,820px);display:flex;flex-direction:column;gap:16px}
+.schede-m{display:flex;flex-wrap:wrap;gap:8px}
+.scheda-m{padding:9px 16px;border:1.5px solid #B4A9B8;border-radius:999px;background:transparent;color:#EFE8DF;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:background .25s,color .25s}
+.scheda-m:hover{background:rgba(180,169,184,.2)}
+.scheda-m.on{background:#B4A9B8;color:#000}
+.scena-m{height:calc(100vh - 230px);min-height:380px;flex-direction:column;align-items:center;justify-content:center;gap:12px;animation:entra-m .5s ease both}
+@keyframes entra-m{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.nota-m{margin:0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
+.telefono-m{height:calc(100% - 30px);aspect-ratio:9/18.5;padding:10px;border-radius:34px;background:#1A1A1A;box-shadow:0 0 0 1px #333,0 30px 60px rgba(0,0,0,.5)}
+.schermo-m{width:100%;height:100%;border-radius:26px;overflow-y:auto;background:#F6F2EC;scrollbar-width:none}
+.schermo-m::-webkit-scrollbar{display:none}
+.schermo-m img{display:block;width:100%;height:auto}
+.giro-m{position:relative;width:min(100%,560px);aspect-ratio:920/598;padding:0;border:0;background:transparent;cursor:pointer;perspective:1400px}
+.giro-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.giro-m.girato .giro-in{transform:rotateY(180deg)}
+.faccia-m{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.retro-m{transform:rotateY(180deg)}
+.doppia-m{justify-content:center}
+.zoom-m{display:block;min-height:0;flex:1 1 0;padding:0;border:0;background:transparent;cursor:zoom-in}
+.zoom-m img{display:block;width:100%;height:100%;object-fit:contain}
+@media (prefers-reduced-motion: reduce){.scena4{animation:none}.giro-in{transition:none}}
+@media (max-width: 760px){.scena-m{height:auto !important;min-height:0}.telefono-m{height:72svh}.zoom-m{flex:none;width:100%}.logo4{width:40vw}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
 <body>
 <template id="dc-template">
 
-<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: #000000; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
+<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: #000; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
 
   <header class="cornice" style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw 0">
     <button type="button" class="btn-menu" onClick="{{apriI}}">← Progetti</button>
@@ -133,22 +116,21 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Mind</h1>
     <div>
-      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Brand identity per Mind, un centro di massaggi, estetica e percorsi olistici.</p>
-      <p class="cornice" style="margin: 0; color: #B4A9B8">Brand identity · Logo, payoff, applicazioni</p>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Brand identity per Mind, centro estetico e olistico: un marchio pensato per essere toccato, oltre che guardato.</p>
+      <p class="cornice" style="margin: 0; color: #B4A9B8">Brand identity · Logo, fotografia, stampa, social</p>
       <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #B4A9B8; padding: 6px 11px 5px">Approfondisci +</button>
     </div>
   </div>
 
-  <div class="area-vis scena1" style="flex: 1 1 auto; min-height: 0; margin: 0 4vw 4vh">
-    <div class="logo1">
-      <span class="onda1"></span><span class="onda1 o2"></span><span class="onda1 o3"></span>
-      <img src="a/9a33b35417b26ee3e5e51f35a79969ba.svg" alt="Il logo mind">
-    </div>
-    <p class="payoff1">Abbraccia il tuo <b>equilibrio</b></p>
+  <div class="area-vis scena4" onMouseMove="{{luce}}" onMouseLeave="{{luceVia}}" style="flex: 1 1 auto; min-height: 0; margin: 0 4vw 4vh">
+    <img class="buio4" src="a/2d37befa565f77cc98e7013e2226b43c.jpg" alt="">
+    <img class="luce4" src="a/2d37befa565f77cc98e7013e2226b43c.jpg" alt="Il pittogramma di Mind inciso a secco su carta avorio">
+    <span class="bagliore4" aria-hidden="true"></span>
+    <img class="logo4" src="a/77b5b9c6074ccb41326cc4454165ae7f.svg" alt="Mind">
   </div>
 
-  <div class="lb" role="dialog" aria-label="Immagine ingrandita" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
-    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,.4)">
+  <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
+    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(180,169,184,.2)">
   </div>
 
   <div class="tendinaP" aria-hidden="{{nascostoP}}" style="transform: translateX({{txP}})">
@@ -157,27 +139,34 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
       <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
     </div>
     <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 820px) minmax(0, 400px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
-      <div class="galleria-m" onMouseEnter="{{fermaG}}" onMouseLeave="{{riprendiG}}">
-        <div class="vetrina-m">
-          <sc-for list="{{foto}}" as="f" hint-placeholder-count="5">
-            <img src="{{f.src}}" alt="{{f.alt}}" style="opacity: {{f.op}}">
-          </sc-for>
+      <div class="palco-m">
+        <div class="schede-m" role="group" aria-label="Applicazioni"><button type="button" class="scheda-m {{s0}}" onClick="{{v0}}" aria-pressed="{{p0}}">Instagram</button><button type="button" class="scheda-m {{s1}}" onClick="{{v1}}" aria-pressed="{{p1}}">Biglietto</button><button type="button" class="scheda-m {{s2}}" onClick="{{v2}}" aria-pressed="{{p2}}">Poster e buono</button><button type="button" class="scheda-m {{s3}}" onClick="{{v3}}" aria-pressed="{{p3}}">Carta e sito</button></div>
+        <div class="scena-m" style="display: {{d0}}">
+          <div class="telefono-m"><div class="schermo-m"><img src="a/759403cb5efd593f083bebb5c365f3d0.jpg" alt="Il profilo Instagram di Mind: griglia a scacchiera di foto e grafiche"></div></div>
+          <p class="nota-m">scorri il feed</p>
         </div>
-        <div class="miniature-m">
-          <sc-for list="{{foto}}" as="f" hint-placeholder-count="5">
-            <button type="button" onClick="{{f.scegli}}" aria-label="{{f.alt}}" aria-pressed="{{f.premuto}}" style="opacity: {{f.opm}}"><img src="{{f.src}}" alt=""><span style="border-top: {{f.bordo}}">{{f.et}}</span></button>
-          </sc-for>
+        <div class="scena-m" style="display: {{d1}}">
+          <button type="button" class="giro-m {{gcls}}" onClick="{{gira}}" aria-label="Gira il biglietto da visita"><span class="giro-in"><img class="faccia-m" src="a/d11001c1f36415bac180e198b732ea96.jpg" alt="Fronte del biglietto: pittogramma inciso su carta prugna"><img class="faccia-m retro-m" src="a/e37ad5e8525c2fc12e7ee9c69442de75.jpg" alt="Retro del biglietto: pittogramma in rilievo su carta avorio"></span></button>
+          <p class="nota-m">clicca per girarlo: l'incisione del fronte diventa rilievo sul retro</p>
+        </div>
+        <div class="scena-m doppia-m" style="display: {{d2}}">
+          <button type="button" class="zoom-m" onClick="{{z0}}" aria-label="Ingrandisci i poster"><img src="a/8fe23d9fe260443331e3a9c35240f195.jpg" alt="Serie di poster di Mind"></button>
+          <button type="button" class="zoom-m" onClick="{{z1}}" aria-label="Ingrandisci il buono regalo"><img src="a/8cacde17ec9e91a5b2b1f0f9d22e4bc9.jpg" alt="Buono regalo di Mind"></button>
+        </div>
+        <div class="scena-m doppia-m" style="display: {{d3}}">
+          <button type="button" class="zoom-m" onClick="{{z2}}" aria-label="Ingrandisci la carta dei trattamenti"><img src="a/fc288ec947005270ff9a38fe6b7c673f.jpg" alt="Carta dei trattamenti e carta intestata di Mind"></button>
+          <button type="button" class="zoom-m" onClick="{{z3}}" aria-label="Ingrandisci il sito"><img src="a/5b40c24173a87b08dda93c83106e970e.jpg" alt="Homepage del sito di Mind"></button>
         </div>
       </div>
       <div class="testo-p">
         <h2>Il concetto</h2>
-        <p>La i del logo è una persona a braccia aperte che stringe a sé le lettere vicine: cura del corpo e ascolto, insieme.</p>
-        <h2>Il payoff</h2>
-        <p>“Abbraccia il tuo <b>equilibrio</b>”: la parola più forte abbraccia la frase, come la i abbraccia il logo.</p>
+        <p>La i del logo è una persona a braccia aperte che stringe a sé le lettere vicine. È quello che succede da Mind: qualcuno si prende cura del corpo e intanto ascolta tutto il resto.</p>
+        <h2>Il segno</h2>
+        <p>Il pittogramma vive sempre nello stesso punto, grande e tagliato in alto a destra, tono su tono. Sulla carta diventa un'incisione a secco: il biglietto ha l'incisione sul fronte e il rilievo sul retro.</p>
+        <h2>La fotografia</h2>
+        <p>Mani, pelle, olio, da vicino e in luce calda. Ogni foto passa dalla stessa correzione, ombre verso il prugna e luci verso l'avorio, così sembrano tutte dello stesso servizio.</p>
         <h2>Le applicazioni</h2>
-        <p>Biglietti, poster, social, buono regalo e sito condividono la stessa materia e lo stesso tono calmo.</p>
-        <h2>La materia</h2>
-        <p style="margin-bottom: 0">Ogni colore è una superficie: intonaco, sabbia, pelle. Il pittogramma si imprime, si disegna con la crema, si incide.</p>
+        <p style="margin-bottom: 0">Un feed a scacchiera tra foto e grafica, poster per la cabina e la vetrina, buono regalo, carta dei trattamenti, carta intestata e sito.</p>
       </div>
     </div>
   </div>
@@ -223,16 +212,11 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "Mind", "href": "mind.html", "img": "a/a16172e6abb63de71a2dffe82b94600e.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "Mind", "href": "mind.html", "img": "a/518a2dbce15d2d160a2b57c03518ff21.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
     var B = 'a/';
-    this.M = [
-      [B + 'a16172e6abb63de71a2dffe82b94600e.jpg', 'Il pittogramma disegnato con la crema sulla pelle', 'crema sulla pelle'],
-      [B + 'ed3597dab6b827d3862ca046fc2486be.jpg', 'Il pittogramma impresso nella sabbia', 'impronta nella sabbia'],
-      [B + 'e4d10cf09a0cd5e933328163f22268da.jpg', 'Il pittogramma in rilievo sulla carta', 'rilievo su carta'],
-      [B + '9fbdbbd589fdea286f439c5ce75a46ab.jpg', "Il pittogramma inciso nell'intonaco", "inciso nell'intonaco"]
-    ];
-    this.F = [["a/ad369f6b041aeea78fa6e62d3b745d8b.jpg", "Biglietti da visita di Mind", "Biglietti da visita"], ["a/8d29255f5eb0ffaa2cb4be81e5224179.jpg", "Serie di poster di Mind", "Poster"], ["a/00e742812f9ce9627ca1bf7019fceb45.jpg", "Post e storia Instagram di Mind", "Instagram"], ["a/68196dc33693c1501ec95febb59429f6.jpg", "Buono regalo di Mind", "Buono regalo"], ["a/6712ffc4442d72760443eb1ac68353b1.jpg", "Homepage del sito di Mind", "Sito web"]];
-    this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0 };
+    this.M = [['a/8fe23d9fe260443331e3a9c35240f195.jpg', 'Serie di poster di Mind'], ['a/8cacde17ec9e91a5b2b1f0f9d22e4bc9.jpg', 'Buono regalo di Mind'], ['a/fc288ec947005270ff9a38fe6b7c673f.jpg', 'Carta dei trattamenti e carta intestata di Mind'], ['a/5b40c24173a87b08dda93c83106e970e.jpg', 'Homepage del sito di Mind']]
+    this.F = [['a/78ca1aaaea83f7c958194547cad66a2e.jpg', 'I tre manifesti esposti in galleria']];
+    this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0, tm: 0, girato: false };
   }
   posI(e) {
     if (!e || e.clientX === undefined) { return; }
@@ -251,12 +235,6 @@ class Component extends DCLogic {
       muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
     };
   }
-  componentDidMount() {
-    var self = this;
-    var calmo = false; try { calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-    if (!calmo) { this.giroG = setInterval(function () { if (!self.pausa && self.state.apertoP) { self.setState({ fi: (self.state.fi + 1) % self.F.length }); } }, 4500); }
-  }
-  componentWillUnmount() { if (this.giroG) { clearInterval(this.giroG); } }
   tasti(e) {
     var t = e.target && e.target.tagName; if (t === 'INPUT' || t === 'TEXTAREA') { return; }
     var st = this.state, k = e.key, L = this.M;
@@ -268,15 +246,22 @@ class Component extends DCLogic {
     var d = k === 'ArrowRight' ? 1 : -1;
     if (L && st.lb >= 0 && L.length > 1) { e.preventDefault(); this.setState({ lb: (st.lb + d + L.length) % L.length }); return; }
     if (st.apertoC || st.apertoI || st.lb >= 0) { return; }
-    if (st.apertoP && this.F && this.F.length > 1) { e.preventDefault(); this.setState({ fi: ((st.fi || 0) + d + this.F.length) % this.F.length }); return; }
+    if (st.apertoP) { e.preventDefault(); this.setState({ tm: (st.tm + d + 4) % 4 }); return; }
   }
   renderVals() {
     if (!this._kb) { this._kb = true; var me = this; try { window.addEventListener('keydown', function (e) { me.tasti(e); }); } catch (x) {} }
     var self = this, st = this.state;
     return Object.assign(this.valsIndice(), {
-      manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], et: m[2], ang: (i * 90 - 45) + 'deg', apri: function () { self.setState({ lb: i }); } }; }),
-      fermaG: function () { self.pausa = true; }, riprendiG: function () { self.pausa = false; },
-      foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], et: f[2], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
+      v0: function () { self.setState({ tm: 0 }); }, s0: st.tm === 0 ? 'on' : '', p0: st.tm === 0 ? 'true' : 'false', d0: st.tm === 0 ? 'flex' : 'none',
+      v1: function () { self.setState({ tm: 1 }); }, s1: st.tm === 1 ? 'on' : '', p1: st.tm === 1 ? 'true' : 'false', d1: st.tm === 1 ? 'flex' : 'none',
+      v2: function () { self.setState({ tm: 2 }); }, s2: st.tm === 2 ? 'on' : '', p2: st.tm === 2 ? 'true' : 'false', d2: st.tm === 2 ? 'flex' : 'none',
+      v3: function () { self.setState({ tm: 3 }); }, s3: st.tm === 3 ? 'on' : '', p3: st.tm === 3 ? 'true' : 'false', d3: st.tm === 3 ? 'flex' : 'none',
+      z0: function () { self.setState({ lb: 0 }); }, z1: function () { self.setState({ lb: 1 }); }, z2: function () { self.setState({ lb: 2 }); }, z3: function () { self.setState({ lb: 3 }); },
+      gira: function () { self.setState({ girato: !st.girato }); }, gcls: st.girato ? 'girato' : '',
+      luce: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.classList.add('segui'); el.style.setProperty('--lx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%'); el.style.setProperty('--ly', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%'); },
+      luceVia: function (e) { e.currentTarget.classList.remove('segui'); },
+      manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], apri: function () { self.setState({ lb: i }); } }; }),
+      foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
       lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',
       lbSrc: st.lb >= 0 ? this.M[st.lb][0] : this.M[0][0], lbAlt: st.lb >= 0 ? this.M[st.lb][1] : '',
       chiudiLb: function () { self.setState({ lb: -1 }); },

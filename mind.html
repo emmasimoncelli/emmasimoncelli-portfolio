@@ -123,8 +123,14 @@ html{scroll-behavior:smooth}
 .stretto7{justify-items:center}.stretto7 img{width:auto;max-width:min(100%,620px);max-height:88svh}
 .vis7{display:flex;justify-content:center;padding:4vh 4vw 6vh}
 .vis7 > *{max-width:100%}
-.split7{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5vw;align-items:center;padding:8vh 4vw}
+.split7{display:grid;grid-template-columns:auto minmax(0,720px);justify-content:start;gap:5vw;align-items:center;padding:8vh 4vw}
 .split7 .vis7{padding:0;justify-content:flex-start}
+.neon7{justify-items:center;padding:4vh 4vw 6vh}.neon7 img{width:min(76vw,1000px)}
+.pila7{position:relative;width:min(92vw,620px);aspect-ratio:1/1.05;margin:2vh auto 4vh}
+.pila7 img{position:absolute;width:58%;height:auto;box-shadow:0 24px 50px rgba(0,0,0,.6);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pila7 .pa7{left:4%;top:2%;transform:rotate(-5deg);z-index:1}
+.pila7 .pb7{right:4%;top:22%;transform:rotate(4deg);z-index:2}
+.pila7 img:hover{z-index:3;transform:rotate(0deg) scale(1.03)}
 .gira7wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
 .gira7{background:none;border:0;padding:0;cursor:pointer;perspective:1600px;width:min(100%,760px)}
 .carta7{position:relative;display:block;aspect-ratio:910/588;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
@@ -142,7 +148,7 @@ html{scroll-behavior:smooth}
 .tendina,.tendinaI,.lb{position:fixed !important}
 @keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
-@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.split7{grid-template-columns:1fr;padding:6vh 5vw;gap:28px}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:36px;height:36px}}
+@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.split7{grid-template-columns:1fr;padding:6vh 5vw;gap:28px}.pila7{aspect-ratio:1/1.15}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:36px;height:36px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -159,7 +165,7 @@ html{scroll-behavior:smooth}
     <div>
       <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Brand identity per Mind, centro estetico e olistico: un marchio pensato per essere toccato, oltre che guardato.</p>
       <p class="cornice" style="margin: 0; color: #B4A9B8">Brand identity · Logo, fotografia, stampa, social</p>
-      <button type="button" class="cornice scorri7" onClick="{{scorri}}">Scorri ↓</button>
+      <button type="button" class="cornice scorri7" onClick="{{scorri}}">Approfondisci +</button>
     </div>
   </div>
 

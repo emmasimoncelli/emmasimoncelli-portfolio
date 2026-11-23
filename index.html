@@ -133,6 +133,10 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 .logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
 @keyframes respira7{0%,100%{transform:translateZ(0) scale(.92)}50%{transform:translateZ(0) scale(1.1)}}
 @media (max-width: 760px){.logo7{width:36px;height:36px}}
+.indiceA{background:#000;padding:9vh 4vw 10vh}
+.indiceA .voce6{font-size:4.6vw}
+html{scroll-behavior:smooth}
+@media (max-width: 760px){.indiceA{padding:7vh 5vw 8vh}.indiceA .voce6{font-size:8.5vw}}
 .picc{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF}
 .frasep{margin:0;font-weight:800;font-size:clamp(17px,1.5vw,22px);line-height:1.2;letter-spacing:-.01em;text-transform:uppercase}
 .frasep em{font-style:normal;color:inherit}
@@ -178,8 +182,8 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
   <header class="cornice testata" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 18px 4vw">
     <a class="logo7" href="index.html" aria-label="Emma Simoncelli, About me"><svg viewBox="80 20 840 640" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg></a>
     <nav aria-label="Menu" style="display: flex; gap: 28px">
-      <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
-      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+      <button type="button" class="btn-menu" onClick="{{vaiP}}">Progetti</button>
+      <button type="button" class="btn-menu" onClick="{{vaiC}}">Contatti</button>
     </nav>
   </header>
 
@@ -190,6 +194,18 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
       <div class="testoE"><h1 class="nomeE">Emma<br>Simoncelli</h1><p class="frasep gdE">Graphic designer</p><div class="parE parD"><p class="frasep">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un <em>segno.</em></p><p class="parp">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p></div></div>
     </div>
     <div class="parE parM"><p class="frasep">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un <em>segno.</em></p><p class="parp">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p></div>
+  </section>
+  <section class="indiceA" id="progetti">
+    <p class="gruppo2">Progetti</p>
+    <nav aria-label="Progetti">
+      <sc-for list="{{progetti}}" as="p" hint-placeholder-count="6">
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span></a>
+      </sc-for>
+    </nav>
+    <div class="anteprima" aria-hidden="true" style="position: fixed; left: {{cx}}; top: {{cy}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+      <img class="{{icls}}" src="{{iimg}}" alt="">
+      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
+    </div>
   </section>
   <section class="cv2">
       <p class="gruppo2">Esperienze lavorative</p>
@@ -211,43 +227,10 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
       <div><p class="gruppo2">Expertise</p><p class="lista2">Brand design <i>/</i> Editorial design <i>/</i> Typography <i>/</i> Photo editing <i>/</i> Digital assets</p></div>
     </div>
   </section>
-  <footer class="piede2">
+  <footer class="piede2" id="contatti">
     <p style="margin: 0; font-weight: 900; font-size: 5vw; line-height: .92; letter-spacing: -.04em; text-transform: uppercase">Contattami!</p>
     <div class="lista-c"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/">LinkedIn</a><a href="https://www.instagram.com/emmasimoncelli/">Instagram</a><span>Riccione (RN), Italia</span><span style="color: #C9A8FF">© 2026 Emma Simoncelli</span></div>
   </footer>
-  </div>
-
-  <div class="tendina" aria-hidden="{{nascosto}}" onMouseMove="{{muovi}}" style="transform: translateX({{tx}})">
-    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
-      <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
-      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
-    </div>
-    <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
-      <sc-for list="{{progetti}}" as="p" hint-placeholder-count="6">
-        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span></a>
-      </sc-for>
-    </nav>
-    <div class="anteprima" aria-hidden="true" style="position: fixed; left: {{cx}}; top: {{cy}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
-      <img class="{{icls}}" src="{{iimg}}" alt="">
-      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
-    </div>
-  </div>
-
-  <div class="tendina" aria-hidden="{{nascostoC}}" onMouseMove="{{muovi}}" style="transform: translateX({{txC}}); background: #4B1F8F; z-index: 510">
-    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
-      <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
-      <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
-    </div>
-    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
-      <div class="lista-c" style="width: min(360px, 100%); opacity: {{opC}}; transform: translateX({{trC}}); transition: opacity .5s .3s, transform .6s .3s cubic-bezier(.2,.8,.2,1)">
-        <p class="titC">Contattami!</p>
-        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
-        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
-        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}">Instagram</a>
-        <span>Riccione (RN), Italia</span>
-        <span style="color: #C9A8FF; border-bottom: 1px solid rgba(255,255,255,.28)">© 2026 Emma Simoncelli</span>
-      </div>
-    </div>
   </div>
 
   <div class="cursore" aria-hidden="true" style="left: {{cx}}; top: {{cy}}; width: {{cw}}; height: {{cw}}; background: {{cbg}}; opacity: {{cop}}"></div>
@@ -267,6 +250,7 @@ class Component extends DCLogic {
     try { if (window.location.hash === '#progetti') { this.setState({ aperto: true }); } } catch (e) {}
   }
   renderVals() {
+    if (!this._hash) { this._hash = true; try { var hh = location.hash.slice(1); if (hh) { setTimeout(function () { var el = document.getElementById(hh); if (el) { el.scrollIntoView(); } }, 400); } } catch (e) {} }
     var self = this, st = this.state;
     return {
       r0: function () { self.setState({ ap: st.ap === 0 ? -1 : 0 }); }, e0: st.ap === 0 ? 'true' : 'false', g0: st.ap === 0 ? '1fr' : '0fr', t0: st.ap === 0 ? '45deg' : '0deg',
@@ -277,11 +261,12 @@ class Component extends DCLogic {
       r5: function () { self.setState({ ap: st.ap === 5 ? -1 : 5 }); }, e5: st.ap === 5 ? 'true' : 'false', g5: st.ap === 5 ? '1fr' : '0fr', t5: st.ap === 5 ? '45deg' : '0deg',
       tx: st.aperto ? '0%' : '100%', nascosto: st.aperto ? 'false' : 'true',
       progetti: this.P.map(function (p, i) {
-        return { titolo: p.t, kw: ({"tesi.html": "Editorial", "mind.html": "Brand identity", "edicola518.html": "Poster design & visuals", "acito.html": "Editorial", "leave-the-spikes.html": "Poster design & visuals", "underground.html": "Brand identity"})[p.href] || '', href: p.href, tab: st.aperto ? 0 : -1,
-          tx: st.aperto ? '0px' : '120px', op: st.aperto ? 1 : 0, del: st.aperto ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s',
+        return { titolo: p.t, kw: ({"tesi.html": "Editorial", "mind.html": "Brand identity", "edicola518.html": "Poster design & visuals", "acito.html": "Editorial", "leave-the-spikes.html": "Poster design & visuals", "underground.html": "Brand identity"})[p.href] || '', href: p.href,
           su: function (e) { var o = { h: i }; if (e && e.clientX !== undefined) { o.x = e.clientX; o.y = e.clientY; } self.setState(o); }, giu: function () { self.setState({ h: -1 }); } };
       }),
-      iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: (st.aperto && st.h >= 0) ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '220px' : '200px',
+      iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: st.h >= 0 ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '220px' : '200px',
+      vaiP: function () { var el = document.getElementById('progetti'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); } },
+      vaiC: function () { var el = document.getElementById('contatti'); if (el) { el.scrollIntoView({ behavior: 'smooth' }); } },
       apri: function () { self.setState({ aperto: true, apertoC: false }); },
       apriC: function () { self.setState({ apertoC: true, aperto: false, h: -1 }); },
       chiudi: function () { self.setState({ aperto: false, apertoC: false, h: -1 }); },

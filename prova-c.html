@@ -125,10 +125,11 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 @keyframes entra{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 .eroeC{position:relative;height:100svh;min-height:640px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center}
 .stellaC{position:absolute;left:50%;top:50%;width:min(96vw,1400px);transform:translate(-50%,-50%) rotate(-4deg);overflow:visible}
-.stellaC path{fill:none;stroke:#8C5CFF;stroke-width:1.6;stroke-linejoin:round;stroke-dasharray:8000;stroke-dashoffset:8000;animation:disegna 2.6s .2s cubic-bezier(.6,0,.3,1) forwards}
+.stellaC path{fill:none;stroke:#8C5CFF;stroke-width:1.6;stroke-linejoin:round;stroke-dasharray:8000;stroke-dashoffset:8000;animation:disegna 3.2s .5s cubic-bezier(.6,0,.3,1) forwards}
 @keyframes disegna{to{stroke-dashoffset:0}}
 .nomeC{position:relative;z-index:2;margin:0;font-weight:900;font-size:9vw;line-height:.85;letter-spacing:-.05em;text-transform:uppercase;text-align:center}
-.bolloC{position:absolute;right:6vw;top:11vh;width:min(15vw,230px);transform:rotate(5deg);z-index:3;filter:drop-shadow(0 16px 30px rgba(0,0,0,.6));animation:entra 1s .4s both}
+.bolloC{position:absolute;right:6vw;top:11vh;width:min(15vw,230px);rotate:5deg;z-index:3;filter:drop-shadow(0 16px 30px rgba(0,0,0,.6));animation:entra 1s .4s both;transition:scale .45s cubic-bezier(.2,.8,.2,1),filter .45s}
+.bolloC:hover{scale:1.07;filter:drop-shadow(0 24px 44px rgba(0,0,0,.7))}
 .notaC{position:absolute;right:calc(6vw + min(15vw,230px) + 28px);top:14vh;width:min(26vw,340px);text-align:right;z-index:3}
 .firmaC{position:absolute;left:10vw;top:calc(50% + 9.5vw);width:min(30vw,440px);transform:rotate(-6deg);z-index:3}
 .annoC{position:absolute;right:6vw;bottom:5vh;z-index:3}
@@ -155,7 +156,6 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
     <img class="bolloC" src="a/0c3295eced50a6242d0b6617c4f670f7.png" alt="Emma Simoncelli">
     <p class="frasep notaC">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un <em>segno.</em></p>
     <h1 class="nomeC">Emma<br>Simoncelli</h1>
-    <img class="firmaC nome-mano" src="a/4e0223b96e6b43584891d2507cfb632f.svg" alt="">
     <p class="parp parC">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p>
     <p class="picc annoC">Graphic designer</p>
   </section>

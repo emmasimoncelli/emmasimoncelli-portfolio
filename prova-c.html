@@ -127,20 +127,23 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 .stellaC{position:absolute;left:50%;top:50%;width:min(90vw,1400px,calc((100svh - 70px) * 1.35));transform:translate(-50%,-50%) rotate(-4deg);overflow:visible}
 .stellaC path{fill:none;stroke:#8C5CFF;stroke-width:1.6;stroke-linejoin:round;stroke-dasharray:8000;stroke-dashoffset:8000;animation:disegna 3.2s .5s cubic-bezier(.6,0,.3,1) forwards}
 @keyframes disegna{to{stroke-dashoffset:0}}
+@keyframes riempi{0%,100%{fill-opacity:0}50%{fill-opacity:1}}
+@media (hover: none){.stellaC path{animation:disegna 3.2s .5s cubic-bezier(.6,0,.3,1) forwards,riempi 4s 4s ease-in-out infinite}}
 .stellaC path{fill:#8C5CFF;fill-opacity:0;pointer-events:all;transition:fill-opacity .5s ease}
 .eroeC:has(.nomeC:hover) .stellaC path,.stellaC path:hover{fill-opacity:1}
 .nomeC{cursor:default}
 .nomeC{position:relative;z-index:2;margin:0;font-weight:900;font-size:9vw;line-height:.85;letter-spacing:-.05em;text-transform:uppercase;text-align:center}
-.bolloC{position:absolute;right:6vw;top:12vh;width:min(14vw,210px);rotate:3deg;z-index:3;animation:entra 1s .4s both;transition:scale .45s cubic-bezier(.2,.8,.2,1)}
+.bolloC{position:absolute;right:5vw;top:50%;margin-top:calc(min(14vw,210px) * -0.62);width:min(14vw,210px);rotate:3deg;z-index:3;animation:entra 1s .4s both;transition:scale .45s cubic-bezier(.2,.8,.2,1)}
 .bolloC img{display:block;width:100%;height:auto}
 .bolloC svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 .bolloC path{fill:none;stroke:#fff;stroke-width:1.3;vector-effect:non-scaling-stroke;stroke-linecap:round}
 .bolloC:hover{scale:1.07}
-.notaC{position:absolute;right:calc(6vw + min(14vw,210px) + 34px);top:14vh;text-align:right;z-index:3}
+.centroC{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.6vw}
+.notaC{position:relative;z-index:3;font-size:clamp(18px,1.9vw,30px) !important;text-align:center}
 .firmaC{position:absolute;left:10vw;top:calc(50% + 9.5vw);width:min(30vw,440px);transform:rotate(-6deg);z-index:3}
 .annoC{position:absolute;right:6vw;bottom:5vh;z-index:3}
 .parC{position:absolute;left:4vw;bottom:5vh;max-width:460px;z-index:3}
-@media (max-width: 760px){.eroeC{height:auto;min-height:100svh;flex-direction:column;padding:80px 5vw 40px;gap:24px;justify-content:flex-start}.stellaC{top:calc(80px + 28svh + 7vw);width:96vw}.nomeC{font-size:15vw;margin-top:28svh}.bolloC{right:6vw;top:80px;width:34vw}.notaC{position:static;width:auto;text-align:left;order:3}.firmaC{position:relative;left:auto;top:auto;width:62vw}.annoC{display:none}.parC{position:static;order:4}}
+@media (max-width: 760px){.eroeC{height:auto;min-height:100svh;flex-direction:column;padding:80px 5vw 40px;gap:24px;justify-content:flex-start}.stellaC{top:calc(80px + 28svh + 7vw);width:96vw}.nomeC{font-size:15vw}.centroC{margin-top:28svh;gap:12px}.bolloC{right:6vw;top:80px;margin-top:0;width:34vw}.firmaC{position:relative;left:auto;top:auto;width:62vw}.annoC{display:none}.parC{position:static;order:4}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -160,8 +163,7 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
   <section class="eroeC">
     <svg class="stellaC" viewBox="0 -40 1000 740" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg>
     <div class="bolloC"><img src="a/baea4ca0239156cc5502e0f12d8f217a.jpg" alt="Emma Simoncelli"><svg viewBox="0 0 100 124" preserveAspectRatio="none" aria-hidden="true"><path d="M-5,-3 C20,-4.5 60,-2 105,-4 C104.5,30 106,80 104,128 C70,127 30,129.5 -4,127 C-6,90 -3.5,40 -5,-3"/><path d="M-2.5,-6 C35,-5 70,-7 102,-5.5 C103,40 101.5,90 103,125.5 C60,126.5 25,124.5 -3,126 C-2,80 -4,30 -2.5,-6"/></svg></div>
-    <p class="frasep notaC" style="font-size:clamp(20px,2vw,30px)">Graphic designer</p>
-    <h1 class="nomeC">Emma<br>Simoncelli</h1>
+    <div class="centroC"><h1 class="nomeC">Emma<br>Simoncelli</h1><p class="frasep notaC">Graphic designer</p></div>
     <div class="parC"><p class="frasep">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un <em>segno.</em></p><p class="parp">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p></div>
   </section>
   <section class="cv2">

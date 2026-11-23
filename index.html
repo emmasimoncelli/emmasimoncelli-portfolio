@@ -147,6 +147,11 @@ html{scroll-behavior:smooth}
 .barra7 a,.barra7 button{color:#FFFFFF !important;background:none;border:0;padding:0;font:inherit;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer}
 .barra7 a:hover,.barra7 button:hover{color:#1A0B33 !important}
 @media (max-width: 760px){.barra7{padding:10px 5vw}.barra7 .logo7b{width:40px;height:40px}}
+.voce6{position:relative}
+.voce6 .kw6{margin-left:auto}
+.fr6{flex:none;font-weight:400;font-size:clamp(22px,2.4vw,38px);line-height:1;color:#FFFFFF;transition:transform .35s cubic-bezier(.2,.8,.2,1),color .25s}
+.voce6:hover .fr6{transform:translate(6px,-6px);color:#C9A8FF}
+@media (max-width: 760px){.voce6 .kw6{margin-left:0}.voce6{padding-right:40px !important}.fr6{position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px}.voce6:hover .fr6{transform:translateY(-50%)}}
 .picc{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF}
 .frasep{margin:0;font-weight:800;font-size:clamp(17px,1.5vw,22px);line-height:1.2;letter-spacing:-.01em;text-transform:uppercase}
 .frasep em{font-style:normal;color:inherit}
@@ -211,7 +216,7 @@ html{scroll-behavior:smooth}
     <p class="gruppo2">Progetti</p>
     <nav aria-label="Progetti">
       <sc-for list="{{progetti}}" as="p" hint-placeholder-count="6">
-        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span></a>
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span><span class="fr6" aria-hidden="true">↗</span></a>
       </sc-for>
     </nav>
     <div class="anteprima" aria-hidden="true" style="position: fixed; left: {{cx}}; top: {{cy}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">

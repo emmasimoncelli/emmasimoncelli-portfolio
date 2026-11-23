@@ -102,11 +102,11 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 @media (max-width: 760px){.titC{font-size:8vw}.piede2 > p{font-size:8vw !important}}
 
 .eroe7{position:relative;height:100svh;min-height:700px;overflow:hidden;display:flex;flex-direction:column}
-.testata7{position:relative;z-index:3;display:flex;align-items:center;gap:22px;padding:18px 4vw 0}
+.testata7{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 4vw 0}
 .logo7{display:block;width:34px;height:34px;flex:none}
-.logo7 svg{width:100%;height:100%;overflow:visible;animation:gira7 14s linear infinite}
+.logo7 svg{width:100%;height:100%;overflow:visible;animation:respira7 3.2s ease-in-out infinite}
 .logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
-@keyframes gira7{to{transform:rotate(360deg)}}
+@keyframes respira7{0%,100%{transform:scale(.9)}50%{transform:scale(1.12)}}
 .nav7{display:flex;gap:24px}
 .scorri7{display:inline-block;margin-top:14px;color:#000;background:#B4A9B8;padding:6px 11px 5px;text-decoration:none}
 .scorri7:hover{color:#000;background:#EFE8DF}
@@ -116,14 +116,20 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 .imm7{padding:0 4vw;display:grid;gap:2vw}
 .imm7 img{display:block;width:100%;height:auto}
 .due7{grid-template-columns:1fr 1fr}
-.tre7{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;margin-top:2vw}
-.tre7 img{aspect-ratio:4/5;object-fit:cover}
+.tre7{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.tre7 img{height:auto}
 .uno7 img{max-height:72svh;object-fit:cover}
-.compo7{display:flex;justify-content:center;padding-top:2vh;overflow:hidden}
+.compo7{display:flex;justify-content:center;padding:4vh 4vw 6vh}
 .compo7 .compo5{width:min(100%,1100px);height:min(80svh,760px)}
-.pross7{display:grid;grid-template-columns:minmax(0,1fr) min(26vw,360px);align-items:end;gap:4vw;margin-top:18vh;padding:6vh 4vw 8vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
+.pross7{display:grid;grid-template-columns:minmax(0,1fr) min(14vw,200px);align-items:end;gap:3vw;margin-top:14vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
 .pross7 .cornice{grid-column:1/-1;color:#B4A9B8}
-.pt7{font-weight:900;font-size:7vw;white-space:nowrap;line-height:.9;letter-spacing:-.05em;text-transform:uppercase;transition:color .3s}
+.gira7wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.gira7{background:none;border:0;padding:0;cursor:pointer;perspective:1600px;width:min(100%,760px)}
+.carta7{position:relative;display:block;aspect-ratio:910/588;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.carta7 img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.carta7 .r7{transform:rotateY(180deg)}
+.nota7{margin:0;color:#B4A9B8}
+.pt7{font-weight:900;font-size:3.6vw;white-space:nowrap;line-height:.9;letter-spacing:-.05em;text-transform:uppercase;transition:color .3s}
 .fr7{display:inline-block;transition:transform .3s}
 .pross7:hover .pt7{color:#FF5A4F}
 .pross7:hover .fr7{transform:translateX(2vw)}
@@ -132,7 +138,7 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 .tendina,.tendinaI,.lb{position:fixed !important}
 @keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
-@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px}.due7,.tre7{grid-template-columns:1fr}.tre7{margin-top:12px}.compo7 .compo5{height:min(78vw,52svh)}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:11vw;white-space:normal}.logo7{width:28px;height:28px}.testata7{gap:18px}}
+@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px}.due7,.tre7{grid-template-columns:1fr}.tre7{margin-top:12px}.compo7 .compo5{height:min(78vw,52svh)}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw;white-space:normal}.pross7 img{width:40vw}.compo7{overflow:hidden;padding:2vh 0}.logo7{width:28px;height:28px}.testata7{gap:18px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -162,14 +168,11 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
   </div>
   </section>
   <section class="blocco7 rivela" id="concetto"><p class="et7">Il concetto</p><p class="tx7">La i del logo è una persona a braccia aperte che stringe a sé le lettere vicine. È quello che succede da Mind: qualcuno si prende cura del corpo e intanto ascolta tutto il resto.</p></section>
-  <section class="imm7 due7"><img class="rivela " src="a/2469009a7c0230e91c694275951687f2.jpg" alt="Fronte del biglietto da visita" loading="lazy"><img class="rivela " src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt="Retro del biglietto da visita" loading="lazy"></section>
-  <section class="blocco7 rivela" id="segno"><p class="et7">Il segno</p><p class="tx7">Il pittogramma vive sempre nello stesso punto, grande e tagliato in alto a destra, tono su tono. Sulla carta diventa un'incisione a secco: il biglietto ha l'incisione sul fronte e il rilievo sul retro.</p></section>
-  <section class="imm7 uno7"><img class="rivela " src="a/16e206a798d521c3ad98f852f09ac140.jpg" alt="Dettaglio dell'incisione a secco sulla carta prugna" loading="lazy"></section>
+  <section class="imm7 gira7wrap rivela"><button type="button" class="gira7" onClick="{{giraB}}" aria-label="Gira il biglietto da visita" aria-pressed="{{bGirato}}"><span class="carta7" style="transform: rotateY({{bRot}})"><img class="f7" src="a/2469009a7c0230e91c694275951687f2.jpg" alt="Fronte del biglietto da visita"><img class="r7" src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt="Retro del biglietto da visita"></span></button><p class="cornice nota7">Clicca per girarlo</p></section>
   <section class="blocco7 rivela" id="fotografia"><p class="et7">La fotografia</p><p class="tx7">Mani, pelle, olio, da vicino e in luce calda. Ogni foto passa dalla stessa correzione, ombre verso il prugna e luci verso l'avorio, così sembrano tutte dello stesso servizio.</p></section>
   <section class="imm7 tre7"><img class="rivela " src="a/8443c2acd55ba2e047b269dc5c76ef88.jpg" alt="Mani calde" loading="lazy"><img class="rivela " src="a/b2c11e0f782fc7ffdd87ff5fe4621670.jpg" alt="Olio sulla pelle" loading="lazy"><img class="rivela " src="a/204c1484b4df8fb6d42852b146cbeaa4.jpg" alt="Massaggio alla schiena" loading="lazy"></section>
   <section class="blocco7 rivela" id="applicazioni"><p class="et7">Le applicazioni</p><p class="tx7">Un feed a scacchiera tra foto e grafica, poster per la cabina e la vetrina, biglietti con l'incisione, buono regalo e carta dei trattamenti.</p></section>
   <section class="imm7 compo7"><div class="compo5" onMouseMove="{{muoviC}}" onMouseLeave="{{esciC}}"><div class="giro5"><button type="button" class="pezzo5 inc5" onClick="{{z0}}" aria-label="Ingrandisci: Dettaglio dell'incisione a secco sulla carta prugna" style="left: 3%; top: 44%; width: 24%; --r: 3deg; --d: 0.15"><img src="a/16e206a798d521c3ad98f852f09ac140.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z1}}" aria-label="Ingrandisci: Carta dei trattamenti" style="left: 2%; top: 0%; width: 20%; --r: -4deg; --d: 0.6"><img src="a/78cf009fb756323b370f02bfdf795eb5.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z2}}" aria-label="Ingrandisci: Poster con fotografia" style="left: 21%; top: 8%; width: 19%; --r: 3deg; --d: 0.45"><img src="a/41c8e125bf59e31a7fd3310fcf114439.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z3}}" aria-label="Ingrandisci: Poster Il corpo ha memoria" style="left: 64%; top: 0%; width: 19%; --r: 4deg; --d: 0.35"><img src="a/f5f8df95e77c74dffe307329384cc2db.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z4}}" aria-label="Ingrandisci: Lettera su carta intestata" style="left: 83%; top: 18%; width: 16%; --r: -3deg; --d: 0.55"><img src="a/b28db34fb8a057e06a2a4be06bcb8728.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z5}}" aria-label="Ingrandisci: Buono regalo" style="left: 0%; top: 74%; width: 32%; --r: -3deg; --d: 0.8"><img src="a/35a06b0d49bfc4feca01d480e3c7653d.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z6}}" aria-label="Ingrandisci: Fronte del biglietto da visita" style="left: 31%; top: 72%; width: 24%; --r: -6deg; --d: 1"><img src="a/2469009a7c0230e91c694275951687f2.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z7}}" aria-label="Ingrandisci: Retro del biglietto da visita" style="left: 60%; top: 62%; width: 24%; --r: 4deg; --d: 0.9"><img src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt=""></button><button type="button" class="pezzo5 tel5" onClick="{{z8}}" aria-label="Ingrandisci: Feed Instagram di Mind" style="left: 41%; top: 5%; width: 21%; --r: 0deg; --d: 0.75"><span class="feed5"></span></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5 inc5" onClick="{{z0}}" aria-label="Ingrandisci: Dettaglio dell'incisione a secco sulla carta prugna" style="left: 3%; top: 44%; width: 24%; --r: 3deg; --d: 0.15"><img src="a/16e206a798d521c3ad98f852f09ac140.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z1}}" aria-label="Ingrandisci: Carta dei trattamenti" style="left: 2%; top: 0%; width: 20%; --r: -4deg; --d: 0.6"><img src="a/78cf009fb756323b370f02bfdf795eb5.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z2}}" aria-label="Ingrandisci: Poster con fotografia" style="left: 21%; top: 8%; width: 19%; --r: 3deg; --d: 0.45"><img src="a/41c8e125bf59e31a7fd3310fcf114439.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z3}}" aria-label="Ingrandisci: Poster Il corpo ha memoria" style="left: 64%; top: 0%; width: 19%; --r: 4deg; --d: 0.35"><img src="a/f5f8df95e77c74dffe307329384cc2db.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z4}}" aria-label="Ingrandisci: Lettera su carta intestata" style="left: 83%; top: 18%; width: 16%; --r: -3deg; --d: 0.55"><img src="a/b28db34fb8a057e06a2a4be06bcb8728.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z5}}" aria-label="Ingrandisci: Buono regalo" style="left: 0%; top: 74%; width: 32%; --r: -3deg; --d: 0.8"><img src="a/35a06b0d49bfc4feca01d480e3c7653d.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z6}}" aria-label="Ingrandisci: Fronte del biglietto da visita" style="left: 31%; top: 72%; width: 24%; --r: -6deg; --d: 1"><img src="a/2469009a7c0230e91c694275951687f2.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z7}}" aria-label="Ingrandisci: Retro del biglietto da visita" style="left: 60%; top: 62%; width: 24%; --r: 4deg; --d: 0.9"><img src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5 tel5" onClick="{{z8}}" aria-label="Ingrandisci: Feed Instagram di Mind" style="left: 41%; top: 5%; width: 21%; --r: 0deg; --d: 0.75"><span class="feed5"></span></button></div></div></section>
-  <section class="imm7 tre7"><img class="rivela " src="a/78cf009fb756323b370f02bfdf795eb5.jpg" alt="Carta dei trattamenti" loading="lazy"><img class="rivela " src="a/b28db34fb8a057e06a2a4be06bcb8728.jpg" alt="Lettera su carta intestata" loading="lazy"><img class="rivela " src="a/41c8e125bf59e31a7fd3310fcf114439.jpg" alt="Poster con fotografia" loading="lazy"></section>
   <a class="pross7" href="underground.html"><span class="cornice">Progetto successivo</span><span class="pt7">Underground <span class="fr7">→</span></span><img src="a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg" alt="" loading="lazy"></a>
   <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
     <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(180,169,184,.2)">
@@ -241,6 +244,7 @@ class Component extends DCLogic {
     var self = this, st = this.state;
     return Object.assign(this.valsIndice(), {
       z0: function () { self.setState({ lb: 0 }); }, z1: function () { self.setState({ lb: 1 }); }, z2: function () { self.setState({ lb: 2 }); }, z3: function () { self.setState({ lb: 3 }); }, z4: function () { self.setState({ lb: 4 }); }, z5: function () { self.setState({ lb: 5 }); }, z6: function () { self.setState({ lb: 6 }); }, z7: function () { self.setState({ lb: 7 }); }, z8: function () { self.setState({ lb: 8 }); },
+      giraB: function () { self.setState({ bG: !self.state.bG }); }, bRot: st.bG ? '180deg' : '0deg', bGirato: st.bG ? 'true' : 'false',
       muoviF: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.style.setProperty('--fx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3)); el.style.setProperty('--fy', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3)); },
       esciF: function (e) { e.currentTarget.style.setProperty('--fx', 0); e.currentTarget.style.setProperty('--fy', 0); },
       muoviC: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.classList.add('segui'); el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3)); el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3)); },

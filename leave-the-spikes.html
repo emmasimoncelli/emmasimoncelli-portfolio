@@ -14,23 +14,23 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
-body{margin:0;background:#000}
-a{color:#EFE8DF}a:hover{color:#5FC24A}
+body{margin:0;background: #EEF0F2}
+a{color:#141414}a:hover{color:#5FC24A}
 .palco-ed,.palco-ed *{cursor:none !important}
 .cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#141414;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
 .btn-menu:hover{color:#5FC24A}
-.manif{padding:0;border:0;background:#000;flex:0 1 auto;height:100%;aspect-ratio:1100/1540;min-width:0;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.manif{padding:0;border:0;background: #EEF0F2;flex:0 1 auto;height:100%;aspect-ratio:1100/1540;min-width:0;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
 .manif img{display:block;width:100%;height:100%;object-fit:cover}
 .manif:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(95,194,74,.28)}
 .tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
-.tendinaP{position:absolute;inset:0;z-index:490;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
-.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
-.lista-c a:hover{color:#D9C2FF}
+.tendinaP{position:absolute;inset:0;z-index:490;background: #EEF0F2;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(20,20,20,.28);font-size:16px;font-weight:500;text-decoration:none;color:#141414}
+.lista-c a:hover{color:#8C5CFF}
 .testo-p h2{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5FC24A}
-.testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#E6DFE8}
+.testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#2A2A2A}
 .bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
-.lb{position:absolute;inset:0;z-index:600;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:40px;transition:opacity .35s}
+.lb{position:absolute;inset:0;z-index:600;background:rgba(238,240,242,.96);display:flex;align-items:center;justify-content:center;padding:40px;transition:opacity .35s}
 .corteo{position:relative;width:min(100%,110vh,860px);aspect-ratio:860/620;overflow:visible}
 .manifestante{position:absolute;display:flex;flex-direction:column;align-items:center;transform-origin:50% 100%;animation:ondeggia 5s ease-in-out infinite}
 .manifestante .pannello{position:relative;width:100%;background:#C9A87A;padding:4%;box-sizing:border-box;box-shadow:0 24px 50px rgba(0,0,0,.55),inset 0 0 0 1px rgba(0,0,0,.15)}
@@ -38,9 +38,9 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
 .manifestante .asta{width:6%;aspect-ratio:1/11.7;margin-top:-4px;border-radius:3px;background:linear-gradient(90deg,#7A532B 0%,#B88A55 45%,#9C6F3E 70%,#6A4523 100%)}
 @keyframes ondeggia{0%,100%{transform:rotate(calc(var(--r) - 3deg))}50%{transform:rotate(calc(var(--r) + 3deg))}}
 
-.tendinaI{position:absolute;inset:0;z-index:495;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
-.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
-.voce6:hover{color:#C9A8FF}
+.tendinaI{position:absolute;inset:0;z-index:495;background: #EEF0F2;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#141414;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(20,20,20,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#8C5CFF}
 .anteprima{position:absolute;left:-400px;top:-400px;pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
 .anteprima img{display:block;width:100%;height:auto}
 .anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
@@ -71,12 +71,12 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
 .bolla,.cursore,.anteprima{display:none !important}
 *{cursor:auto !important}
 }
-.tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+.tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#8C5CFF}
 .voce6{display:flex !important;justify-content:space-between;align-items:baseline;gap:24px}
-.kw6{flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .25s;white-space:nowrap}
-.voce6:hover .kw6{color:#C9A8FF}
+.kw6{flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:rgba(20,20,20,.6);transition:color .25s;white-space:nowrap}
+.voce6:hover .kw6{color:#8C5CFF}
 @media (max-width: 760px){.voce6{flex-direction:column;align-items:flex-start;gap:8px}.kw6{font-size:11px}}
-.titC{margin:0 0 20px;font-weight:900;font-size:clamp(28px,3.4vw,54px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;color:#FFFFFF}
+.titC{margin:0 0 20px;font-weight:900;font-size:clamp(28px,3.4vw,54px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;color:#141414}
 .piede2{align-items:start !important}
 .piede2 > p{font-size:clamp(28px,3.4vw,54px) !important}
 @media (max-width: 760px){.titC{font-size:8vw}.piede2 > p{font-size:8vw !important}}
@@ -90,11 +90,11 @@ html{scroll-behavior:smooth}
 @keyframes respira7{0%,100%{transform:translateZ(0) scale(.92)}50%{transform:translateZ(0) scale(1.1)}}
 .nav7{display:flex;gap:24px}
 .scorri7{margin-top:16px;color:#000000;background:#5FC24A;padding:4px 8px 3px;border:0;font-family:inherit;font-size:12px;font-weight:600;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s}
-.scorri7:hover{background:#EFE8DF;color:#000}
+.scorri7:hover{background:#141414;color:#000}
 .blocco7{padding:9vh 4vw 5vh;max-width:980px}
 .et7{margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5FC24A}
-.tx7{margin:0;font-weight:600;font-size:clamp(18px,1.75vw,27px);line-height:1.25;letter-spacing:-.02em;color:#EFE8DF}
-.tx7.piccolo{font-weight:500;font-size:clamp(15px,1.2vw,18px);line-height:1.55;color:#CFC6D3;max-width:640px}
+.tx7{margin:0;font-weight:600;font-size:clamp(18px,1.75vw,27px);line-height:1.25;letter-spacing:-.02em;color:#141414}
+.tx7.piccolo{font-weight:500;font-size:clamp(15px,1.2vw,18px);line-height:1.55;color:#4A4A4A;max-width:640px}
 .imm7{padding:0 4vw;display:grid;gap:2vw;margin-bottom:2vw}
 .imm7 img{display:block;width:100%;height:auto}
 .due7{grid-template-columns:1fr 1fr;align-items:start}
@@ -120,7 +120,7 @@ html{scroll-behavior:smooth}
 .carta7 img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
 .carta7 .r7{transform:rotateY(180deg)}
 .nota7{margin:0;color:#5FC24A}
-.pross7{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:3vw;margin-top:8vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
+.pross7{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:3vw;margin-top:8vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(20,20,20,.18);text-decoration:none;color:#141414}
 .pross7 .cornice{grid-column:1/-1;color:#5FC24A}
 .pt7{font-weight:900;font-size:3.6vw;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;transition:color .3s}
 .fr7{display:inline-block;width:.72em;height:.72em;margin-left:.15em;vertical-align:-.02em;overflow:visible;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
@@ -145,13 +145,19 @@ html{scroll-behavior:smooth}
 .barra7 a,.barra7 button{color:#FFFFFF !important;background:none;border:0;padding:0;font:inherit;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer}
 .barra7 a:hover,.barra7 button:hover{color:#1A0B33 !important}
 @media (max-width: 760px){.barra7{padding:10px 5vw}.barra7 .logo7b{width:40px;height:40px}}
+
+/*tema-chiaro*/
+.cv2{color:#FFFFFF}
+.cv2 .btn-menu,.cv2 a{color:#FFFFFF}
+.cursore{background:#8C5CFF !important}
+.et7,.nota7,.pross7 .cornice{color:#3E9A2C !important}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
 <body>
 <template id="dc-template">
 
-<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #000; color: #EFE8DF; font-family: Switzer, sans-serif">
+<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #EEF0F2; color: #141414; font-family: Switzer, sans-serif">
   <div class="barra7" aria-hidden="false"><a class="logo7b" href="index.html" aria-label="Emma Simoncelli, About me"><svg viewBox="80 20 840 640" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg></a><nav aria-label="Menu rapido"><a href="index.html#progetti">Progetti</a><a href="index.html#contatti">Contatti</a></nav></div>
 
 
@@ -161,8 +167,8 @@ html{scroll-behavior:smooth}
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Leave the Spikes to the Punks</h1>
     <div>
-      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Un manifesto nato durante il workshop con Antonio Colomboni, che riflette sul tema dei confini e della convivenza tra culture.</p>
-      <p class="cornice" style="margin: 0; color: #5FC24A">Workshop con Antonio Colomboni · Illustrazione · Manifesto</p>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #2A2A2A">Un manifesto nato durante il workshop con Antonio Colomboni, che riflette sul tema dei confini e della convivenza tra culture.</p>
+      <p class="cornice" style="margin: 0; color: #3E9A2C">Workshop con Antonio Colomboni · Illustrazione · Manifesto</p>
       <button type="button" class="cornice scorri7" onClick="{{scorri}}">Approfondisci +</button>
     </div>
   </div>
@@ -221,7 +227,7 @@ html{scroll-behavior:smooth}
         <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
         <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}">Instagram</a>
         <span>Riccione (RN), Italia</span>
-        <span style="color: #C9A8FF; border-bottom: 1px solid rgba(255,255,255,.28)">© 2026 Emma Simoncelli</span>
+        <span style="color: #C9A8FF; border-bottom: 1px solid rgba(20,20,20,.28)">© 2026 Emma Simoncelli</span>
       </div>
     </div>
   </div>

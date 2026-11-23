@@ -84,10 +84,10 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
 html{scroll-behavior:smooth}
 .eroe7{position:relative;height:100svh;min-height:680px;overflow:hidden;display:flex;flex-direction:column}
 .testata7{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 4vw 0}
-.logo7{display:block;width:34px;height:34px;flex:none}
-.logo7 svg{width:100%;height:100%;overflow:visible;animation:respira7 3.2s ease-in-out infinite}
+.logo7{display:block;width:44px;height:44px;flex:none;animation:respira7 4s ease-in-out infinite;will-change:transform;transform:translateZ(0)}
+.logo7 svg{display:block;width:100%;height:100%;overflow:visible}
 .logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
-@keyframes respira7{0%,100%{transform:scale(.9)}50%{transform:scale(1.12)}}
+@keyframes respira7{0%,100%{transform:translateZ(0) scale(.92)}50%{transform:translateZ(0) scale(1.1)}}
 .nav7{display:flex;gap:24px}
 .scorri7{margin-top:14px;color:#000;background:#5FC24A;padding:6px 11px 5px;border:0;font:inherit;cursor:pointer}
 .scorri7:hover{background:#EFE8DF}
@@ -103,13 +103,15 @@ html{scroll-behavior:smooth}
 .stretto7{justify-items:center}.stretto7 img{width:auto;max-width:min(100%,620px);max-height:88svh}
 .vis7{display:flex;justify-content:center;padding:4vh 4vw 6vh}
 .vis7 > *{max-width:100%}
+.split7{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5vw;align-items:center;padding:8vh 4vw}
+.split7 .vis7{padding:0;justify-content:flex-start}
 .gira7wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
 .gira7{background:none;border:0;padding:0;cursor:pointer;perspective:1600px;width:min(100%,760px)}
 .carta7{position:relative;display:block;aspect-ratio:910/588;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
 .carta7 img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
 .carta7 .r7{transform:rotateY(180deg)}
 .nota7{margin:0;color:#5FC24A}
-.pross7{display:grid;grid-template-columns:minmax(0,1fr) min(14vw,200px);align-items:end;gap:3vw;margin-top:14vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
+.pross7{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:3vw;margin-top:14vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
 .pross7 .cornice{grid-column:1/-1;color:#5FC24A}
 .pt7{font-weight:900;font-size:3.6vw;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;transition:color .3s}
 .fr7{display:inline-block;transition:transform .3s}
@@ -120,7 +122,7 @@ html{scroll-behavior:smooth}
 .tendina,.tendinaI,.lb{position:fixed !important}
 @keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
-@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:28px;height:28px}}
+@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.split7{grid-template-columns:1fr;padding:6vh 5vw;gap:28px}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:36px;height:36px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -162,7 +164,7 @@ html{scroll-behavior:smooth}
           <div class="asta"></div>
         </div>
       </div></section>
-  <a class="pross7" href="edicola518.html"><span class="cornice">Progetto successivo</span><span class="pt7">Edicola 518 <span class="fr7">→</span></span><img src="a/49c486526a3fd314a35a5c178951f9a0.webp" alt="" loading="lazy"></a>
+  <a class="pross7" href="edicola518.html"><span class="cornice">Progetto successivo</span><span class="pt7">Edicola 518 <span class="fr7">→</span></span></a>
   <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
     <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(95,194,74,.2)">
   </div>

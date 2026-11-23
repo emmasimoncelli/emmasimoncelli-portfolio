@@ -94,10 +94,10 @@ a{color:#EFE8DF}a:hover{color:#E98BC0}
 html{scroll-behavior:smooth}
 .eroe7{position:relative;height:100svh;min-height:680px;overflow:hidden;display:flex;flex-direction:column}
 .testata7{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 4vw 0}
-.logo7{display:block;width:34px;height:34px;flex:none}
-.logo7 svg{width:100%;height:100%;overflow:visible;animation:respira7 3.2s ease-in-out infinite}
+.logo7{display:block;width:44px;height:44px;flex:none;animation:respira7 4s ease-in-out infinite;will-change:transform;transform:translateZ(0)}
+.logo7 svg{display:block;width:100%;height:100%;overflow:visible}
 .logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
-@keyframes respira7{0%,100%{transform:scale(.9)}50%{transform:scale(1.12)}}
+@keyframes respira7{0%,100%{transform:translateZ(0) scale(.92)}50%{transform:translateZ(0) scale(1.1)}}
 .nav7{display:flex;gap:24px}
 .scorri7{margin-top:14px;color:#000;background:#8C0A55;padding:6px 11px 5px;border:0;font:inherit;cursor:pointer}
 .scorri7:hover{background:#EFE8DF}
@@ -113,13 +113,15 @@ html{scroll-behavior:smooth}
 .stretto7{justify-items:center}.stretto7 img{width:auto;max-width:min(100%,620px);max-height:88svh}
 .vis7{display:flex;justify-content:center;padding:4vh 4vw 6vh}
 .vis7 > *{max-width:100%}
+.split7{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5vw;align-items:center;padding:8vh 4vw}
+.split7 .vis7{padding:0;justify-content:flex-start}
 .gira7wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
 .gira7{background:none;border:0;padding:0;cursor:pointer;perspective:1600px;width:min(100%,760px)}
 .carta7{position:relative;display:block;aspect-ratio:910/588;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
 .carta7 img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
 .carta7 .r7{transform:rotateY(180deg)}
 .nota7{margin:0;color:#8C0A55}
-.pross7{display:grid;grid-template-columns:minmax(0,1fr) min(14vw,200px);align-items:end;gap:3vw;margin-top:14vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
+.pross7{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:3vw;margin-top:14vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
 .pross7 .cornice{grid-column:1/-1;color:#8C0A55}
 .pt7{font-weight:900;font-size:3.6vw;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;transition:color .3s}
 .fr7{display:inline-block;transition:transform .3s}
@@ -130,7 +132,7 @@ html{scroll-behavior:smooth}
 .tendina,.tendinaI,.lb{position:fixed !important}
 @keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
-@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:28px;height:28px}}
+@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.split7{grid-template-columns:1fr;padding:6vh 5vw;gap:28px}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:36px;height:36px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -168,7 +170,7 @@ html{scroll-behavior:smooth}
   </div>
   </section>
   <section class="blocco7 rivela" id="inizio7"><p class="et7">Concept</p><p class="tx7">Come costruiscono oggi i giovani la propria identità, in un sistema in cui tutto è esposto, giudicato e copiato? La rivista risponde rifiutando la coerenza formale: la varietà diventa il metodo.</p></section>
-  <section class="vis7 rivela"><div style="display: flex; flex-direction: column; align-items: flex-start">
+  <section class="split7"><div class="vis7 rivela"><div style="display: flex; flex-direction: column; align-items: flex-start">
         <div class="legenda-row" role="group" aria-label="Tipi di collegamento" style="display: flex; flex-wrap: nowrap; gap: 4px; width: min(60vh, 600px, 100%); margin-bottom: 10px">
           <sc-for list="{{legenda}}" as="l" hint-placeholder-count="5">
             <button type="button" class="leg" onClick="{{l.scegli}}" aria-pressed="{{l.premuto}}" style="background: {{l.bg}}; color: {{l.fg}}; opacity: {{l.op}}; outline: {{l.bordo}}; outline-offset: 2px">{{l.nome}}</button>
@@ -181,11 +183,9 @@ html{scroll-behavior:smooth}
         </div>
 
         <p style="margin: 12px 0 0; width: min(60vh, 600px, 100%); font-size: 13px; line-height: 1.45; color: #CFC6D3">Ogni linea è un legame reale o concettuale: un festival, una collaborazione, un progetto o un'estetica in comune.</p>
-      </div></section>
-  <section class="blocco7 rivela"><p class="et7">Metodo</p><p class="tx7">Quattro artisti di partenza (Yungblud, Bring Me the Horizon, Fontaines D.C., Wolf Alice) e attorno a loro brand, festival e format collegati. Ogni sezione prende palette, caratteri e ritmo dal mondo che racconta.</p></section>
-  <section class="imm7 due7"><img class="rivela" src="a/7d0397ab26fa28c34edcf808209e6275.jpg" alt="Doppia pagina della rivista" loading="lazy"><img class="rivela" src="a/19ad3fc632c23bc9957ac51e4bb508b2.jpg" alt="Doppia pagina della rivista" loading="lazy"></section>
-  <section class="imm7 uno7"><img class="rivela" src="a/91c9b6cc05ec4e84a3c2c156e801bf54.jpg" alt="Doppia pagina della rivista" loading="lazy"></section>
-  <a class="pross7" href="acito.html"><span class="cornice">Progetto successivo</span><span class="pt7">Acito <span class="fr7">→</span></span><img src="a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp" alt="" loading="lazy"></a>
+      </div></div><div class="rivela"><p class="et7">Metodo</p><p class="tx7">Quattro artisti di partenza (Yungblud, Bring Me the Horizon, Fontaines D.C., Wolf Alice) e attorno a loro brand, festival e format collegati. Ogni sezione prende palette, caratteri e ritmo dal mondo che racconta.</p></div></section>
+  <section class="imm7 due7"><img class="rivela" src="a/c7485644ca024f5bb962659bba30839d.jpg" alt="La rivista aperta sulla pagina di Bring Me the Horizon" loading="lazy"><img class="rivela" src="a/f8cb04513fbf4ca9b54d67489fbd5773.jpg" alt="La rivista sfogliata" loading="lazy"><img class="rivela" src="a/0484ea140937244ed90f4e438a8e40c3.jpg" alt="La pagina dei Fontaines D.C." loading="lazy"><img class="rivela" src="a/60da513d7d53e0f686380aa3321bd8b4.jpg" alt="La rivista e la copertina nera" loading="lazy"></section>
+  <a class="pross7" href="acito.html"><span class="cornice">Progetto successivo</span><span class="pt7">Acito <span class="fr7">→</span></span></a>
   <div class="tendinaI" aria-hidden="{{nascostoI}}" onMouseMove="{{muoviI}}" style="transform: translateX({{txI}})">
     <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw">
       <button type="button" class="btn-menu" onClick="{{chiudiI}}">← Torna al progetto</button>

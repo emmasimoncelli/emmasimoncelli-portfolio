@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emma Simoncelli | Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<meta name="description" content="Portfolio di Emma Simoncelli, graphic designer a Riccione.">
+<meta property="og:title" content="Emma Simoncelli | Portfolio">
+<meta property="og:description" content="Graphic designer | Riccione (RN)">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://emmasimoncelli.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#000}
+a{color:#EFE8DF}a:hover{color:#B4A9B8}
+.palco-ed,.palco-ed *{cursor:none !important}
+.cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#EFE8DF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu:hover{color:#B4A9B8}
+.manif{display:block;padding:0;border:0;background:transparent;flex:none;height:max(220px, min(calc(100vh - 340px), calc(27vw * 1.4)));aspect-ratio:1100/1540;cursor:pointer}
+.manif img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.manif:hover img{transform:scale(1.04);box-shadow:0 16px 36px rgba(180,169,184,.2)}
+.tendina{position:absolute;inset:0;z-index:500;background:#4B1F8F;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.tendinaP{position:absolute;inset:0;z-index:490;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
+.lista-c a:hover{color:#D9C2FF}
+.testo-p h2{margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B4A9B8}
+.testo-p p{margin:0 0 22px;font-size:15px;line-height:1.55;color:#E6DFE8}
+.bolla{position:absolute;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.lb{position:absolute;inset:0;z-index:600;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:40px;transition:opacity .35s}
+.tendinaI{position:absolute;inset:0;z-index:495;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#C9A8FF}
+.anteprima{position:absolute;left:-400px;top:-400px;pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.anteprima img{display:block;width:100%;height:auto}
+.anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
+.gira-i{animation:giraI 12s linear infinite}
+@keyframes giraI{to{transform:rotate(360deg)}}
+@media (max-width: 760px){
+.pagina .area-vis{justify-content:flex-start !important;overflow-x:auto !important;gap:14px !important;padding-top:12px !important}
+.pagina .manif{height:min(52svh, 112vw) !important}
+.pagina{height:auto !important;min-height:100svh !important;overflow:visible !important}
+.riga-titolo{grid-template-columns:1fr !important;gap:14px !important;justify-content:stretch !important;align-items:start !important}
+.titolo{font-size:clamp(30px,9vw,56px) !important}
+.area-vis{flex:none !important;height:62svh !important;min-height:320px}
+.tendina,.tendinaP,.tendinaI,.lb{position:fixed !important}
+.tendina,.tendinaP,.tendinaI{overflow-y:auto !important}
+.griglia-p{grid-template-columns:1fr !important;align-content:start !important;justify-items:center !important;gap:28px !important;padding-top:20px !important;flex:none !important}
+.voce6{font-size:8.5vw !important;padding:12px 0 !important}
+.legenda-row{flex-wrap:wrap !important}
+.frase-hero{font-size:11vw !important}
+.riga-hero{flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+.riga-hero p{text-align:left !important}
+.griglia-cv{grid-template-columns:1fr !important;gap:36px !important}
+.cta6{font-size:9vw !important}
+.nome-scia{font-size:15vw !important}
+}
+@media (min-width: 761px) and (max-width: 1100px){
+.griglia-cv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.voce6{font-size:6vw !important}
+}
+@media (hover: none), (pointer: coarse){
+.bolla,.cursore,.anteprima{display:none !important}
+*{cursor:auto !important}
+}
+.tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+@property --mx{syntax:'<number>';inherits:true;initial-value:0}
+@property --my{syntax:'<number>';inherits:true;initial-value:0}
+.scena5{position:relative;overflow:hidden}
+.figura5{position:absolute;right:-7%;top:2%;height:122%;aspect-ratio:107.65/114.72;-webkit-mask:url(a/ace5aa989904e2ef6cdb4d3717bcd614.svg) center/contain no-repeat;mask:url(a/ace5aa989904e2ef6cdb4d3717bcd614.svg) center/contain no-repeat;background:#2A2230}
+.dentro5{position:absolute;inset:-8%;transform:translate(calc(var(--fx,0) * -5%), calc(var(--fy,0) * -5%)) scale(1.04);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.figura5 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:dissolvi5 24s linear infinite}
+@keyframes dissolvi5{0%{opacity:0;transform:scale(1.08)}5%{opacity:1}17%{opacity:1}22%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.testo5{position:absolute;left:0;bottom:0;display:flex;flex-direction:column;gap:3vh;z-index:2}
+.frase5{margin:0;font-weight:900;font-size:min(7vw, 11vh);line-height:.88;letter-spacing:-.045em;text-transform:uppercase;color:#EFE8DF}
+.frase5 span{color:#B4A9B8}
+.logo5{width:min(16vw,200px);height:auto}
+.compo5{position:relative;width:min(100%,860px);height:min(calc(100vh - 150px),660px);--mx:0;--my:0;animation:fluttua5 9s ease-in-out infinite alternate}
+.compo5.segui{animation:none}
+@keyframes fluttua5{0%{--mx:-.6;--my:-.4}50%{--mx:.5;--my:.3}100%{--mx:-.2;--my:.6}}
+.pezzo5{position:absolute;padding:0;border:0;background:transparent;cursor:zoom-in;transform:translate(calc(var(--mx) * var(--d) * 26px), calc(var(--my) * var(--d) * 20px)) rotate(var(--r));transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .3s;filter:drop-shadow(0 22px 40px rgba(0,0,0,.55))}
+.pezzo5:hover{z-index:20;filter:drop-shadow(0 28px 50px rgba(0,0,0,.7)) brightness(1.05)}
+.pezzo5 img{display:block;width:100%;height:auto}
+.giro5{display:contents}
+.dup5{display:none}
+@keyframes scorri5{to{transform:translateX(-50%)}}
+.tel5{aspect-ratio:9/18.5;padding:8px;border-radius:26px;background:#161616;box-shadow:0 0 0 1px #333;z-index:10}
+.feed5{display:block;width:100%;height:100%;border-radius:19px;background:#F6F2EC url(a/759403cb5efd593f083bebb5c365f3d0.jpg) center 0/100% auto no-repeat;animation:scorriFeed5 36s ease-in-out infinite alternate}
+@keyframes scorriFeed5{to{background-position:center 100%}}
+
+@media (max-width: 760px){.pagina .scena5{height:auto !important;min-height:0;display:flex !important;flex-direction:column !important;align-items:stretch;overflow:visible !important;gap:2vh !important}.figura5{position:relative;right:-30vw;top:auto;height:auto;width:min(112vw, 56svh);align-self:flex-end}.pagina .scena5{margin-right:0 !important;overflow:hidden !important}.testo5{margin-top:-6vh}.testo5{position:relative;gap:2vh}.inc5{display:none !important}.frase5{font-size:13vw}.logo5{width:30vw}.compo5{height:min(78vw,52svh);width:calc(100% + 8vw);margin:0 -4vw;overflow:hidden;animation:none}.giro5{display:flex;gap:12px;height:100%;width:max-content;align-items:center;animation:scorri5 40s linear infinite}.giro5:active{animation-play-state:paused}.compo5 .pezzo5{position:relative;left:auto !important;top:auto !important;width:auto !important;height:86%;flex:none;transform:none;filter:none}.compo5 .pezzo5 img{height:100%;width:auto}.compo5 .tel5{height:100%;width:auto !important;aspect-ratio:9/18.5}.compo5 .dup5{display:block}}
+.voce6{display:flex !important;justify-content:space-between;align-items:baseline;gap:24px}
+.kw6{flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .25s;white-space:nowrap}
+.voce6:hover .kw6{color:#C9A8FF}
+@media (max-width: 760px){.voce6{flex-direction:column;align-items:flex-start;gap:8px}.kw6{font-size:11px}}
+.titC{margin:0 0 20px;font-weight:900;font-size:clamp(28px,3.4vw,54px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;color:#FFFFFF}
+.piede2{align-items:start !important}
+.piede2 > p{font-size:clamp(28px,3.4vw,54px) !important}
+@media (max-width: 760px){.titC{font-size:8vw}.piede2 > p{font-size:8vw !important}}
+
+.eroe7{position:relative;height:100svh;min-height:700px;overflow:hidden;display:flex;flex-direction:column}
+.testata7{position:relative;z-index:3;display:flex;align-items:center;gap:22px;padding:18px 4vw 0}
+.logo7{display:block;width:34px;height:34px;flex:none}
+.logo7 svg{width:100%;height:100%;overflow:visible;animation:gira7 14s linear infinite}
+.logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
+@keyframes gira7{to{transform:rotate(360deg)}}
+.nav7{display:flex;gap:24px}
+.scorri7{display:inline-block;margin-top:14px;color:#000;background:#B4A9B8;padding:6px 11px 5px;text-decoration:none}
+.scorri7:hover{color:#000;background:#EFE8DF}
+.blocco7{padding:16vh 4vw 8vh;max-width:980px}
+.et7{margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B4A9B8}
+.tx7{margin:0;font-weight:700;font-size:clamp(22px,2.6vw,40px);line-height:1.18;letter-spacing:-.02em;color:#EFE8DF}
+.imm7{padding:0 4vw;display:grid;gap:2vw}
+.imm7 img{display:block;width:100%;height:auto}
+.due7{grid-template-columns:1fr 1fr}
+.tre7{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;margin-top:2vw}
+.tre7 img{aspect-ratio:4/5;object-fit:cover}
+.uno7 img{max-height:72svh;object-fit:cover}
+.compo7{display:flex;justify-content:center;padding-top:2vh;overflow:hidden}
+.compo7 .compo5{width:min(100%,1100px);height:min(80svh,760px)}
+.pross7{display:grid;grid-template-columns:minmax(0,1fr) min(26vw,360px);align-items:end;gap:4vw;margin-top:18vh;padding:6vh 4vw 8vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
+.pross7 .cornice{grid-column:1/-1;color:#B4A9B8}
+.pt7{font-weight:900;font-size:7vw;white-space:nowrap;line-height:.9;letter-spacing:-.05em;text-transform:uppercase;transition:color .3s}
+.fr7{display:inline-block;transition:transform .3s}
+.pross7:hover .pt7{color:#FF5A4F}
+.pross7:hover .fr7{transform:translateX(2vw)}
+.pross7 img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pross7:hover img{transform:rotate(-3deg) scale(1.03)}
+.tendina,.tendinaI,.lb{position:fixed !important}
+@keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px}.due7,.tre7{grid-template-columns:1fr}.tre7{margin-top:12px}.compo7 .compo5{height:min(78vw,52svh)}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:11vw;white-space:normal}.logo7{width:28px;height:28px}.testata7{gap:18px}}
+</style>
+<style>body{font-family:Switzer,sans-serif}</style>
+</head>
+<body>
+<template id="dc-template">
+
+<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #000; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
+
+  <section class="eroe7">
+  <header class="cornice testata7"><a class="logo7" href="index.html" aria-label="Emma Simoncelli, About me"><svg viewBox="80 20 840 640" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg></a><nav aria-label="Menu" class="nav7"><button type="button" class="btn-menu" onClick="{{apriI}}">Progetti</button><button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button></nav></header>
+
+  <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
+    <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Mind</h1>
+    <div>
+      <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Brand identity per Mind, centro estetico e olistico: un marchio pensato per essere toccato, oltre che guardato.</p>
+      <p class="cornice" style="margin: 0; color: #B4A9B8">Brand identity · Logo, fotografia, stampa, social</p>
+      <a class="cornice scorri7" href="#concetto">Scorri ↓</a>
+    </div>
+  </div>
+
+  <div class="area-vis scena5" style="flex: 1 1 auto; min-height: 0; margin: 0 4vw 4vh">
+    <div class="figura5" onMouseMove="{{muoviF}}" onMouseLeave="{{esciF}}" role="img" aria-label="Il pittogramma di Mind, una persona a braccia aperte, riempito dalle foto delle mani che massaggiano"><div class="dentro5"><img src="a/9c6d24336697a85957347d092c0af351.jpg" alt="" style="animation-delay: 0s"><img src="a/8443c2acd55ba2e047b269dc5c76ef88.jpg" alt="" style="animation-delay: 4s"><img src="a/b2c11e0f782fc7ffdd87ff5fe4621670.jpg" alt="" style="animation-delay: 8s"><img src="a/76e3c0395e0f938cdb0f3a9c702fe476.jpg" alt="" style="animation-delay: 12s"><img src="a/204c1484b4df8fb6d42852b146cbeaa4.jpg" alt="" style="animation-delay: 16s"><img src="a/8e9dc00817037655c2bfac0d477430fa.jpg" alt="" style="animation-delay: 20s"></div></div>
+    <div class="testo5">
+      <img class="logo5" src="a/9a33b35417b26ee3e5e51f35a79969ba.svg" alt="Mind">
+      <p class="frase5">Il corpo<br>ha <span>memoria</span></p>
+    </div>
+  </div>
+  </section>
+  <section class="blocco7 rivela" id="concetto"><p class="et7">Il concetto</p><p class="tx7">La i del logo è una persona a braccia aperte che stringe a sé le lettere vicine. È quello che succede da Mind: qualcuno si prende cura del corpo e intanto ascolta tutto il resto.</p></section>
+  <section class="imm7 due7"><img class="rivela " src="a/2469009a7c0230e91c694275951687f2.jpg" alt="Fronte del biglietto da visita" loading="lazy"><img class="rivela " src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt="Retro del biglietto da visita" loading="lazy"></section>
+  <section class="blocco7 rivela" id="segno"><p class="et7">Il segno</p><p class="tx7">Il pittogramma vive sempre nello stesso punto, grande e tagliato in alto a destra, tono su tono. Sulla carta diventa un'incisione a secco: il biglietto ha l'incisione sul fronte e il rilievo sul retro.</p></section>
+  <section class="imm7 uno7"><img class="rivela " src="a/16e206a798d521c3ad98f852f09ac140.jpg" alt="Dettaglio dell'incisione a secco sulla carta prugna" loading="lazy"></section>
+  <section class="blocco7 rivela" id="fotografia"><p class="et7">La fotografia</p><p class="tx7">Mani, pelle, olio, da vicino e in luce calda. Ogni foto passa dalla stessa correzione, ombre verso il prugna e luci verso l'avorio, così sembrano tutte dello stesso servizio.</p></section>
+  <section class="imm7 tre7"><img class="rivela " src="a/8443c2acd55ba2e047b269dc5c76ef88.jpg" alt="Mani calde" loading="lazy"><img class="rivela " src="a/b2c11e0f782fc7ffdd87ff5fe4621670.jpg" alt="Olio sulla pelle" loading="lazy"><img class="rivela " src="a/204c1484b4df8fb6d42852b146cbeaa4.jpg" alt="Massaggio alla schiena" loading="lazy"></section>
+  <section class="blocco7 rivela" id="applicazioni"><p class="et7">Le applicazioni</p><p class="tx7">Un feed a scacchiera tra foto e grafica, poster per la cabina e la vetrina, biglietti con l'incisione, buono regalo e carta dei trattamenti.</p></section>
+  <section class="imm7 compo7"><div class="compo5" onMouseMove="{{muoviC}}" onMouseLeave="{{esciC}}"><div class="giro5"><button type="button" class="pezzo5 inc5" onClick="{{z0}}" aria-label="Ingrandisci: Dettaglio dell'incisione a secco sulla carta prugna" style="left: 3%; top: 44%; width: 24%; --r: 3deg; --d: 0.15"><img src="a/16e206a798d521c3ad98f852f09ac140.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z1}}" aria-label="Ingrandisci: Carta dei trattamenti" style="left: 2%; top: 0%; width: 20%; --r: -4deg; --d: 0.6"><img src="a/78cf009fb756323b370f02bfdf795eb5.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z2}}" aria-label="Ingrandisci: Poster con fotografia" style="left: 21%; top: 8%; width: 19%; --r: 3deg; --d: 0.45"><img src="a/41c8e125bf59e31a7fd3310fcf114439.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z3}}" aria-label="Ingrandisci: Poster Il corpo ha memoria" style="left: 64%; top: 0%; width: 19%; --r: 4deg; --d: 0.35"><img src="a/f5f8df95e77c74dffe307329384cc2db.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z4}}" aria-label="Ingrandisci: Lettera su carta intestata" style="left: 83%; top: 18%; width: 16%; --r: -3deg; --d: 0.55"><img src="a/b28db34fb8a057e06a2a4be06bcb8728.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z5}}" aria-label="Ingrandisci: Buono regalo" style="left: 0%; top: 74%; width: 32%; --r: -3deg; --d: 0.8"><img src="a/35a06b0d49bfc4feca01d480e3c7653d.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z6}}" aria-label="Ingrandisci: Fronte del biglietto da visita" style="left: 31%; top: 72%; width: 24%; --r: -6deg; --d: 1"><img src="a/2469009a7c0230e91c694275951687f2.jpg" alt=""></button><button type="button" class="pezzo5" onClick="{{z7}}" aria-label="Ingrandisci: Retro del biglietto da visita" style="left: 60%; top: 62%; width: 24%; --r: 4deg; --d: 0.9"><img src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt=""></button><button type="button" class="pezzo5 tel5" onClick="{{z8}}" aria-label="Ingrandisci: Feed Instagram di Mind" style="left: 41%; top: 5%; width: 21%; --r: 0deg; --d: 0.75"><span class="feed5"></span></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5 inc5" onClick="{{z0}}" aria-label="Ingrandisci: Dettaglio dell'incisione a secco sulla carta prugna" style="left: 3%; top: 44%; width: 24%; --r: 3deg; --d: 0.15"><img src="a/16e206a798d521c3ad98f852f09ac140.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z1}}" aria-label="Ingrandisci: Carta dei trattamenti" style="left: 2%; top: 0%; width: 20%; --r: -4deg; --d: 0.6"><img src="a/78cf009fb756323b370f02bfdf795eb5.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z2}}" aria-label="Ingrandisci: Poster con fotografia" style="left: 21%; top: 8%; width: 19%; --r: 3deg; --d: 0.45"><img src="a/41c8e125bf59e31a7fd3310fcf114439.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z3}}" aria-label="Ingrandisci: Poster Il corpo ha memoria" style="left: 64%; top: 0%; width: 19%; --r: 4deg; --d: 0.35"><img src="a/f5f8df95e77c74dffe307329384cc2db.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z4}}" aria-label="Ingrandisci: Lettera su carta intestata" style="left: 83%; top: 18%; width: 16%; --r: -3deg; --d: 0.55"><img src="a/b28db34fb8a057e06a2a4be06bcb8728.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z5}}" aria-label="Ingrandisci: Buono regalo" style="left: 0%; top: 74%; width: 32%; --r: -3deg; --d: 0.8"><img src="a/35a06b0d49bfc4feca01d480e3c7653d.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z6}}" aria-label="Ingrandisci: Fronte del biglietto da visita" style="left: 31%; top: 72%; width: 24%; --r: -6deg; --d: 1"><img src="a/2469009a7c0230e91c694275951687f2.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5" onClick="{{z7}}" aria-label="Ingrandisci: Retro del biglietto da visita" style="left: 60%; top: 62%; width: 24%; --r: 4deg; --d: 0.9"><img src="a/905cf3137bf1adb931f46c45bd128921.jpg" alt=""></button><button type="button" tabindex="-1" aria-hidden="true" class="pezzo5 dup5 tel5" onClick="{{z8}}" aria-label="Ingrandisci: Feed Instagram di Mind" style="left: 41%; top: 5%; width: 21%; --r: 0deg; --d: 0.75"><span class="feed5"></span></button></div></div></section>
+  <section class="imm7 tre7"><img class="rivela " src="a/78cf009fb756323b370f02bfdf795eb5.jpg" alt="Carta dei trattamenti" loading="lazy"><img class="rivela " src="a/b28db34fb8a057e06a2a4be06bcb8728.jpg" alt="Lettera su carta intestata" loading="lazy"><img class="rivela " src="a/41c8e125bf59e31a7fd3310fcf114439.jpg" alt="Poster con fotografia" loading="lazy"></section>
+  <a class="pross7" href="underground.html"><span class="cornice">Progetto successivo</span><span class="pt7">Underground <span class="fr7">→</span></span><img src="a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg" alt="" loading="lazy"></a>
+  <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
+    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(180,169,184,.2)">
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascostoC}}" style="transform: translateX({{txC}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
+      <button type="button" class="btn-menu" onClick="{{chiudiC}}">← Torna al progetto</button>
+      <a href="index.html" style="text-decoration: none">About me</a>
+    </div>
+    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
+      <div class="lista-c" style="width: min(360px, 100%)">
+        <p class="titC">Contattami!</p>
+        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
+        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
+        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}">Instagram</a>
+        <span>Riccione (RN), Italia</span>
+        <span style="color: #C9A8FF; border-bottom: 1px solid rgba(255,255,255,.28)">© 2026 Emma Simoncelli</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bolla" aria-hidden="true" style="left: {{bx}}; top: {{by}}; width: {{bw}}; height: {{bw}}; background: {{bbg}}; opacity: {{bop}}"></div>
+</div>
+</template>
+<div id="dc-root"></div>
+<script src="dc.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/41eb429e80ad1037dc968df8c4d6dbb5.jpg", "r": -5}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Mind", "href": "mind.html", "img": "a/518a2dbce15d2d160a2b57c03518ff21.jpg", "r": 4}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}];
+    var B = 'a/';
+    this.M = [["a/16e206a798d521c3ad98f852f09ac140.jpg", "Dettaglio dell'incisione a secco sulla carta prugna"], ["a/78cf009fb756323b370f02bfdf795eb5.jpg", "Carta dei trattamenti"], ["a/41c8e125bf59e31a7fd3310fcf114439.jpg", "Poster con fotografia"], ["a/f5f8df95e77c74dffe307329384cc2db.jpg", "Poster Il corpo ha memoria"], ["a/b28db34fb8a057e06a2a4be06bcb8728.jpg", "Lettera su carta intestata"], ["a/35a06b0d49bfc4feca01d480e3c7653d.jpg", "Buono regalo"], ["a/2469009a7c0230e91c694275951687f2.jpg", "Fronte del biglietto da visita"], ["a/905cf3137bf1adb931f46c45bd128921.jpg", "Retro del biglietto da visita"], ["a/759403cb5efd593f083bebb5c365f3d0.jpg", "Feed Instagram di Mind"]];
+    this.F = [];
+    this.state = { sopra: '', dentro: false, mx: -100, my: -100, tx: 0, ty: 0, apertoC: false, apertoP: false, lb: -1, fi: 0, tm: 0, girato: false };
+  }
+  posI(e) {
+    if (!e || e.clientX === undefined) { return; }
+    var t = e.currentTarget && e.currentTarget.closest ? e.currentTarget.closest('.tendinaI') : null; if (!t) { return; }
+    var r = t.getBoundingClientRect(); this._ix = (e.clientX - r.left) + 'px'; this._iy = (e.clientY - r.top) + 'px';
+  }
+  valsIndice() {
+    var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
+    return {
+      indice: P.map(function (p, i) { return { titolo: p.t, kw: ({"tesi.html": "Editorial", "mind.html": "Brand identity", "edicola518.html": "Poster design & visuals", "acito.html": "Editorial", "leave-the-spikes.html": "Poster design & visuals", "underground.html": "Brand identity"})[p.href] || '', href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
+      apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
+      chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },
+      iimg: cur.img, iover: cur.over || cur.img, iovd: cur.over ? 'block' : 'none', irot: (cur.r || 0) + 'deg', icls: cur.gira ? 'gira-i' : '', iop: (on && h >= 0) ? 1 : 0, iw: (cur.over || cur.gira) ? '220px' : '200px',
+      ilx: this._ix || '-400px', ily: this._iy || '-400px',
+      muoviI: function (e) { self.posI(e); var a = e.currentTarget.querySelector('.anteprima'); if (a) { a.style.left = self._ix; a.style.top = self._iy; } }
+    };
+  }
+  tasti(e) {
+    var t = e.target && e.target.tagName; if (t === 'INPUT' || t === 'TEXTAREA') { return; }
+    var st = this.state, k = e.key, L = this.M;
+    if (k === 'Escape') {
+      if (st.lb >= 0) { this.setState({ lb: -1 }); } else if (st.apertoC) { this.setState({ apertoC: false }); } else if (st.apertoI) { this.setState({ apertoI: false, hI: -1 }); } else if (st.apertoP) { this.setState({ apertoP: false }); }
+      return;
+    }
+    if (k !== 'ArrowLeft' && k !== 'ArrowRight') { return; }
+    var d = k === 'ArrowRight' ? 1 : -1;
+    if (L && st.lb >= 0 && L.length > 1) { e.preventDefault(); this.setState({ lb: (st.lb + d + L.length) % L.length }); return; }
+    if (st.apertoC || st.apertoI || st.lb >= 0) { return; }
+  }
+  renderVals() {
+    if (!this._kb) { this._kb = true; var me = this; try { window.addEventListener('keydown', function (e) { me.tasti(e); }); } catch (x) {} }
+    var self = this, st = this.state;
+    return Object.assign(this.valsIndice(), {
+      z0: function () { self.setState({ lb: 0 }); }, z1: function () { self.setState({ lb: 1 }); }, z2: function () { self.setState({ lb: 2 }); }, z3: function () { self.setState({ lb: 3 }); }, z4: function () { self.setState({ lb: 4 }); }, z5: function () { self.setState({ lb: 5 }); }, z6: function () { self.setState({ lb: 6 }); }, z7: function () { self.setState({ lb: 7 }); }, z8: function () { self.setState({ lb: 8 }); },
+      muoviF: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.style.setProperty('--fx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3)); el.style.setProperty('--fy', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3)); },
+      esciF: function (e) { e.currentTarget.style.setProperty('--fx', 0); e.currentTarget.style.setProperty('--fy', 0); },
+      muoviC: function (e) { var el = e.currentTarget, r = el.getBoundingClientRect(); el.classList.add('segui'); el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3)); el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3)); },
+      esciC: function (e) { e.currentTarget.classList.remove('segui'); },
+      manifesti: this.M.map(function (m, i) { return { src: m[0], alt: m[1], apri: function () { self.setState({ lb: i }); } }; }),
+      foto: this.F.map(function (f, i) { var on = i === st.fi; return { src: f[0], alt: f[1], op: on ? 1 : 0, opm: on ? 1 : 0.45, premuto: on ? 'true' : 'false', bordo: on ? '1px solid #B4A9B8' : 'none', scegli: function () { self.setState({ fi: i }); } }; }),
+      lbNascosto: st.lb >= 0 ? 'false' : 'true', lbOp: st.lb >= 0 ? 1 : 0, lbPe: st.lb >= 0 ? 'auto' : 'none',
+      lbSrc: st.lb >= 0 ? this.M[st.lb][0] : this.M[0][0], lbAlt: st.lb >= 0 ? this.M[st.lb][1] : '',
+      chiudiLb: function () { self.setState({ lb: -1 }); },
+      txC: st.apertoC ? '0%' : '100%', nascostoC: st.apertoC ? 'false' : 'true', tabC: st.apertoC ? 0 : -1,
+      apriC: function () { self.setState({ apertoC: true }); },
+      chiudiC: function () { self.setState({ apertoC: false }); },
+      txP: st.apertoP ? '0%' : '100%', nascostoP: st.apertoP ? 'false' : 'true',
+      apriP: function () { self.setState({ apertoP: true }); },
+      chiudiP: function () { self.setState({ apertoP: false }); },
+      bx: st.mx + 'px', by: st.my + 'px',
+      bw: st.sopra ? '90px' : '14px',
+      bbg: (st.apertoI || st.apertoC) ? (st.sopra ? 'radial-gradient(circle, #C9A8FF 0%, #C9A8FF 16%, rgba(155,93,229,.65) 34%, rgba(155,93,229,.2) 55%, rgba(155,93,229,0) 70%)' : '#C9A8FF') : (st.sopra ? 'radial-gradient(circle, #B4A9B8 0%, #B4A9B8 16%, rgba(180,169,184,.65) 34%, rgba(180,169,184,.2) 55%, rgba(180,169,184,0) 70%)' : '#B4A9B8'),
+      bop: st.dentro ? 1 : 0,
+      muovi: function (e) {
+        var r = e.currentTarget.getBoundingClientRect();
+        var t = e.target && e.target.closest ? e.target.closest('button,a') : null;
+        var k = t ? 'link' : '';
+        var mx = Math.round(e.clientX - r.left), my = Math.round(e.clientY - r.top);
+        self.state.mx = mx; self.state.my = my;
+        var el = e.currentTarget;
+        var b = el.querySelector('.bolla');
+        if (b) { b.style.left = mx + 'px'; b.style.top = my + 'px'; }
+        if (k !== st.sopra || !st.dentro) { self.setState({ sopra: k, dentro: true }); }
+      },
+      esci: function () { self.setState({ dentro: false }); }
+    });
+  }
+}
+DCStart(Component);
+</script>
+</body>
+</html>

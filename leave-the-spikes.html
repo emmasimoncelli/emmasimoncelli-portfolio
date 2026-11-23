@@ -122,9 +122,12 @@ html{scroll-behavior:smooth}
 .pross7{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:3vw;margin-top:8vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
 .pross7 .cornice{grid-column:1/-1;color:#5FC24A}
 .pt7{font-weight:900;font-size:3.6vw;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;transition:color .3s}
-.fr7{display:inline-block;transition:transform .3s}
+.fr7{display:inline-block;width:.72em;height:.72em;margin-left:.15em;vertical-align:-.02em;overflow:visible;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.fr7 path,.fz7 path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10}
+.fz7{display:block;width:22px;height:22px;margin:auto}.sx7{transform:scaleX(-1)}
+.freccia{font-size:0 !important}.freccia:hover{transform:none !important}
 .pross7:hover .pt7{color:#F27BA6}
-.pross7:hover .fr7{transform:translateX(1.4vw)}
+.pross7:hover .fr7{transform:rotate(-45deg)}
 .pross7 img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .pross7:hover img{transform:rotate(-3deg) scale(1.03)}
 .tendina,.tendinaI,.lb{position:fixed !important}
@@ -184,7 +187,7 @@ html{scroll-behavior:smooth}
           <div class="asta"></div>
         </div>
       </div></section>
-  <a class="pross7" href="edicola518.html"><span class="cornice">Progetto successivo</span><span class="pt7">Edicola 518 <span class="fr7">→</span></span></a>
+  <a class="pross7" href="edicola518.html"><span class="cornice">Progetto successivo</span><span class="pt7">Edicola 518 <svg class="fr7" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.9 5 H8.3"/><path d="M5.1 1.7 L8.4 5 L5.1 8.3"/></svg></span></a>
   <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
     <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(95,194,74,.2)">
   </div>

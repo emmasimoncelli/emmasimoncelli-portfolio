@@ -132,9 +132,12 @@ html{scroll-behavior:smooth}
 .pross7{display:grid;grid-template-columns:minmax(0,1fr);align-items:end;gap:3vw;margin-top:8vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
 .pross7 .cornice{grid-column:1/-1;color:#8C0A55}
 .pt7{font-weight:900;font-size:3.6vw;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;transition:color .3s}
-.fr7{display:inline-block;transition:transform .3s}
+.fr7{display:inline-block;width:.72em;height:.72em;margin-left:.15em;vertical-align:-.02em;overflow:visible;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.fr7 path,.fz7 path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10}
+.fz7{display:block;width:22px;height:22px;margin:auto}.sx7{transform:scaleX(-1)}
+.freccia{font-size:0 !important}.freccia:hover{transform:none !important}
 .pross7:hover .pt7{color:#2D9DD5}
-.pross7:hover .fr7{transform:translateX(1.4vw)}
+.pross7:hover .fr7{transform:rotate(-45deg)}
 .pross7 img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .pross7:hover img{transform:rotate(-3deg) scale(1.03)}
 .tendina,.tendinaI,.lb{position:fixed !important}
@@ -184,9 +187,9 @@ html{scroll-behavior:smooth}
   </div>
 
   <div style="display: flex; justify-content: center; align-items: center; gap: 36px; padding: 18px 4vw 24px">
-    <button type="button" class="freccia" onClick="{{prev}}" aria-label="Pagina precedente">←</button>
+    <button type="button" class="freccia" onClick="{{prev}}" aria-label="Pagina precedente"><svg class="fz7 sx7" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.9 5 H8.3"/><path d="M5.1 1.7 L8.4 5 L5.1 8.3"/></svg></button>
     <span style="font-weight: 700; font-size: 15px; letter-spacing: .04em; min-width: 80px; text-align: center; font-variant-numeric: tabular-nums">{{contatore}}</span>
-    <button type="button" class="freccia" onClick="{{next}}" aria-label="Pagina successiva">→</button>
+    <button type="button" class="freccia" onClick="{{next}}" aria-label="Pagina successiva"><svg class="fz7" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.9 5 H8.3"/><path d="M5.1 1.7 L8.4 5 L5.1 8.3"/></svg></button>
   </div>
   </section>
   <section class="blocco7 rivela" id="inizio7"><p class="et7">Concept</p><p class="tx7">Come costruiscono oggi i giovani la propria identità in un contesto in cui tutto è esposto, giudicato e continuamente riprodotto? La rivista affronta questa domanda attraverso un linguaggio visivo volutamente eterogeneo, in cui la varietà diventa una scelta progettuale.</p></section>
@@ -205,7 +208,7 @@ html{scroll-behavior:smooth}
         <p style="margin: 12px 0 0; width: min(60vh, 600px, 100%); font-size: 13px; line-height: 1.45; color: #CFC6D3">Ogni linea è un legame reale o concettuale: un festival, una collaborazione, un progetto o un'estetica in comune.</p>
       </div></div><div class="rivela"><p class="et7">Metodo</p><p class="tx7">Sono partita da quattro artisti — Yungblud, Bring Me the Horizon, Fontaines D.C. e Wolf Alice — per esplorare le connessioni tra i loro mondi: festival, brand, collaborazioni ed estetiche. Ogni sezione sviluppa un'identità visiva propria, ispirata agli artisti e ai contesti che racconta, attraverso palette, caratteri tipografici e composizioni differenti.</p></div></section>
   <section class="imm7 due7"><img class="rivela" src="a/c7485644ca024f5bb962659bba30839d.jpg" alt="La rivista aperta sulla pagina di Bring Me the Horizon" loading="lazy"><img class="rivela" src="a/f8cb04513fbf4ca9b54d67489fbd5773.jpg" alt="La rivista sfogliata" loading="lazy"><img class="rivela" src="a/0484ea140937244ed90f4e438a8e40c3.jpg" alt="La pagina dei Fontaines D.C." loading="lazy"><img class="rivela" src="a/60da513d7d53e0f686380aa3321bd8b4.jpg" alt="La rivista e la copertina nera" loading="lazy"></section>
-  <a class="pross7" href="acito.html"><span class="cornice">Progetto successivo</span><span class="pt7">Acito <span class="fr7">→</span></span></a>
+  <a class="pross7" href="acito.html"><span class="cornice">Progetto successivo</span><span class="pt7">Acito <svg class="fr7" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.9 5 H8.3"/><path d="M5.1 1.7 L8.4 5 L5.1 8.3"/></svg></span></a>
   <div class="tendinaI" aria-hidden="{{nascostoI}}" onMouseMove="{{muoviI}}" style="transform: translateX({{txI}})">
     <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw">
       <button type="button" class="btn-menu" onClick="{{chiudiI}}">← Torna al progetto</button>

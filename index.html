@@ -34,7 +34,7 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 .cursore{position:fixed;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
 @keyframes rivela{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.rivela{animation:rivela linear both;animation-timeline:view();animation-range:entry 0% cover 25%}}
-@media (prefers-reduced-motion: reduce){.rivela{animation:none}.tendina,.voce6{transition:none}}
+
 .lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
 .lista-c a:hover{color:#D9C2FF}
 .anteprima{pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
@@ -80,7 +80,7 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 .voce-n:hover{color:#C9A8FF;-webkit-text-stroke:0}
 .stella-n{color:#C9A8FF;font-size:2.4vw;line-height:1}
 @media (max-width: 760px){.voce-n{font-size:10vw}.stella-n{font-size:6vw}.nastro-p{padding:22px 0}}
-@media (prefers-reduced-motion: reduce){.nome-mano,.eroe-nome .foto-viola,.nastro-p .nastro-in{animation:none}}
+@media (prefers-reduced-motion: reduce){.nastro-p .nastro-in{animation:none}}
 .piede .lista-c a,.piede .lista-c span{border-top:1px solid rgba(255,255,255,.28)}
 @media (max-width: 760px){.piede-griglia{grid-template-columns:1fr !important;gap:20px !important}.piede-griglia p{font-size:10vw !important}.frase-cv{font-size:7.5vw !important}}
 @media (max-width: 760px){.foto-b{height:min(56vh,460px) !important}}

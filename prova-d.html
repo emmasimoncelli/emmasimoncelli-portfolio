@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emma Simoncelli • Portfolio</title>
+<meta name="description" content="Portfolio di Emma Simoncelli, graphic designer a Riccione.">
+<meta property="og:title" content="Emma Simoncelli • Portfolio">
+<meta property="og:description" content="Graphic designer · Riccione (RN)">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://emmasimoncelli.github.io/portfolio/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:'Switzer';src:url(a/8f98dc3defd3cea23b425beed1afd08f.ttf) format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+body{margin:0;background:#000}
+a{color:#FFFFFF}a:hover{color:#D9C2FF}
+.palco8,.palco8 *{cursor:none !important}
+.cornice{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.btn-menu{background:transparent;border:0;padding:0;font:inherit;color:#FFFFFF;letter-spacing:.08em;text-transform:uppercase;font-size:12px;font-weight:600}
+.btn-menu:hover{color:#D9C2FF}
+.nome6{margin:0;font-weight:900;font-size:8.6vw;line-height:.84;letter-spacing:-.05em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap}
+.blocco h3{margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D9C2FF}
+.riga6{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid rgba(255,255,255,.28);font-size:17px;font-weight:600}
+.riga6 span{font-weight:400;color:#E6DAFF;white-space:nowrap}
+.cta6{display:flex;width:100%;justify-content:space-between;align-items:center;padding:34px 4vw;background:#000;color:#FFFFFF;border:0;font:inherit;font-weight:900;font-size:6vw;line-height:1;letter-spacing:-.04em;text-transform:uppercase;text-align:left;transition:color .3s}
+.cta6:hover{color:#C9A8FF}
+.cta6 .fr{display:inline-block;transition:transform .3s}
+.cta6:hover .fr{transform:translateX(18px)}
+.tendina{position:fixed;inset:0;z-index:500;background:#000;transition:transform .75s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.voce6{display:block;text-decoration:none;color:#FFFFFF;font-weight:800;font-size:4.6vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.16);text-wrap:balance;transition:color .25s,transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.voce6:hover{color:#C9A8FF}
+.cursore{position:fixed;z-index:999;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+@keyframes rivela{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.rivela{animation:rivela linear both;animation-timeline:view();animation-range:entry 0% cover 25%}}
+@media (prefers-reduced-motion: reduce){.rivela{animation:none}.tendina,.voce6{transition:none}}
+.lista-c a,.lista-c span{display:block;padding:9px 0;border-top:1px solid rgba(255,255,255,.28);font-size:16px;font-weight:500;text-decoration:none;color:#FFFFFF}
+.lista-c a:hover{color:#D9C2FF}
+.anteprima{pointer-events:none;z-index:2;transition:opacity .3s,transform .5s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
+.anteprima img{display:block;width:100%;height:auto}
+.anteprima .sopra-i{position:absolute;left:17%;top:50%;width:66%;transform:translateY(-50%)}
+.gira-i{animation:giraI 12s linear infinite}
+@keyframes giraI{to{transform:rotate(360deg)}}
+@media (max-width: 760px){
+.pagina{height:auto !important;min-height:100svh !important;overflow:visible !important}
+.riga-titolo{grid-template-columns:1fr !important;gap:14px !important;justify-content:stretch !important;align-items:start !important}
+.titolo{font-size:clamp(30px,9vw,56px) !important}
+.area-vis{flex:none !important;height:62svh !important;min-height:320px}
+.tendina,.tendinaP,.tendinaI,.lb{position:fixed !important}
+.tendina,.tendinaP,.tendinaI{overflow-y:auto !important}
+.griglia-p{grid-template-columns:1fr !important;align-content:start !important;justify-items:center !important;gap:28px !important;padding-top:20px !important;flex:none !important}
+.voce6{font-size:8.5vw !important;padding:12px 0 !important}
+.legenda-row{flex-wrap:wrap !important}
+.frase-hero{font-size:11vw !important}
+.riga-hero{flex-direction:column !important;align-items:flex-start !important;gap:16px !important}
+.riga-hero p{text-align:left !important}
+.griglia-cv{grid-template-columns:1fr !important;gap:36px !important}
+.cta6{font-size:9vw !important}
+.nome-scia{font-size:15vw !important}
+}
+@media (min-width: 761px) and (max-width: 1100px){
+.griglia-cv{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.voce6{font-size:6vw !important}
+}
+@media (hover: none), (pointer: coarse){
+.bolla,.cursore,.anteprima{display:none !important}
+*{cursor:auto !important}
+}
+.eroe-nome .foto-viola{animation:respira 9s ease-in-out infinite alternate}
+@keyframes respira{from{transform:translate(-50%,-52%) scale(1)}to{transform:translate(-50%,-52%) scale(1.04)}}
+.nome-mano{animation:scrivi 2.2s cubic-bezier(.6,0,.3,1) .3s both}
+@keyframes scrivi{from{clip-path:inset(-20% 100% -20% 0)}to{clip-path:inset(-20% 0 -20% 0)}}
+.nastro-p{overflow:hidden;background:#000;padding:26px 0;display:flex;align-items:center}
+.nastro-p .nastro-in{display:flex;align-items:center;gap:14px;width:max-content;animation:scorriP 38s linear infinite}
+.nastro-p:hover .nastro-in{animation-play-state:paused}
+@keyframes scorriP{to{transform:translateX(-50%)}}
+.voce-n{text-decoration:none;color:#FFFFFF;font-weight:900;font-size:4.4vw;line-height:1;letter-spacing:-.035em;text-transform:uppercase;white-space:nowrap;transition:color .25s}
+.voce-n.vuota{color:transparent;-webkit-text-stroke:1.5px #FFFFFF}
+.voce-n:hover{color:#C9A8FF;-webkit-text-stroke:0}
+.stella-n{color:#C9A8FF;font-size:2.4vw;line-height:1}
+@media (max-width: 760px){.voce-n{font-size:10vw}.stella-n{font-size:6vw}.nastro-p{padding:22px 0}}
+@media (prefers-reduced-motion: reduce){.nome-mano,.eroe-nome .foto-viola,.nastro-p .nastro-in{animation:none}}
+.piede .lista-c a,.piede .lista-c span{border-top:1px solid rgba(255,255,255,.28)}
+@media (max-width: 760px){.piede-griglia{grid-template-columns:1fr !important;gap:20px !important}.piede-griglia p{font-size:10vw !important}.frase-cv{font-size:7.5vw !important}}
+@media (max-width: 760px){.foto-b{height:min(56vh,460px) !important}}
+.tag-c{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:14px 26px;border:1.5px solid #C9A8FF;border-radius:999px;color:#FFFFFF;font-weight:700;font-size:clamp(16px,1.9vw,30px);line-height:1;letter-spacing:-.01em;transition:background .25s,color .25s}
+.tag-c:hover{background:#C9A8FF;color:#000}
+.voce-cv{padding:26px 0 28px;border-top:1px solid rgba(255,255,255,.3)}
+.voce-testa{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+.voce-cv h4{margin:0;font-size:clamp(20px,1.9vw,30px);font-weight:800;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase}
+.data-cv{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF;white-space:nowrap}
+.dove-cv{margin:8px 0 12px;font-size:16px;font-weight:600;color:#FFFFFF}
+.desc-cv{margin:0;max-width:620px;font-size:15px;line-height:1.6;color:#E6DAFF}
+.titolo-cv{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D9C2FF}
+.pillole{display:flex;flex-wrap:wrap;gap:10px}
+.pillole .tag-c{font-size:16px;padding:11px 20px}
+.colonne-cv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4vw 6vw;align-items:start}
+@media (max-width: 900px){.colonne-cv{grid-template-columns:1fr !important;gap:56px !important}.voce-cv h4{font-size:22px}}
+
+@media (max-width: 760px){.nastro-p{padding:18px 0}.tag-c{padding:10px 18px;font-size:16px}}
+.eroe2{position:relative;padding:120px 4vw 80px;background:#000}
+.frase2{margin:0;max-width:1300px;font-weight:900;font-size:6.2vw;line-height:.92;letter-spacing:-.045em;text-transform:uppercase}
+.frase2 em{font-style:normal;color:#8C5CFF}
+.firma2{position:absolute;right:4vw;bottom:34px;width:min(36vw,520px);transform:rotate(-5deg);transform-origin:right bottom}
+.par2{margin:48px 0 0;max-width:560px;font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#D9CDE6}
+.cv2{background:#4B1F8F;padding:80px 4vw 90px}
+.gruppo2{margin:0 0 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D9C2FF}
+.riga2{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,.8fr) 40px;gap:24px;align-items:center;width:100%;padding:22px 0;border:0;border-top:1px solid rgba(255,255,255,.3);background:transparent;color:#FFFFFF;font:inherit;text-align:left;cursor:pointer}
+.riga2 .anno2{font-size:14px;font-weight:700;color:#D9C2FF}
+.riga2 .ruolo2{font-size:clamp(22px,2.6vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1;text-transform:uppercase;transition:color .25s}
+.riga2:hover .ruolo2{color:#C9A8FF}
+.riga2 .dove2{font-size:15px;font-weight:600;color:#E6DAFF}
+.riga2 .piu2{font-size:28px;font-weight:300;text-align:right;transition:transform .4s}
+.apri2{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.8,.2,1)}
+.apri2 > div{overflow:hidden}
+.apri2 p{margin:0 0 26px 134px;max-width:640px;font-size:15px;line-height:1.6;color:#E6DAFF}
+.skills2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:80px;padding-top:30px;border-top:1px solid rgba(255,255,255,.3)}
+.lista2{margin:14px 0 0;font-size:clamp(20px,2.2vw,34px);font-weight:800;line-height:1.25;letter-spacing:-.02em;text-transform:uppercase}
+.lista2 i{font-style:normal;color:#C9A8FF;font-weight:400}
+.piede2{background:#000;padding:70px 4vw 36px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:end}
+@media (max-width: 760px){.frase2{font-size:11vw !important}.firma2{position:static !important;display:block;width:70vw !important;margin-top:28px}.riga2{grid-template-columns:56px minmax(0,1fr) 28px !important;gap:12px !important}.riga2 .dove2{display:none}.apri2 p{margin-left:0 !important}.skills2,.piede2{grid-template-columns:1fr !important}}
+.picc{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF}
+.frasep{margin:0;font-weight:800;font-size:clamp(17px,1.5vw,22px);line-height:1.2;letter-spacing:-.01em;text-transform:uppercase}
+.frasep em{font-style:normal;color:#8C5CFF}
+.parp{margin:12px 0 0;font-size:15px;line-height:1.55;color:#D9CDE6}
+@keyframes entra{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.eroeD{position:relative;height:100svh;min-height:640px;overflow:hidden;background:#000;--x:-999px;--y:-999px}
+.figD{position:absolute;right:4vw;bottom:0;height:94%;aspect-ratio:996/1152}
+.figD img{position:absolute;inset:0;width:100%;height:100%}
+.figD .veraD{-webkit-mask:radial-gradient(circle 130px at var(--x) var(--y),#000 55%,transparent 100%);mask:radial-gradient(circle 130px at var(--x) var(--y),#000 55%,transparent 100%)}
+.nomeD{position:absolute;left:3vw;top:50%;transform:translateY(-50%);z-index:2;margin:0;font-weight:900;font-size:11vw;line-height:.82;letter-spacing:-.055em;text-transform:uppercase;color:#fff;pointer-events:none}
+.testoD{position:absolute;left:4vw;bottom:5vh;max-width:440px;z-index:3}
+.etD{position:absolute;left:4vw;top:24px;z-index:3}
+@media (max-width: 760px){.eroeD{height:auto;min-height:0;padding:70px 4vw 36px}.figD{position:relative;right:auto;height:auto;width:100%;margin-top:6vw}.nomeD{top:58vw;font-size:17vw}.testoD{position:static;margin-top:24px}}
+@media (hover: none){.veraD{display:none}}
+</style>
+<style>body{font-family:Switzer,sans-serif}</style>
+</head>
+<body>
+<template id="dc-template">
+
+<div class="palco8" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #000; color: #FFFFFF; font-family: Switzer, sans-serif">
+
+
+  <header class="cornice testata" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: flex-end; align-items: center; padding: 22px 4vw">
+    <nav aria-label="Menu" style="display: flex; gap: 28px">
+      <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </nav>
+  </header>
+
+  <section class="eroeD" onMouseMove="{{muoviD}}" onMouseLeave="{{esciD}}">
+    <p class="picc etD">Graphic designer</p>
+    <div class="figD"><img src="a/728dea503d88895a4b6807d32f7e12b9.png" alt="Emma Simoncelli"><img class="veraD" src="a/b4e9e88d5fd4fe284bed50e6fe4636a6.webp" alt=""></div>
+    <h1 class="nomeD">Emma<br>Simoncelli</h1>
+    <div class="testoD"><p class="frasep">Amo trasformare concetti in sistemi visivi che colpiscono e lasciano un <em>segno.</em></p><p class="parp">Faccio la graphic designer perché credo che la comunicazione possa davvero fare la differenza: è lo strumento più potente che abbiamo per esprimere idee ed emozioni.</p></div>
+  </section>
+  <section class="cv2">
+      <p class="gruppo2">Esperienze lavorative</p>
+      <button type="button" class="riga2" onClick="{{r0}}" aria-expanded="{{e0}}"><span class="anno2">2026</span><span class="ruolo2">Graphic designer</span><span class="dove2">Simbiosi Group, Cattolica</span><span class="piu2" style="transform: rotate({{t0}})">+</span></button>
+      <div class="apri2" style="grid-template-rows: {{g0}}"><div><p><strong style="color: #FFFFFF">Simbiosi Group, Cattolica · gennaio 2026 – in corso</strong><br>Come figura junior del team, il mio ruolo è molto dinamico. Da una parte gestisco in totale autonomia i progetti più piccoli, dall'altra faccio da supporto ai colleghi sui lavori complessi, occupandomi spesso in prima persona della creazione delle immagini. Il mio punto forte è Illustrator, ma salto agilmente tra Photoshop, InDesign e le basi di Figma, Premiere e After Effects per dare una mano ovunque serva.</p></div></div>
+      <button type="button" class="riga2" onClick="{{r1}}" aria-expanded="{{e1}}"><span class="anno2">2025</span><span class="ruolo2">Stage graphic designer</span><span class="dove2">Simbiosi Group, Cattolica</span><span class="piu2" style="transform: rotate({{t1}})">+</span></button>
+      <div class="apri2" style="grid-template-rows: {{g1}}"><div><p><strong style="color: #FFFFFF">Simbiosi Group, Cattolica · marzo – settembre 2025</strong><br>Ho iniziato affiancando il team sulle lavorazioni quotidiane, facendo modifiche e adattamenti per imparare il mestiere. L'agenzia ha apprezzato la mia flessibilità e soprattutto la voglia di fare, tanto da decidere di aspettare la mia laurea per potermi assumere a tempo pieno.</p></div></div>
+      <button type="button" class="riga2" onClick="{{r2}}" aria-expanded="{{e2}}"><span class="anno2">2020</span><span class="ruolo2">Alternanza scuola-lavoro</span><span class="dove2">Retorica, Riccione</span><span class="piu2" style="transform: rotate({{t2}})">+</span></button>
+      <div class="apri2" style="grid-template-rows: {{g2}}"><div><p><strong style="color: #FFFFFF">Retorica, Riccione · febbraio 2020</strong><br>Breve esperienza formativa svolta durante gli anni del liceo artistico. È stato il mio primo vero approccio al mondo del lavoro, dove ho potuto osservare da vicino le dinamiche di un'agenzia.</p></div></div>
+      <p class="gruppo2" style="margin-top: 56px">Istruzione</p>
+      <button type="button" class="riga2" onClick="{{r3}}" aria-expanded="{{e3}}"><span class="anno2">2025</span><span class="ruolo2">Laurea in Design</span><span class="dove2">Unirsm Design</span><span class="piu2" style="transform: rotate({{t3}})">+</span></button>
+      <div class="apri2" style="grid-template-rows: {{g3}}"><div><p><strong style="color: #FFFFFF">Unirsm Design · novembre 2025</strong><br>Il corso prevede un biennio multidisciplinare per formare basi solide sia nel design del prodotto che nella comunicazione. Arrivata al terzo anno, avendo la possibilità di personalizzare il piano di studi, ho scelto di specializzarmi sulla comunicazione visiva, frequentando entrambi i laboratori dedicati.</p></div></div>
+      <button type="button" class="riga2" onClick="{{r4}}" aria-expanded="{{e4}}"><span class="anno2">2021</span><span class="ruolo2">Maturità artistica</span><span class="dove2">Liceo Artistico Mengaroni</span><span class="piu2" style="transform: rotate({{t4}})">+</span></button>
+      <div class="apri2" style="grid-template-rows: {{g4}}"><div><p><strong style="color: #FFFFFF">Liceo Artistico Mengaroni · giugno 2021</strong><br>Indirizzo Grafica. Diploma conseguito con votazione 100 e lode.</p></div></div>
+      <button type="button" class="riga2" onClick="{{r5}}" aria-expanded="{{e5}}"><span class="anno2">2021</span><span class="ruolo2">Certificazione lingua inglese</span><span class="dove2">Cambridge Assessment English</span><span class="piu2" style="transform: rotate({{t5}})">+</span></button>
+      <div class="apri2" style="grid-template-rows: {{g5}}"><div><p><strong style="color: #FFFFFF">Cambridge Assessment English · 2021</strong><br>Livello B2.</p></div></div>
+    <div class="skills2">
+      <div><p class="gruppo2">Software</p><p class="lista2">Illustrator <i>/</i> InDesign <i>/</i> Photoshop <i>/</i> Figma <i>/</i> After Effects (basi) <i>/</i> Premiere (basi)</p></div>
+      <div><p class="gruppo2">Expertise</p><p class="lista2">Brand design <i>/</i> Editorial design <i>/</i> Typography <i>/</i> Photo editing <i>/</i> Digital assets</p></div>
+    </div>
+  </section>
+  <footer class="piede2">
+    <p style="margin: 0; font-weight: 900; font-size: 5vw; line-height: .92; letter-spacing: -.04em; text-transform: uppercase">Contattami!</p>
+    <div class="lista-c"><a href="mailto:emmasic2002@gmail.com">emmasic2002@gmail.com</a><a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/">LinkedIn</a><a href="https://www.instagram.com/emmasimoncelli/">Instagram</a><span>Riccione (RN), Italia</span><span style="color: #C9A8FF">© 2026 Emma Simoncelli</span></div>
+  </footer>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascosto}}" onMouseMove="{{muovi}}" style="transform: translateX({{tx}})">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
+      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
+    </div>
+    <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
+      <sc-for list="{{progetti}}" as="p" hint-placeholder-count="6">
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+      </sc-for>
+    </nav>
+    <div class="anteprima" aria-hidden="true" style="position: fixed; left: {{cx}}; top: {{cy}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
+      <img class="{{icls}}" src="{{iimg}}" alt="">
+      <img class="sopra-i" src="{{iover}}" alt="" style="display: {{iovd}}">
+    </div>
+  </div>
+
+  <div class="tendina" aria-hidden="{{nascostoC}}" onMouseMove="{{muovi}}" style="transform: translateX({{txC}}); background: #4B1F8F; z-index: 510">
+    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw">
+      <button type="button" class="btn-menu" onClick="{{chiudi}}">About me</button>
+      <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
+    </div>
+    <div style="flex: 1 1 auto; display: flex; align-items: flex-end; padding: 0 4vw 8vh">
+      <div class="lista-c" style="width: min(360px, 100%); opacity: {{opC}}; transform: translateX({{trC}}); transition: opacity .5s .3s, transform .6s .3s cubic-bezier(.2,.8,.2,1)">
+        <p class="cornice" style="margin: 0 0 14px; color: #D9C2FF">Contatti</p>
+        <a href="mailto:emmasic2002@gmail.com" tabindex="{{tabC}}">emmasic2002@gmail.com</a>
+        <span>Riccione (RN), Italia</span>
+        <a href="https://www.linkedin.com/in/emma-simoncelli-aa0231378/" tabindex="{{tabC}}">LinkedIn</a>
+        <a href="https://www.instagram.com/emmasimoncelli/" tabindex="{{tabC}}" style="border-bottom: 1px solid rgba(255,255,255,.28)">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursore" aria-hidden="true" style="left: {{cx}}; top: {{cy}}; width: {{cw}}; height: {{cw}}; background: {{cbg}}; opacity: {{cop}}"></div>
+</div>
+</template>
+<div id="dc-root"></div>
+<script src="dc.js"></script>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var B = 'a/';
+    this.P = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "Mind", "href": "mind.html", "img": "a/518a2dbce15d2d160a2b57c03518ff21.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "r": -3, "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp"}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    this.state = { aperto: false, apertoC: false, h: -1, x: -200, y: -200, sopra: false, dentro: false, ap: -1 };
+  }
+  componentDidMount() {
+    try { if (window.location.hash === '#progetti') { this.setState({ aperto: true }); } } catch (e) {}
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    return {
+      r0: function () { self.setState({ ap: st.ap === 0 ? -1 : 0 }); }, e0: st.ap === 0 ? 'true' : 'false', g0: st.ap === 0 ? '1fr' : '0fr', t0: st.ap === 0 ? '45deg' : '0deg',
+      r1: function () { self.setState({ ap: st.ap === 1 ? -1 : 1 }); }, e1: st.ap === 1 ? 'true' : 'false', g1: st.ap === 1 ? '1fr' : '0fr', t1: st.ap === 1 ? '45deg' : '0deg',
+      r2: function () { self.setState({ ap: st.ap === 2 ? -1 : 2 }); }, e2: st.ap === 2 ? 'true' : 'false', g2: st.ap === 2 ? '1fr' : '0fr', t2: st.ap === 2 ? '45deg' : '0deg',
+      r3: function () { self.setState({ ap: st.ap === 3 ? -1 : 3 }); }, e3: st.ap === 3 ? 'true' : 'false', g3: st.ap === 3 ? '1fr' : '0fr', t3: st.ap === 3 ? '45deg' : '0deg',
+      r4: function () { self.setState({ ap: st.ap === 4 ? -1 : 4 }); }, e4: st.ap === 4 ? 'true' : 'false', g4: st.ap === 4 ? '1fr' : '0fr', t4: st.ap === 4 ? '45deg' : '0deg',
+      r5: function () { self.setState({ ap: st.ap === 5 ? -1 : 5 }); }, e5: st.ap === 5 ? 'true' : 'false', g5: st.ap === 5 ? '1fr' : '0fr', t5: st.ap === 5 ? '45deg' : '0deg',
+      tx: st.aperto ? '0%' : '100%', nascosto: st.aperto ? 'false' : 'true',
+      progetti: this.P.map(function (p, i) {
+        return { titolo: p.t, href: p.href, tab: st.aperto ? 0 : -1,
+          tx: st.aperto ? '0px' : '120px', op: st.aperto ? 1 : 0, del: st.aperto ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s',
+          su: function (e) { var o = { h: i }; if (e && e.clientX !== undefined) { o.x = e.clientX; o.y = e.clientY; } self.setState(o); }, giu: function () { self.setState({ h: -1 }); } };
+      }),
+      iimg: (st.h >= 0 ? this.P[st.h] : this.P[0]).img, iover: (st.h >= 0 ? this.P[st.h] : this.P[0]).over || this.P[0].img, iovd: (st.h >= 0 && this.P[st.h].over) ? 'block' : 'none', irot: (st.h >= 0 ? this.P[st.h].r : 0) + 'deg', icls: (st.h >= 0 && this.P[st.h].gira) ? 'gira-i' : '', iop: (st.aperto && st.h >= 0) ? 1 : 0, iw: (st.h >= 0 && (this.P[st.h].over || this.P[st.h].gira)) ? '220px' : '200px',
+      apri: function () { self.setState({ aperto: true, apertoC: false }); },
+      apriC: function () { self.setState({ apertoC: true, aperto: false, h: -1 }); },
+      chiudi: function () { self.setState({ aperto: false, apertoC: false, h: -1 }); },
+      txC: st.apertoC ? '0%' : '100%', nascostoC: st.apertoC ? 'false' : 'true', opC: st.apertoC ? 1 : 0, trC: st.apertoC ? '0px' : '80px', tabC: st.apertoC ? 0 : -1,
+      contatti: function () {
+        self.setState({ aperto: false, h: -1 });
+        var el = document.getElementById('contatti'); if (el) { setTimeout(function () { el.scrollIntoView({ behavior: 'smooth' }); }, 500); }
+      },
+      cx: st.x + 'px', cy: st.y + 'px',
+      cw: st.sopra ? '90px' : '14px',
+      cbg: st.sopra ? 'radial-gradient(circle, #C9A8FF 0%, #C9A8FF 16%, rgba(155,93,229,.65) 34%, rgba(155,93,229,.2) 55%, rgba(155,93,229,0) 70%)' : '#C9A8FF',
+      cop: st.dentro ? 1 : 0,
+      muoviD: function (e) { var f = e.currentTarget.querySelector('.figD'); if (!f) return; var r = f.getBoundingClientRect(); e.currentTarget.style.setProperty('--x', (e.clientX - r.left) + 'px'); e.currentTarget.style.setProperty('--y', (e.clientY - r.top) + 'px'); },
+      esciD: function (e) { e.currentTarget.style.setProperty('--x', '-999px'); e.currentTarget.style.setProperty('--y', '-999px'); },
+      muovi: function (e) {
+        var t = e.target && e.target.closest ? e.target.closest('a,button') : null;
+        self.setState({ x: e.clientX, y: e.clientY, sopra: !!t, dentro: true });
+      },
+      esci: function () { self.setState({ dentro: false }); }
+    };
+  }
+}
+DCStart(Component);
+</script>
+</body>
+</html>

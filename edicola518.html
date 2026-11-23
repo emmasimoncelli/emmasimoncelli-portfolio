@@ -74,9 +74,10 @@ a{color:#EFE8DF}a:hover{color:#F27BA6}
 .kw6{flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .25s;white-space:nowrap}
 .voce6:hover .kw6{color:#C9A8FF}
 @media (max-width: 760px){.voce6{flex-direction:column;align-items:flex-start;gap:8px}.kw6{font-size:11px}}
-.titC{margin:0 0 22px;font-weight:900;font-size:5vw;line-height:.92;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;color:#FFFFFF}
+.titC{margin:0 0 20px;font-weight:900;font-size:clamp(28px,3.4vw,54px);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;white-space:nowrap;color:#FFFFFF}
 .piede2{align-items:start !important}
-@media (max-width: 760px){.titC{font-size:10vw}}
+.piede2 > p{font-size:clamp(28px,3.4vw,54px) !important}
+@media (max-width: 760px){.titC{font-size:8vw}.piede2 > p{font-size:8vw !important}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -179,7 +180,7 @@ a{color:#EFE8DF}a:hover{color:#F27BA6}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/42ce1854b6ecba3a5f4ce0f3e4b35460.jpg", "r": -5}, {"t": "Mind", "href": "mind.html", "img": "a/518a2dbce15d2d160a2b57c03518ff21.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
+    this.IDX = [{"t": "Let's stop trying to make all the edges smooth", "href": "tesi.html", "img": "a/41eb429e80ad1037dc968df8c4d6dbb5.jpg", "r": -5}, {"t": "Mind", "href": "mind.html", "img": "a/518a2dbce15d2d160a2b57c03518ff21.jpg", "r": 4}, {"t": "Edicola 518", "href": "edicola518.html", "img": "a/49c486526a3fd314a35a5c178951f9a0.webp", "r": 0, "gira": true}, {"t": "Acito", "href": "acito.html", "img": "a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp", "over": "a/6d98620b7c21df77aa8bb46e87b521d6.webp", "r": -3}, {"t": "Leave the Spikes to the Punks", "href": "leave-the-spikes.html", "img": "a/15c5c5709f289c5705246a340fa843d0.jpg", "r": 6}, {"t": "Underground", "href": "underground.html", "img": "a/b0efeccf1ca7be128673dbc6a52c4bcf.jpg", "r": -7}];
     var B = 'a/';
     this.M = [
       [B + '9aa9237cca671557b078d3c78713e3fb.jpg', 'Manifesto Lasciati guidare'],

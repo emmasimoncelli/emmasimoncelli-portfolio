@@ -115,6 +115,7 @@ html{scroll-behavior:smooth}
 .vis7{display:flex;justify-content:center;padding:2vh 4vw 4vh}
 .vis7 > *{max-width:100%}
 .vis7 .compo5{height:min(64svh,620px)}
+.vis7 .palco-picto{width:min(30vw,44vh,340px) !important}
 .split7{display:grid;grid-template-columns:min(60vh,600px) minmax(0,720px);justify-content:start;gap:4vw;align-items:center;padding:4vh 4vw}
 .split7 .vis7{padding:0;justify-content:flex-start}
 .neon7{justify-items:center;padding:2vh 4vw 4vh}.neon7 img{width:min(76vw,1000px)}
@@ -143,7 +144,7 @@ html{scroll-behavior:smooth}
 .tendina,.tendinaI,.lb{position:fixed !important}
 @keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
-@media (max-width: 760px){.eroe7{height:auto !important;min-height:0 !important;padding-bottom:3vh}.eroe7 .area-vis{height:auto !important;min-height:0 !important;flex:none !important;padding-bottom:0 !important}.eroe7 .nastro{height:min(44svh,360px) !important}.eroe7 .molla-box{height:min(28vh,200px) !important;margin:0 !important}.blocco7{padding:5vh 5vw 3vh}.tx7{font-size:19px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.split7{grid-template-columns:1fr;padding:6vh 5vw;gap:28px}.pila7{aspect-ratio:1/1.15}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:48px;height:48px}}
+@media (max-width: 760px){.eroe7{height:auto !important;min-height:0 !important;padding-bottom:3vh}.eroe7 .area-vis{height:auto !important;min-height:0 !important;flex:none !important;padding-bottom:0 !important}.eroe7 .nastro{height:min(44svh,360px) !important}.eroe7 .molla-box{height:min(28vh,200px) !important;margin:0 !important}.blocco7{padding:5vh 5vw 3vh}.tx7{font-size:19px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.split7{grid-template-columns:1fr;padding:6vh 5vw;gap:28px}.split7 .legenda-row{flex-wrap:nowrap !important;gap:3px !important}.split7 .leg{font-size:7.5px !important;padding:5px 2px 4px !important;letter-spacing:0 !important}.vis7 .palco-picto{width:min(52vw,240px) !important}.compo5.libero{overflow-x:auto !important;-webkit-overflow-scrolling:touch;scrollbar-width:none}.compo5.libero .giro5{animation:none !important;transform:none !important}.pila7{aspect-ratio:1/1.15}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:48px;height:48px}}
 
 .barra7{position:fixed;top:0;left:0;right:0;z-index:450;display:flex;align-items:center;justify-content:space-between;padding:12px 4vw;background:#8C5CFF;transform:translateY(-105%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .barra7.su{transform:none}
@@ -192,7 +193,7 @@ html{scroll-behavior:smooth}
     <button type="button" class="freccia" onClick="{{next}}" aria-label="Pagina successiva"><svg class="fz7" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.9 5 H8.3"/><path d="M5.1 1.7 L8.4 5 L5.1 8.3"/></svg></button>
   </div>
   </section>
-  <section class="blocco7 rivela" id="inizio7"><p class="et7">Concept</p><p class="tx7">Dalle conversazioni con l'autrice sono emersi tre elementi ricorrenti: il rapporto con la tradizione, il contrasto e il cibo. La rivista li sviluppa attraverso quattro sezioni: il percorso personale e letterario dell'autrice, un'intervista, il racconto <em>Grazia</em> e una sezione che mette a confronto fotografie realizzate da noi e immagini generate con l'intelligenza artificiale.</p></section>
+  <section class="blocco7 rivela" id="inizio7"><p class="et7">Concept</p><p class="tx7">La rivista si sviluppa attraverso quattro sezioni: il percorso personale e letterario dell'autrice, un'intervista, il racconto <em>Grazia</em> e una sezione che mette a confronto fotografie realizzate da noi e immagini generate con l'intelligenza artificiale.</p></section>
   <section class="vis7 rivela"><div style="position: relative; width: min(100%, 76vh, 720px); aspect-ratio: 1097 / 1100">
         <img src="a/4b3e5bdb03fd2f516f1f5f3f1661aba5.webp" alt="Un piatto bianco" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 30px 45px rgba(0,0,0,.6))">
         <img src="a/6d98620b7c21df77aa8bb46e87b521d6.webp" alt="La scritta acito che si scrive a mano con la salsa di pomodoro" style="position: absolute; left: 17%; top: 50%; width: 66%; height: auto; transform: translateY(-50%)">
@@ -427,7 +428,7 @@ class Component extends DCLogic {
       esci: function () { self.setState({ dentro: false }); self.riposo(); },
       txC: this.state.apertoC ? '0%' : '100%', nascostoC: this.state.apertoC ? 'false' : 'true', tabC: this.state.apertoC ? 0 : -1,
       apriC: function () { self.setState({ apertoC: true }); },
-      scorri: function () { var t = document.getElementById('inizio7'); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } },
+      scorri: function () { var t = document.getElementById('inizio7'); if (!t) { return; } var y0 = window.scrollY, y1 = t.getBoundingClientRect().top + y0, d = 1100, t0 = null; function passo(ts) { if (t0 === null) { t0 = ts; } var k = Math.min(1, (ts - t0) / d), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; window.scrollTo(0, y0 + (y1 - y0) * e); if (k < 1) { requestAnimationFrame(passo); } } requestAnimationFrame(passo); },
       apriP: function () { self.setState({ apertoP: true }); self.sel = null; self.sc = self.programma(null); self.avviaMappa(); },
       chiudiP: function () { self.setState({ apertoP: false }); self.fermaMappa(); },
       txP: this.state.apertoP ? '0%' : '100%', nascostoP: this.state.apertoP ? 'false' : 'true',

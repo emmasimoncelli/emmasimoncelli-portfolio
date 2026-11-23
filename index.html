@@ -150,7 +150,7 @@ html{scroll-behavior:smooth}
 .indiceA .voce6{display:flex !important;flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start !important;gap:8px !important}
 .indiceA .voce6{position:relative;padding-right:clamp(48px,5vw,80px) !important}
 .fr6{position:absolute;right:0;top:50%;width:clamp(26px,2.6vw,42px);height:clamp(26px,2.6vw,42px);margin-top:calc(clamp(26px,2.6vw,42px) / -2);color:#FFFFFF;transition:transform .4s cubic-bezier(.2,.8,.2,1),color .25s}
-.fr6 path{fill:currentColor}
+.fr6 path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10}
 .voce6:hover .fr6{transform:rotate(-45deg);color:#C9A8FF}
 .picc{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF}
 .frasep{margin:0;font-weight:800;font-size:clamp(17px,1.5vw,22px);line-height:1.2;letter-spacing:-.01em;text-transform:uppercase}
@@ -216,7 +216,7 @@ html{scroll-behavior:smooth}
     <p class="gruppo2">Progetti</p>
     <nav aria-label="Progetti">
       <sc-for list="{{progetti}}" as="p" hint-placeholder-count="6">
-        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span><svg class="fr6" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.6 4.15 H5.7 V1.3 L9.6 5 L5.7 8.7 V5.85 H0.6 Z"/></svg></a>
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span><svg class="fr6" viewBox="0 0 10 10" aria-hidden="true"><path d="M0.9 5 H8.3"/><path d="M5.1 1.7 L8.4 5 L5.1 8.3"/></svg></a>
       </sc-for>
     </nav>
     <div class="anteprima" aria-hidden="true" style="position: fixed; left: {{cx}}; top: {{cy}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">

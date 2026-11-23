@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Underground • Emma Simoncelli</title>
+<title>Underground | Emma Simoncelli</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon-180.png">
 <meta name="description" content="Portfolio di Emma Simoncelli, graphic designer a Riccione.">
-<meta property="og:title" content="Underground • Emma Simoncelli">
-<meta property="og:description" content="Graphic designer · Riccione (RN)">
+<meta property="og:title" content="Underground | Emma Simoncelli">
+<meta property="og:description" content="Graphic designer | Riccione (RN)">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://emmasimoncelli.github.io/portfolio/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -215,7 +215,7 @@ class Component extends DCLogic {
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, kw: ({"tesi.html": "Editorial · Photography", "mind.html": "Brand identity · Photography", "edicola518.html": "Campaign · Posters", "acito.html": "Editorial · Cover", "leave-the-spikes.html": "Poster · Workshop", "underground.html": "Brand identity · Lettering"})[p.href] || '', href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, kw: ({"tesi.html": "Editorial", "mind.html": "Brand identity", "edicola518.html": "Poster design & visuals", "acito.html": "Editorial", "leave-the-spikes.html": "Poster design & visuals", "underground.html": "Brand identity"})[p.href] || '', href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },

@@ -92,6 +92,10 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
 @keyframes scorriFeed5{to{background-position:center 100%}}
 @media (prefers-reduced-motion: reduce){.figura5 img{animation:none}.figura5 img:first-child{opacity:1}.compo5,.feed5,.giro5{animation:none}}
 @media (max-width: 760px){.pagina .scena5{height:auto !important;min-height:0;display:flex !important;flex-direction:column !important;align-items:stretch;overflow:visible !important;gap:2vh !important}.figura5{position:relative;right:-30vw;top:auto;height:auto;width:min(112vw, 56svh);align-self:flex-end}.pagina .scena5{margin-right:0 !important;overflow:hidden !important}.testo5{margin-top:-6vh}.testo5{position:relative;gap:2vh}.inc5{display:none !important}.frase5{font-size:13vw}.logo5{width:30vw}.compo5{height:min(78vw,52svh);width:calc(100% + 8vw);margin:0 -4vw;overflow:hidden;animation:none}.giro5{display:flex;gap:12px;height:100%;width:max-content;align-items:center;animation:scorri5 40s linear infinite}.giro5:active{animation-play-state:paused}.compo5 .pezzo5{position:relative;left:auto !important;top:auto !important;width:auto !important;height:86%;flex:none;transform:none;filter:none}.compo5 .pezzo5 img{height:100%;width:auto}.compo5 .tel5{height:100%;width:auto !important;aspect-ratio:9/18.5}.compo5 .dup5{display:block}}
+.voce6{display:flex !important;justify-content:space-between;align-items:baseline;gap:24px}
+.kw6{flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .25s;white-space:nowrap}
+.voce6:hover .kw6{color:#C9A8FF}
+@media (max-width: 760px){.voce6{flex-direction:column;align-items:flex-start;gap:8px}.kw6{font-size:11px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -156,7 +160,7 @@ a{color:#EFE8DF}a:hover{color:#B4A9B8}
     </div>
     <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
       <sc-for list="{{indice}}" as="p" hint-placeholder-count="6">
-        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span></a>
       </sc-for>
     </nav>
     <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
@@ -204,7 +208,7 @@ class Component extends DCLogic {
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, kw: ({"tesi.html": "Editorial · Photography", "mind.html": "Brand identity · Photography", "edicola518.html": "Campaign · Posters", "acito.html": "Editorial · Cover", "leave-the-spikes.html": "Poster · Workshop", "underground.html": "Brand identity · Lettering"})[p.href] || '', href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },

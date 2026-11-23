@@ -72,6 +72,10 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
 *{cursor:auto !important}
 }
 .tendinaI .btn-menu:hover,.tendinaI a:hover,.tendina .btn-menu:hover,.tendina a:hover{color:#C9A8FF}
+.voce6{display:flex !important;justify-content:space-between;align-items:baseline;gap:24px}
+.kw6{flex:none;font-size:12px;font-weight:600;letter-spacing:.08em;line-height:1.3;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .25s;white-space:nowrap}
+.voce6:hover .kw6{color:#C9A8FF}
+@media (max-width: 760px){.voce6{flex-direction:column;align-items:flex-start;gap:8px}.kw6{font-size:11px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
@@ -141,7 +145,7 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
     </div>
     <nav aria-label="Progetti" style="flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 0 4vw 4vh">
       <sc-for list="{{indice}}" as="p" hint-placeholder-count="6">
-        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}">{{p.titolo}}</a>
+        <a class="voce6" href="{{p.href}}" onMouseEnter="{{p.su}}" onMouseLeave="{{p.giu}}" tabindex="{{p.tab}}" style="transform: translateX({{p.tx}}); opacity: {{p.op}}; transition-delay: {{p.del}}"><span class="tit6">{{p.titolo}}</span><span class="kw6">{{p.kw}}</span></a>
       </sc-for>
     </nav>
     <div class="anteprima" aria-hidden="true" style="left: {{ilx}}; top: {{ily}}; width: {{iw}}; opacity: {{iop}}; transform: translate(-50%, -50%) rotate({{irot}})">
@@ -246,7 +250,7 @@ class Component extends DCLogic {
   valsIndice() {
     var self = this, st = this.state, on = !!st.apertoI, h = st.hI === undefined ? -1 : st.hI, P = this.IDX, cur = h >= 0 ? P[h] : P[0];
     return {
-      indice: P.map(function (p, i) { return { titolo: p.t, href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
+      indice: P.map(function (p, i) { return { titolo: p.t, kw: ({"tesi.html": "Editorial · Photography", "mind.html": "Brand identity · Photography", "edicola518.html": "Campaign · Posters", "acito.html": "Editorial · Cover", "leave-the-spikes.html": "Poster · Workshop", "underground.html": "Brand identity · Lettering"})[p.href] || '', href: p.href, tab: on ? 0 : -1, tx: on ? '0px' : '120px', op: on ? 1 : 0, del: on ? (0.25 + i * 0.06).toFixed(2) + 's' : '0s', su: function (e) { self.posI(e); self.setState({ hI: i }); }, giu: function () { self.setState({ hI: -1 }); } }; }),
       txI: on ? '0%' : '100%', nascostoI: on ? 'false' : 'true',
       apriI: function () { self.setState({ apertoI: true, hI: -1 }); },
       chiudiI: function () { self.setState({ apertoI: false, hI: -1 }); },

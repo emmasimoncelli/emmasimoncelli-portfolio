@@ -80,46 +80,75 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
 .piede2{align-items:start !important}
 .piede2 > p{font-size:clamp(28px,3.4vw,54px) !important}
 @media (max-width: 760px){.titC{font-size:8vw}.piede2 > p{font-size:8vw !important}}
+
+html{scroll-behavior:smooth}
+.eroe7{position:relative;height:100svh;min-height:680px;overflow:hidden;display:flex;flex-direction:column}
+.testata7{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px 4vw 0}
+.logo7{display:block;width:34px;height:34px;flex:none}
+.logo7 svg{width:100%;height:100%;overflow:visible;animation:respira7 3.2s ease-in-out infinite}
+.logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
+@keyframes respira7{0%,100%{transform:scale(.9)}50%{transform:scale(1.12)}}
+.nav7{display:flex;gap:24px}
+.scorri7{margin-top:14px;color:#000;background:#5FC24A;padding:6px 11px 5px;border:0;font:inherit;cursor:pointer}
+.scorri7:hover{background:#EFE8DF}
+.blocco7{padding:16vh 4vw 8vh;max-width:980px}
+.et7{margin:0 0 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5FC24A}
+.tx7{margin:0;font-weight:700;font-size:clamp(22px,2.6vw,40px);line-height:1.18;letter-spacing:-.02em;color:#EFE8DF}
+.tx7.piccolo{font-weight:500;font-size:clamp(15px,1.2vw,18px);line-height:1.55;color:#CFC6D3;max-width:640px}
+.imm7{padding:0 4vw;display:grid;gap:2vw;margin-bottom:2vw}
+.imm7 img{display:block;width:100%;height:auto}
+.due7{grid-template-columns:1fr 1fr;align-items:start}
+.tre7{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.uno7{justify-items:center}.uno7 img{width:auto;max-width:100%;max-height:88svh}
+.stretto7{justify-items:center}.stretto7 img{width:auto;max-width:min(100%,620px);max-height:88svh}
+.vis7{display:flex;justify-content:center;padding:4vh 4vw 6vh}
+.vis7 > *{max-width:100%}
+.gira7wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.gira7{background:none;border:0;padding:0;cursor:pointer;perspective:1600px;width:min(100%,760px)}
+.carta7{position:relative;display:block;aspect-ratio:910/588;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.3,.7,.2,1)}
+.carta7 img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.carta7 .r7{transform:rotateY(180deg)}
+.nota7{margin:0;color:#5FC24A}
+.pross7{display:grid;grid-template-columns:minmax(0,1fr) min(14vw,200px);align-items:end;gap:3vw;margin-top:14vh;padding:5vh 4vw 6vh;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;color:#EFE8DF}
+.pross7 .cornice{grid-column:1/-1;color:#5FC24A}
+.pt7{font-weight:900;font-size:3.6vw;line-height:.95;letter-spacing:-.04em;text-transform:uppercase;transition:color .3s}
+.fr7{display:inline-block;transition:transform .3s}
+.pross7:hover .pt7{color:#F27BA6}
+.pross7:hover .fr7{transform:translateX(1.4vw)}
+.pross7 img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pross7:hover img{transform:rotate(-3deg) scale(1.03)}
+.tendina,.tendinaI,.lb{position:fixed !important}
+@keyframes rivela7{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.rivela{animation:rivela7 linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+@media (max-width: 760px){.eroe7{height:auto;min-height:100svh}.blocco7{padding:10vh 5vw 5vh}.tx7{font-size:21px}.imm7{padding:0 5vw;gap:12px;margin-bottom:12px}.due7,.tre7{grid-template-columns:1fr}.vis7{padding:2vh 5vw;overflow:hidden}.pross7{grid-template-columns:1fr;margin-top:10vh;padding:5vh 5vw 7vh}.pt7{font-size:9vw}.pross7 img{width:40vw}.logo7{width:28px;height:28px}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 </head>
 <body>
 <template id="dc-template">
 
-<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: #000; color: #EFE8DF; font-family: Switzer, sans-serif; display: flex; flex-direction: column">
+<div class="pagina palco-ed" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #000; color: #EFE8DF; font-family: Switzer, sans-serif">
 
-  <header class="cornice" style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 4vw 0">
-    <button type="button" class="btn-menu" onClick="{{apriI}}">← Progetti</button>
-    <nav aria-label="Menu" style="display: flex; gap: 28px">
-      <a href="index.html" style="text-decoration: none">About me</a>
-      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
-    </nav>
-  </header>
+  <section class="eroe7">
+  <header class="cornice testata7"><a class="logo7" href="index.html" aria-label="Emma Simoncelli, About me"><svg viewBox="80 20 840 640" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg></a><nav aria-label="Menu" class="nav7"><button type="button" class="btn-menu" onClick="{{apriI}}">Progetti</button><button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button></nav></header>
 
   <div class="riga-titolo" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); align-items: start; gap: 4vw; padding: 26px 4vw 20px">
     <h1 class="titolo" style="margin: 0; font-weight: 900; font-size: 3.2vw; line-height: .95; letter-spacing: -.035em; text-transform: uppercase">Leave the Spikes to the Punks</h1>
     <div>
       <p style="margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: #E6DFE8">Un manifesto illustrato nato durante il workshop con Antonio Colomboni: dalla divisione alla condivisione.</p>
       <p class="cornice" style="margin: 0; color: #5FC24A">Workshop con Antonio Colomboni · Illustrazione · Manifesto</p>
-      <button type="button" class="btn-menu" onClick="{{apriP}}" style="margin-top: 14px; color: #000000; background: #5FC24A; padding: 6px 11px 5px">Approfondisci +</button>
+      <button type="button" class="cornice scorri7" onClick="{{scorri}}">Scorri ↓</button>
     </div>
   </div>
 
   <div class="area-vis molla-box" aria-hidden="true" style="flex: 1 1 auto; min-height: 0; position: relative; margin: 0 0 4vh">
     <canvas class="molla" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
   </div>
-
-  <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
-    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(95,194,74,.2)">
-  </div>
-
-  <div class="tendinaP" aria-hidden="{{nascostoP}}" style="transform: translateX({{txP}})">
-    <div class="cornice" style="display: flex; justify-content: space-between; align-items: center; padding: 22px 4vw 0">
-      <button type="button" class="btn-menu" onClick="{{chiudiP}}">← Torna al progetto</button>
-      <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>
-    </div>
-    <div class="griglia-p" style="flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 860px) minmax(0, 420px); justify-content: center; justify-items: center; gap: 4vw; align-items: center; padding: 16px 4vw 32px">
-      <div class="corteo" role="img" aria-label="Un corteo: mani che alzano cartelli con il manifesto Leave the Spikes to the Punks">
+  </section>
+  <section class="blocco7 rivela" id="inizio7"><p class="et7">L'illustrazione</p><p class="tx7">Nella stessa spirale il filo spinato diventa un ramo d'ulivo: dalla guerra alla pace.</p></section>
+  <section class="imm7 stretto7"><img class="rivela" src="a/f101fe4430c6cb61fde39e2f6e2571c8.jpg" alt="Il manifesto Leave the Spikes to the Punks" loading="lazy"></section>
+  <section class="blocco7 rivela"><p class="et7">Il claim</p><p class="tx7">Le spine lasciamole ai punk, che ne fanno solo estetica, e non usiamole più come confine. Un invito alla libertà e alla condivisione di spazi e culture.</p></section>
+  <section class="vis7 rivela"><div class="corteo" role="img" aria-label="Un corteo: mani che alzano cartelli con il manifesto Leave the Spikes to the Punks">
         <div class="manifestante" style="left: 8%; bottom: 10%; width: 26.9%; z-index: 1; --r: -8deg; animation-duration: 5.2s; animation-delay: -1.1s; filter: brightness(0.8)">
           <div class="pannello"><img src="a/f101fe4430c6cb61fde39e2f6e2571c8.jpg" alt=""></div>
           <div class="asta"></div>
@@ -132,14 +161,10 @@ a{color:#EFE8DF}a:hover{color:#5FC24A}
           <div class="pannello"><img src="a/f101fe4430c6cb61fde39e2f6e2571c8.jpg" alt=""></div>
           <div class="asta"></div>
         </div>
-      </div>
-      <div class="testo-p">
-        <h2>L'illustrazione</h2>
-        <p>Nella stessa spirale il filo spinato diventa un ramo d'ulivo: dalla guerra alla pace.</p>
-        <h2>Il claim</h2>
-        <p style="margin-bottom: 0">Le spine lasciamole ai punk, che ne fanno solo estetica, e non usiamole più come confine. Un invito alla libertà e alla condivisione di spazi e culture.</p>
-      </div>
-    </div>
+      </div></section>
+  <a class="pross7" href="edicola518.html"><span class="cornice">Progetto successivo</span><span class="pt7">Edicola 518 <span class="fr7">→</span></span><img src="a/49c486526a3fd314a35a5c178951f9a0.webp" alt="" loading="lazy"></a>
+  <div class="lb" role="dialog" aria-label="Manifesto ingrandito" aria-hidden="{{lbNascosto}}" onClick="{{chiudiLb}}" style="opacity: {{lbOp}}; pointer-events: {{lbPe}}">
+    <img src="{{lbSrc}}" alt="{{lbAlt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(95,194,74,.2)">
   </div>
 
   <div class="tendinaI" aria-hidden="{{nascostoI}}" onMouseMove="{{muoviI}}" style="transform: translateX({{txI}})">
@@ -289,6 +314,7 @@ class Component extends DCLogic {
       apriC: function () { self.setState({ apertoC: true }); },
       chiudiC: function () { self.setState({ apertoC: false }); },
       txP: st.apertoP ? '0%' : '100%', nascostoP: st.apertoP ? 'false' : 'true',
+      scorri: function () { var t = document.getElementById('inizio7'); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } },
       apriP: function () { self.setState({ apertoP: true }); },
       chiudiP: function () { self.setState({ apertoP: false }); },
       bx: st.mx + 'px', by: st.my + 'px',

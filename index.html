@@ -128,6 +128,11 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 .piede2{align-items:start !important}
 .piede2 > p{font-size:clamp(28px,3.4vw,54px) !important}
 @media (max-width: 760px){.titC{font-size:8vw}.piede2 > p{font-size:8vw !important}}
+.logo7{display:block;width:34px;height:34px;flex:none}
+.logo7 svg{width:100%;height:100%;overflow:visible;animation:respira7 3.2s ease-in-out infinite}
+.logo7 path{fill:#8C5CFF;stroke:#8C5CFF;stroke-width:8;stroke-linejoin:round}
+@keyframes respira7{0%,100%{transform:scale(.9)}50%{transform:scale(1.12)}}
+@media (max-width: 760px){.logo7{width:28px;height:28px}}
 .picc{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#D9C2FF}
 .frasep{margin:0;font-weight:800;font-size:clamp(17px,1.5vw,22px);line-height:1.2;letter-spacing:-.01em;text-transform:uppercase}
 .frasep em{font-style:normal;color:inherit}
@@ -170,7 +175,8 @@ a{color:#FFFFFF}a:hover{color:#D9C2FF}
 <div class="palco8" onMouseMove="{{muovi}}" onMouseLeave="{{esci}}" style="position: relative; background: #000; color: #FFFFFF; font-family: Switzer, sans-serif">
 
 
-  <header class="cornice testata" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: flex-end; align-items: center; padding: 22px 4vw">
+  <header class="cornice testata" style="position: absolute; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 18px 4vw">
+    <a class="logo7" href="index.html" aria-label="Emma Simoncelli, About me"><svg viewBox="80 20 840 640" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg></a>
     <nav aria-label="Menu" style="display: flex; gap: 28px">
       <button type="button" class="btn-menu" onClick="{{apri}}">Progetti</button>
       <button type="button" class="btn-menu" onClick="{{apriC}}">Contatti</button>

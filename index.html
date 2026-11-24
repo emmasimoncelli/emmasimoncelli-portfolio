@@ -186,11 +186,16 @@ html.scuro .tema7 svg{transform:rotate(180deg)}
 .parp{margin:12px 0 0;font-size:15px;line-height:1.55;color:var(--tx3)}
 @keyframes entra{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 
-.carteE{display:flex;justify-content:center;align-items:flex-start;gap:1.4vw;width:100%;margin:2vh 0 0;position:relative;z-index:6}
-.carteE a{display:block;flex:none;width:min(10.5vw,160px);aspect-ratio:1/1;transform:translateY(var(--y)) rotate(var(--r));transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 8px 22px rgba(20,20,40,.12)}
-.carteE a:hover{transform:translateY(calc(var(--y) - 10px)) rotate(0deg) scale(1.06);z-index:2}
-.carteE img{display:block;width:100%;height:100%;object-fit:cover}
-@media (max-width: 760px){.carteE{flex-wrap:wrap;gap:10px 4vw;margin:0 0 6vw}.carteE a{width:26vw}}
+.nastroE{width:calc(100% + 8vw);margin:2vh -4vw 10vh;overflow:hidden;position:relative;z-index:6}
+.giroE{display:flex;gap:18px;width:max-content;animation:giroE 48s linear infinite}
+.nastroE:hover .giroE{animation-play-state:paused}
+@keyframes giroE{to{transform:translateX(-50%)}}
+.giroE a{display:block;flex:none;width:min(18vw,270px);text-decoration:none;color:var(--tx)}
+.giroE img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.giroE a:hover img{transform:scale(1.04)}
+.giroE span{display:block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:color .25s}
+.giroE a:hover span{color:#8C5CFF}
+@media (max-width: 760px){.nastroE{width:calc(100% + 10vw);margin:0 -5vw 8vh}.giroE{gap:12px;animation-duration:30s}.giroE a{width:44vw}}
 
 .cv2{padding:56px 4vw 64px !important}
 .riga2{padding:16px 0 !important}
@@ -262,7 +267,7 @@ if(v>=1){c.classList.add('via');setTimeout(function(){c.remove()},700);return}re
   </header>
 
   <section class="eroeE">
-    <nav class="carteE" aria-label="Anteprime dei progetti"><a href="tesi.html" aria-label="Let's stop trying to make all the edges smooth" style="--r:-6deg;--y:14px"><img src="a/2b5ec6e26e002a8e633afbd32012a396.jpg" alt="" loading="eager"></a><a href="acito.html" aria-label="Acito" style="--r:4deg;--y:0px"><img src="a/97df318150967eca154a397eea145d04.jpg" alt="" loading="eager"></a><a href="mind.html" aria-label="Mind" style="--r:-3deg;--y:22px"><img src="a/518a2dbce15d2d160a2b57c03518ff21.jpg" alt="" loading="eager"></a><a href="underground.html" aria-label="Underground" style="--r:5deg;--y:4px"><img src="a/ce3e3fc5f90e6ca2f481e936c0675d85.jpg" alt="" loading="eager"></a><a href="leave-the-spikes.html" aria-label="Leave the Spikes to the Punks" style="--r:-5deg;--y:18px"><img src="a/8d35a772ad29937f8b6583e0a572fce3.jpg" alt="" loading="eager"></a><a href="edicola518.html" aria-label="Edicola 518" style="--r:3deg;--y:2px"><img src="a/431cf67f583b14a0f12fcb3083db209d.jpg" alt="" loading="eager"></a></nav>
+    <nav class="nastroE" aria-label="Anteprime dei progetti"><div class="giroE"><a href="tesi.html" aria-label="Let's stop trying…"><img src="a/2b5ec6e26e002a8e633afbd32012a396.jpg" alt="" loading="eager"><span>Let's stop trying… ↗</span></a><a href="acito.html" aria-label="Acito"><img src="a/97df318150967eca154a397eea145d04.jpg" alt="" loading="eager"><span>Acito ↗</span></a><a href="mind.html" aria-label="Mind"><img src="a/518a2dbce15d2d160a2b57c03518ff21.jpg" alt="" loading="eager"><span>Mind ↗</span></a><a href="underground.html" aria-label="Underground"><img src="a/ce3e3fc5f90e6ca2f481e936c0675d85.jpg" alt="" loading="eager"><span>Underground ↗</span></a><a href="leave-the-spikes.html" aria-label="Leave the Spikes"><img src="a/8d35a772ad29937f8b6583e0a572fce3.jpg" alt="" loading="eager"><span>Leave the Spikes ↗</span></a><a href="edicola518.html" aria-label="Edicola 518"><img src="a/431cf67f583b14a0f12fcb3083db209d.jpg" alt="" loading="eager"><span>Edicola 518 ↗</span></a><a tabindex="-1" aria-hidden="true" href="tesi.html" aria-label="Let's stop trying…"><img src="a/2b5ec6e26e002a8e633afbd32012a396.jpg" alt="" loading="eager"><span>Let's stop trying… ↗</span></a><a tabindex="-1" aria-hidden="true" href="acito.html" aria-label="Acito"><img src="a/97df318150967eca154a397eea145d04.jpg" alt="" loading="eager"><span>Acito ↗</span></a><a tabindex="-1" aria-hidden="true" href="mind.html" aria-label="Mind"><img src="a/518a2dbce15d2d160a2b57c03518ff21.jpg" alt="" loading="eager"><span>Mind ↗</span></a><a tabindex="-1" aria-hidden="true" href="underground.html" aria-label="Underground"><img src="a/ce3e3fc5f90e6ca2f481e936c0675d85.jpg" alt="" loading="eager"><span>Underground ↗</span></a><a tabindex="-1" aria-hidden="true" href="leave-the-spikes.html" aria-label="Leave the Spikes"><img src="a/8d35a772ad29937f8b6583e0a572fce3.jpg" alt="" loading="eager"><span>Leave the Spikes ↗</span></a><a tabindex="-1" aria-hidden="true" href="edicola518.html" aria-label="Edicola 518"><img src="a/431cf67f583b14a0f12fcb3083db209d.jpg" alt="" loading="eager"><span>Edicola 518 ↗</span></a></div></nav>
     <div class="gruppoE">
       <svg class="stellaE" viewBox="0 -40 1000 740" aria-hidden="true"><path d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg>
       <div class="slotE"><img class="bgE" src="a/baea4ca0239156cc5502e0f12d8f217a.jpg" alt=""><img class="figE" src="a/aec3be3996fefff822c6762716887986.png" alt="Emma Simoncelli"></div>

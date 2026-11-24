@@ -199,11 +199,11 @@ html.scuro .tema7 svg{transform:rotate(180deg)}
 @keyframes entra{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 
 .nastroE{width:calc(100% + 8vw);margin:2vh -4vw 10vh;overflow:hidden;position:relative;z-index:6}
-.giroE{display:flex;gap:18px;width:max-content;animation:giroE 60s linear infinite}
+.giroE{display:flex;gap:18px;width:max-content;animation:giroE 44s linear infinite}
 .nastroE:hover .giroE{animation-play-state:paused}
 @keyframes giroE{to{transform:translateX(-50%)}}
-.giroE a{display:block;flex:none;width:min(19vw,280px);text-decoration:none;color:var(--tx)}
-.visE{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--sf);outline:1px solid rgba(var(--ln),.14);outline-offset:-1px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.giroE a{display:block;flex:none;width:min(25vw,380px);text-decoration:none;color:var(--tx)}
+.visE{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#0B0B0B;outline:1px solid rgba(var(--ln),.14);outline-offset:-1px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
 .giroE a:hover .visE{transform:scale(1.03)}
 .giroE span{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:color .25s}
 .giroE a:hover span{color:#8C5CFF}
@@ -226,9 +226,10 @@ html.scuro .tema7 svg{transform:rotate(180deg)}
 .vUG img{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 0 2px #FF5A5A) drop-shadow(0 0 10px #FF2020) drop-shadow(0 0 22px rgba(255,0,0,.8));animation:neonE 5s steps(1) infinite}
 .vUG img+img{animation-delay:.15s}
 @keyframes neonE{0%,38%{opacity:1}40%{opacity:.15}42%{opacity:1}44%{opacity:.2}46%,70%{opacity:1}72%,86%{opacity:.08}88%,100%{opacity:1}}
+:root.scuro .visE:not(.cA):not(.cT){background:#FFFFFF}
 .mollaE{position:absolute;inset:0;width:100%;height:100%}
 .vPost{width:100%;height:100%;object-fit:cover}
-@media (max-width: 760px){.nastroE{width:calc(100% + 10vw);margin:0 -5vw 8vh}.giroE{gap:12px;animation-duration:40s}.giroE a{width:46vw}}
+@media (max-width: 760px){.nastroE{width:calc(100% + 10vw);margin:0 -5vw 8vh}.giroE{gap:12px;animation-duration:30s}.giroE a{width:62vw}}
 
 .cv2{padding:56px 4vw 64px !important}
 .riga2{padding:16px 0 !important}

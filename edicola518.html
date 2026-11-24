@@ -169,6 +169,23 @@ html.scuro .tema7 svg{transform:rotate(180deg)}
 html.scuro{--sf:#000000;--tx:#FFFFFF;--tx2:#F2F2F2;--tx3:#E4E4E4;--tx4:#CFCFCF;--ln:255,255,255;--lbg:0,0,0;--acct:#F27BA6}
 html.scuro .logo5{content:url(a/9a33b35417b26ee3e5e51f35a79969ba.svg)}
 html,body,.pagina,.palco8{transition:background-color .4s,color .4s}
+
+/*nav8*/
+.testata .btn-menu,.testata7 .btn-menu,.barra7 nav a,.barra7 nav button:not(.tema7){position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 2px !important;font-size:12px !important;font-weight:600 !important;letter-spacing:.08em !important;cursor:pointer}
+.testata .btn-menu::after,.testata7 .btn-menu::after,.barra7 nav a::after,.barra7 nav button:not(.tema7)::after{content:"";position:absolute;left:2px;right:2px;bottom:12px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+@media (hover: hover){.testata .btn-menu:hover::after,.testata7 .btn-menu:hover::after,.barra7 nav a:hover::after,.barra7 nav button:not(.tema7):hover::after{transform:scaleX(1);transform-origin:left}}
+.btn-menu.att8::after,.barra7 nav .att8::after{transform:scaleX(1) !important;transform-origin:left}
+.barra7 nav a:hover,.barra7 nav button:hover{color:#FFFFFF !important}
+.testata nav,.testata7 .nav7,.barra7 nav{gap:clamp(14px,2.2vw,28px) !important}
+.tema7{width:44px !important;height:44px !important;margin-right:-11px;border-radius:50%;transition:background .25s}
+@media (hover: hover){.tema7:hover{background:rgba(140,92,255,.14)}.barra7 .tema7:hover{background:rgba(255,255,255,.14)}}
+.btn-menu:focus-visible,.barra7 a:focus-visible,.barra7 button:focus-visible,.tema7:focus-visible,.logo7:focus-visible{outline:2px solid #8C5CFF;outline-offset:3px;border-radius:2px}
+.barra7{padding:max(6px,env(safe-area-inset-top)) 4vw 6px !important;box-shadow:none}
+.barra7.su{box-shadow:0 8px 24px rgba(20,6,45,.22)}
+.barra7 .logo7b{width:40px !important;height:40px !important;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+@media (hover: hover){.barra7 .logo7b:hover{transform:rotate(36deg) scale(1.06)}}
+#progetti,#contatti{scroll-margin-top:24px}
+@media (max-width: 760px){.barra7{padding:max(4px,env(safe-area-inset-top)) 5vw 4px !important}.barra7 .logo7b{width:36px !important;height:36px !important}}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
 <script>try{if(localStorage.getItem('tema')==='scuro')document.documentElement.classList.add('scuro')}catch(e){}try{if(sessionStorage.getItem('visto'))document.documentElement.classList.add('gia');sessionStorage.setItem('visto','1')}catch(e){}</script>
@@ -305,6 +322,7 @@ class Component extends DCLogic {
     if (st.apertoC || st.apertoI || st.lb >= 0) { return; }
   }
   renderVals() {
+    if (!window.__nav8) { window.__nav8 = true; var nav8 = function () { var P = document.getElementById('progetti'), C = document.getElementById('contatti'); if (!P || !C) { return; } var h = window.innerHeight, y = function (el) { return el.getBoundingClientRect(); }, rp = y(P), rc = y(C); var att = rc.top < h * 0.6 ? 'Contatti' : (rp.top < h * 0.6 && rp.bottom > h * 0.25 ? 'Progetti' : ''); document.querySelectorAll('.testata .btn-menu, .barra7 nav button, .barra7 nav a').forEach(function (b) { var t = (b.textContent || '').trim(); var on = t === att; b.classList.toggle('att8', on); if (on) { b.setAttribute('aria-current', 'true'); } else { b.removeAttribute('aria-current'); } }); }; window.addEventListener('scroll', nav8, { passive: true }); window.addEventListener('resize', nav8); setTimeout(nav8, 300); var tt8 = function () { var sc = document.documentElement.classList.contains('scuro'); document.querySelectorAll('.tema7').forEach(function (b) { var l = sc ? 'Passa al tema chiaro' : 'Passa al tema scuro'; b.setAttribute('aria-label', l); b.setAttribute('title', l); }); }; document.addEventListener('click', function (e) { if (e.target && e.target.closest && e.target.closest('.tema7')) { setTimeout(tt8, 0); } }); setTimeout(tt8, 0); }
     if (!window.__tema7) { window.__tema7 = true; try { if (localStorage.getItem('tema') === 'scuro') { document.documentElement.classList.add('scuro'); } } catch (e) {} document.addEventListener('click', function (e) { var t = e.target && e.target.closest ? e.target.closest('.tema7') : null; if (!t) { return; } var sc = document.documentElement.classList.toggle('scuro'); try { localStorage.setItem('tema', sc ? 'scuro' : 'chiaro'); } catch (er) {} }); }
     if (!window.__barra7) { window.__barra7 = true; var ult = window.scrollY || 0; window.addEventListener('scroll', function () { var b = document.querySelector('.barra7'); if (!b) { return; } var y = window.scrollY || 0; if (y < 240) { b.classList.remove('su'); } else if (y < ult - 4) { b.classList.add('su'); } else if (y > ult + 4) { b.classList.remove('su'); } ult = y; }, { passive: true }); }
     if (!this._kb) { this._kb = true; var me = this; try { window.addEventListener('keydown', function (e) { me.tasti(e); }); } catch (x) {} }

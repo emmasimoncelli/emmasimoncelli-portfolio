@@ -174,18 +174,18 @@ html.scuro .tema7 svg{transform:rotate(180deg)}
 .scorri7:hover{background:var(--tx) !important;color:var(--sf) !important}
 .testata7 a:hover,.testata7 .btn-menu:hover,.freccia:hover{color:var(--acct) !important}
 :root{--sf:#EEF0F2;--tx:#141414;--tx2:#2A2A2A;--tx3:#3A3A3A;--tx4:#4A4A4A;--ln:20,20,20;--lbg:238,240,242;--acct:#8C0A55}
-html.scuro{--sf:#000000;--tx:#EFE8DF;--tx2:#E6DFE8;--tx3:#D9CDE6;--tx4:#CFC6D3;--ln:255,255,255;--lbg:0,0,0;--acct:#E98BC0}
+html.scuro{--sf:#000000;--tx:#FFFFFF;--tx2:#F2F2F2;--tx3:#E4E4E4;--tx4:#CFCFCF;--ln:255,255,255;--lbg:0,0,0;--acct:#E98BC0}
 html.scuro .logo5{content:url(a/9a33b35417b26ee3e5e51f35a79969ba.svg)}
 html,body,.pagina,.palco8{transition:background-color .4s,color .4s}
 </style>
 <style>body{font-family:Switzer,sans-serif}</style>
-<script>try{if(localStorage.getItem('tema')==='scuro')document.documentElement.classList.add('scuro')}catch(e){}</script>
-<style>#carica{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--sf,#EEF0F2);transition:opacity .6s ease}#carica.via{opacity:0;pointer-events:none}#carica svg{position:absolute;width:min(70vw,520px);overflow:visible;transform:rotate(-4deg)}#carica path{fill:none;stroke:#8C5CFF;stroke-width:2.4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}#carica-n{position:relative;font-family:Switzer,sans-serif;font-weight:900;font-size:clamp(28px,4vw,56px);letter-spacing:-.03em;color:var(--tx,#141414)}</style>
+<script>try{if(localStorage.getItem('tema')==='scuro')document.documentElement.classList.add('scuro')}catch(e){}try{if(sessionStorage.getItem('visto'))document.documentElement.classList.add('gia');sessionStorage.setItem('visto','1')}catch(e){}</script>
+<style>#carica{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--sf,#EEF0F2);transition:opacity .6s ease}#carica.via{opacity:0;pointer-events:none}#carica svg{position:absolute;width:min(80vw,560px);overflow:visible;transform:rotate(-4deg)}#carica path{fill:none;stroke:#8C5CFF;stroke-width:2.4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}html.gia #carica{display:none}#carica-n{position:relative;top:-.3em;font-family:Switzer,sans-serif;font-weight:900;font-size:clamp(15px,1.6vw,21px);letter-spacing:-.03em;color:var(--tx,#141414)}</style>
 </head>
 <body>
 <div id="carica" aria-hidden="true"><svg viewBox="80 20 840 640"><path id="carica-s" pathLength="1" d="M500,49 L532,273 L802,106 L574,307 L910,330 L583,355 L741,508 L536,395 L500,580 L465,393 L258,509 L426,353 L106,330 L402,300 L252,147 L467,272 Z"/></svg><span id="carica-n">000%</span></div>
 <script>
-(function(){var c=document.getElementById('carica'),n=document.getElementById('carica-n'),p=document.getElementById('carica-s'),t0=performance.now(),v=0,fine=false,MIN=1300;
+(function(){if(document.documentElement.classList.contains('gia')){var g=document.getElementById('carica');if(g)g.remove();return}var c=document.getElementById('carica'),n=document.getElementById('carica-n'),p=document.getElementById('carica-s'),t0=performance.now(),v=0,fine=false,MIN=1300;
 window.addEventListener('load',function(){fine=true});setTimeout(function(){fine=true},8000);
 function quota(){var im=document.images,tot=0,ok=0;for(var i=0;i<im.length;i++){if(im[i].closest('#carica'))continue;tot++;if(im[i].complete)ok++;}return tot?ok/tot:0}
 function passo(ts){var el=ts-t0,obj=Math.min(fine?1:Math.max(.08,quota()*.95),el/MIN);v+=(obj-v)*.12;if(fine&&el>=MIN&&v>.995)v=1;var k=Math.round(v*100);n.textContent=('00'+k).slice(-3)+'%';p.style.strokeDashoffset=String(1-v);
